@@ -6,7 +6,7 @@ import Footer from '../Footer.jsx'
 
 const Faq = () => {
   return (
-    <div>
+    <div className='w-full h-full overflow-hidden'>
       <FaqHero/>
       <Clarity/>
       <Testimonials/>

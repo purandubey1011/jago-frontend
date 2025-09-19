@@ -82,7 +82,7 @@ const ResourcesCards = () => {
       whileInView="visible" 
       viewport={{ amount: 0 }} 
     >
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="flex flex-wrap justify-start gap-8">
         {cardsData.map((card) => (
           <motion.div
             key={card.id}

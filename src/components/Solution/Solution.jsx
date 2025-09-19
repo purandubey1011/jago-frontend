@@ -8,7 +8,7 @@ import Footer from '../Footer.jsx'
 
 const Solution = () => {
   return (
-    <div>
+    <div className='w-full h-full overflow-hidden'>
       <SolutionHero/>
       <WellBeing/>
       <WhyChoose/>

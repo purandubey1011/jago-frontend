@@ -9,7 +9,7 @@ import Footer from '../Footer.jsx'
 
 const Home = () => {
   return (
-    <div className='overflow-x-hidden md:overflow-x-visible'>
+    <div className='overflow-hidden'>
       <Hero />
       <AboutJago />
       <SolutionOffer />

@@ -7,7 +7,7 @@ import Footer from '../Footer.jsx'
 
 const Resources = () => {
   return (
-    <div>
+    <div className='w-full h-full overflow-hidden'>
       <ResourcesHero/>
       <ResourcesCards/>
       <Clarity/>

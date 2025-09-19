@@ -9,7 +9,7 @@ import Footer from '../Footer.jsx'
 
 const About = () => {
   return (
-    <div className='w-full h-full'>
+    <div className='w-full h-full overflow-hidden'>
       <AboutHero/>
       <OurPhilosophy/>
       <GlobalExperience/>

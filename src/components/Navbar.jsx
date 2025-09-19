@@ -212,7 +212,7 @@ const Navbar = () => {
                   Contact
                 </Link>
               </motion.div>
-              <motion.div variants={mobileMenuItemVariants} className="w-full text-center">
+              <motion.div variants={mobileMenuItemVariants} className="w-full text-center px-2">
                 <select className="bg-white/10 text-white rounded-full px-5 py-2 text-base focus:outline-none appearance-none cursor-pointer">
                   <option value="en">English</option>
                   <option value="hi">हिंदी</option>

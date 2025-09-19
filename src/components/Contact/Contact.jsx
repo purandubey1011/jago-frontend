@@ -6,7 +6,7 @@ import Footer from '../Footer.jsx'
 
 const Contact = () => {
   return (
-    <div>
+    <div className='w-full h-full overflow-hidden'>
       <ContactHero/>
       <QuickContact/>
       <BookingCalendar/>

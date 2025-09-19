@@ -7,7 +7,7 @@ import Footer from '../Footer.jsx'
 
 const Pricing = () => {
   return (
-    <div>
+    <div className='w-full h-full overflow-hidden'>
       <PricingHero/>
       <Coaching/>
        <Clarity/>
