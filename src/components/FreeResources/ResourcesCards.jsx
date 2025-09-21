@@ -49,93 +49,96 @@ const ResourcesCards = () => {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
+//   const containerVariants = {
+//   hidden: { opacity: 0 },
+//   visible: {
+//     opacity: 1,
+//     transition: {
+//       staggerChildren: 0.2,
+//       duration: 0.6,
+//     },
+//   },
+// };
+
+// const cardVariants = {
+//   hidden: { opacity: 0, y: 0 },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       duration: 0.7,
+//       ease: "easeOut",
+//     },
+//   },
+// };
 
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      duration: 0.6,
     },
-  };
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 0 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
 
   return (
-    <motion.div
-      ref={container}
-      className="px-4 md:px-12 py-16 bg-white"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible" 
-      viewport={{ amount: 0 }} 
-    >
-      <div className="flex flex-wrap justify-start gap-8">
-        {cardsData.map((card) => (
-          <motion.div
-            key={card.id}
-            className="
-              res-card
-              bg-white
-              rounded-2xl
-              shadow-sm
-              border
-              border-gray-100
-              overflow-hidden
-              hover:shadow-md
-              hover:-translate-y-1
-              transition
-              transform
-              w-full
-              md:w-[45%]
-              lg:w-[30%]
-              xl:w-[23%]
-              flex flex-col
-            "
-            variants={cardVariants} 
-          >
-            {/* Image */}
-            <img
-              src={card.img}
-              alt={card.title}
-              className="w-full h-44 sm:h-48 object-cover"
-            />
+   <motion.div
+  ref={container}
+  className="px-4 md:px-12 py-16 bg-white"
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+>
+  <div className="flex flex-wrap justify-start gap-8">
+    {cardsData.map((card) => (
+      <motion.div
+        key={card.id}
+        className="
+          res-card bg-white rounded-2xl shadow-sm border border-gray-100
+          overflow-hidden hover:shadow-md hover:-translate-y-1 transition
+          transform w-full md:w-[45%] lg:w-[30%] xl:w-[23%] flex flex-col
+        "
+        variants={cardVariants}
+      >
+        <img
+          src={card.img}
+          alt={card.title}
+          className="w-full h-44 sm:h-48 object-cover"
+        />
+        <div className="p-5 flex flex-col h-full">
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg font-semibold text-gray-900">{card.title}</h3>
+            <span className="px-2 py-0.5 text-xs font-semibold rounded-full bg-green-900 text-white">
+              {card.type}
+            </span>
+          </div>
+          <p className="mt-2 text-gray-600 text-sm flex-grow">{card.desc}</p>
+          <button className="mt-6 w-full bg-lime-300 text-black font-medium py-2 rounded-full hover:bg-lime-400 transition">
+            Download
+          </button>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</motion.div>
 
-            {/* Content */}
-            <div className="p-5 flex flex-col h-full">
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {card.title}
-                </h3>
-                <span className="px-2 py-0.5 text-xs font-semibold rounded-full bg-green-900 text-white">
-                  {card.type}
-                </span>
-              </div>
-
-              <p className="mt-2 text-gray-600 text-sm flex-grow">
-                {card.desc}
-              </p>
-
-              <button className="mt-6 w-full bg-lime-300 text-black font-medium py-2 rounded-full hover:bg-lime-400 transition">
-                Download
-              </button>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </motion.div>
   );
 };
 

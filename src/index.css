@@ -1,2 +1,7 @@
 @import "tailwindcss";
 
+/* Dropdown ke options visible aur readable */
+select option {
+  background-color: white; /* dropdown khulte hi white bg */
+  color: black;            /* text black */
+}

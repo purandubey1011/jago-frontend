@@ -33,7 +33,7 @@ const Footer = () => {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{  amount: 0.3 }} // Trigger when 30% of the footer is in view
+      viewport={{  amount: 0.5, once: true }} // Trigger when 30% of the footer is in view
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-16">
         {/* === Left column === */}

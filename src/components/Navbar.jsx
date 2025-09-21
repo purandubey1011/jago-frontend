@@ -24,23 +24,20 @@ const Navbar = () => {
 
   useEffect(() => {
     if (open) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset'; 
+      document.body.style.overflow = "unset";
     };
   }, [open]);
-
 
   const isLightBg =
     location.pathname === "/solutions" || location.pathname === "/resources";
 
   const textColor = isLightBg ? "text-black" : "text-white";
-  const hoverColor = isLightBg
-    ? "hover:text-lime-600"
-    : "hover:text-lime-300";
+  const hoverColor = isLightBg ? "hover:text-lime-600" : "hover:text-lime-300";
   const borderColor = isLightBg ? "border-black" : "border-white";
   const contactHover = isLightBg
     ? "hover:bg-black hover:text-white"
@@ -57,7 +54,11 @@ const Navbar = () => {
 
   const itemVariants = {
     hidden: { y: -50, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   const staggerContainerVariants = {
@@ -73,7 +74,10 @@ const Navbar = () => {
 
   const mobileMenuVariants = {
     hidden: { x: "100%" },
-    visible: { x: 0, transition: { type: "spring", stiffness: 100, damping: 20 } },
+    visible: {
+      x: 0,
+      transition: { type: "spring", stiffness: 100, damping: 20 },
+    },
   };
 
   const mobileMenuItemVariants = {
@@ -133,15 +137,22 @@ const Navbar = () => {
           </Link>
         </motion.div>
 
-        <motion.div variants={itemVariants}>
+        <motion.div
+          variants={mobileMenuItemVariants}
+          className="w-full text-center px-2 relative"
+        >
           <select
-            className={`bg-white/10 rounded-full px-4 py-2 text-sm cursor-pointer focus:outline-none ${
-              isLightBg ? "text-black" : "text-white"
-            }`}
+            className="bg-white/10 text-white rounded-full px-5 pr-8 py-2 text-sm 
+               focus:outline-none appearance-none cursor-pointer w-full"
           >
             <option value="en">English</option>
             <option value="hi">हिंदी</option>
           </select>
+
+          {/* Custom Arrow */}
+          <span className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-white">
+            ▼
+          </span>
         </motion.div>
       </motion.div>
 
@@ -153,14 +164,13 @@ const Navbar = () => {
         initial="hidden"
         animate="visible"
         aria-label="Toggle menu"
-        z 
+        z
       >
-        {open ? <FaTimes className="z-50"/> : <FaBars />}
+        {open ? <FaTimes className="z-50" /> : <FaBars />}
       </motion.button>
 
       <AnimatePresence>
         {open && (
-         
           <motion.div
             key="mobile-menu-overlay"
             initial={{ opacity: 0 }}
@@ -179,7 +189,7 @@ const Navbar = () => {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-black text-white flex flex-col items-center justify-start pt-24 pb-8 space-y-6 text-lg shadow-lg z-50 md:hidden overflow-y-auto" 
+            className="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-black text-white flex flex-col items-center justify-start pt-24 pb-8 space-y-6 text-lg shadow-lg z-50 md:hidden overflow-y-auto"
           >
             <motion.div
               variants={staggerContainerVariants}
@@ -188,14 +198,19 @@ const Navbar = () => {
               className="flex flex-col items-center space-y-6 w-full"
             >
               {navLinksData.map((link) => (
-                <motion.div key={link.to} variants={mobileMenuItemVariants} className="w-full text-center">
+                <motion.div
+                  key={link.to}
+                  variants={mobileMenuItemVariants}
+                  className="w-full text-center"
+                >
                   <NavLink
                     to={link.to}
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
-                      `block py-3 px-4 ${isActive
-                        ? "text-lime-400 font-semibold border-l-4 border-lime-400"
-                        : "hover:bg-gray-800 hover:text-lime-300"
+                      `block py-3 px-4 ${
+                        isActive
+                          ? "text-lime-400 font-semibold border-l-4 border-lime-400"
+                          : "hover:bg-gray-800 hover:text-lime-300"
                       } transition-colors duration-200`
                     }
                   >
@@ -203,7 +218,12 @@ const Navbar = () => {
                   </NavLink>
                 </motion.div>
               ))}
-              <motion.div variants={mobileMenuItemVariants} className="w-full text-center mt-8"> {/* Added mt-8 for spacing */}
+              <motion.div
+                variants={mobileMenuItemVariants}
+                className="w-full text-center mt-8"
+              >
+                {" "}
+                {/* Added mt-8 for spacing */}
                 <Link
                   to="/contact"
                   onClick={() => setOpen(false)}
@@ -212,12 +232,25 @@ const Navbar = () => {
                   Contact
                 </Link>
               </motion.div>
-              <motion.div variants={mobileMenuItemVariants} className="w-full text-center px-2">
-                <select className="bg-white/10 text-white rounded-full px-5 py-2 text-base focus:outline-none appearance-none cursor-pointer">
-                  <option value="en">English</option>
-                  <option value="hi">हिंदी</option>
-                </select>
-              </motion.div>
+
+               <motion.div
+          variants={mobileMenuItemVariants}
+          className="w-full text-center px-2 relative"
+        >
+          <select
+            className="bg-white/10 text-white rounded-full px-5 pr-8 py-2 text-sm 
+               focus:outline-none appearance-none cursor-pointer "
+          >
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+          </select>
+
+          {/* Custom Arrow */}
+          <span className="pointer-events-none absolute right-28 top-1/2 -translate-y-1/2 text-white">
+            ▼
+          </span>
+        </motion.div>
+
             </motion.div>
           </motion.div>
         )}
