@@ -159,7 +159,7 @@ const Testimonials = () => {
       </div>
 
       {/* Thumbnails & Button */}
-      <div className="flex flex-col md:flex-row md:justify-end md:items-center gap-4 mt-8">
+      <div className="flex flex-row justify-end items-center gap-4 mt-8">
         <div className="flex justify-center md:justify-end gap-3">
           {thumbsToShow.map((t) => {
             const idx = testimonials.findIndex((x) => x.img === t.img);
@@ -174,7 +174,7 @@ const Testimonials = () => {
                 <img
                   src={t.img}
                   alt={t.name}
-                  className="w-[60px] h-[60px] md:w-[70px] md:h-[70px] object-cover"
+                  className="w-[45px] h-[60px] md:w-[70px] md:h-[70px] object-cover"
                 />
               </button>
             );
