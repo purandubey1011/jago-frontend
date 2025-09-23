@@ -59,7 +59,7 @@ const Testimonials = () => {
       gsap.from(elems, {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
+          start: "top 60%",
           toggleActions: "play reverse play reverse",
         },
         opacity: 0,
