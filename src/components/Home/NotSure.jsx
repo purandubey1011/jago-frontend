@@ -45,7 +45,7 @@ const NotSure = () => {
         .fromTo(
           btnRef.current,
           { opacity: 0, scale: 0.9 },
-          { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.8)" },
+          { opacity: 1, scale: 1, duration: 1.3, ease: "fade" },
           "-=0.25"
         )
         .from(
@@ -57,7 +57,7 @@ const NotSure = () => {
             stagger: 0.08,
             ease: "back.out(1.7)",
           },
-          "-=0.25"
+          "-=0.80"
         );
     }, sectionRef);
 
@@ -86,7 +86,7 @@ const NotSure = () => {
           <Link to="/contact">
             <button
               ref={btnRef}
-              className="bg-[#0F2E15] hover:bg-green-800 transition text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold"
+              className="bg-[#0F2E15] hover:bg-green-800 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold"
             >
               Start Free Assessment
             </button>

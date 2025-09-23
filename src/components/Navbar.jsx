@@ -150,7 +150,7 @@ const Navbar = () => {
           </select>
 
           {/* Custom Arrow */}
-          <span className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-white">
+          <span className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-white text-xs">
             ▼
           </span>
         </motion.div>
@@ -246,7 +246,7 @@ const Navbar = () => {
           </select>
 
           {/* Custom Arrow */}
-          <span className="pointer-events-none absolute right-24 top-1/2 -translate-y-1/2 text-white">
+          <span className="pointer-events-none absolute right-24 top-1/2 -translate-y-1/2 text-white text-xs">
             ▼
           </span>
         </motion.div>

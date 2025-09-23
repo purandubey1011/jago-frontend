@@ -48,54 +48,72 @@ const Testimonials = () => {
   const handleThumbClick = (i) => setCurrent(i);
 
   // Section entrance
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1.1, ease: [0.22, 1, 0.36, 1] },
+const sectionVariants = {
+  hidden: { opacity: 0, y: 80 }, // thoda neeche se aaye
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.4,       // lambi duration for clarity
+      ease: [0.16, 1, 0.3, 1], // smooth ease (easeOutExpo like)
+      staggerChildren: 0.25,   // ek ek karke aaye
     },
-  };
+  },
+};
 
-  // Heading fade
-  const headingVariants = {
-    hidden: { opacity: 0, y: -30 },
-    visible: {
-      opacity: 0.25,
-      y: 0,
-      transition: { duration: 1.3, ease: "easeOut", delay: 0.1 },
+// Heading fade
+const headingVariants = {
+  hidden: { opacity: 0, y: -40 },
+  visible: {
+    opacity: 0.25,
+    y: 0,
+    transition: {
+      duration: 1.6,
+      ease: "easeOut",
+      delay: 0.3, // thoda late aaye
     },
-  };
+  },
+};
 
-  // Image / text for slide change
-  const imgVariants = {
-    enter: { opacity: 0, y: 50 },
-    center: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1, ease: [0.16, 1, 0.3, 1] },
+// Image / text for slide change
+const imgVariants = {
+  enter: { opacity: 0, y: 60 },
+  center: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.2,
+      ease: [0.16, 1, 0.3, 1],
     },
-    exit: { opacity: 0, y: -30, transition: { duration: 0.5 } },
-  };
-  const textVariants = {
-    enter: { opacity: 0, y: 20 },
-    center: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 },
+  },
+  exit: { opacity: 0, y: -40, transition: { duration: 0.6 } },
+};
+
+const textVariants = {
+  enter: { opacity: 0, y: 30 },
+  center: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.2,
+      ease: [0.16, 1, 0.3, 1],
+      delay: 0.2,
     },
-    exit: { opacity: 0, y: -15, transition: { duration: 0.4 } },
-  };
+  },
+  exit: { opacity: 0, y: -20, transition: { duration: 0.5 } },
+};
+
 
   return (
     <motion.section
-      ref={sectionRef}
-      variants={sectionVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.4 }}
-      className="relative bg-white w-full py-12 px-4 md:py-20 md:px-20 overflow-hidden"
-    >
+  ref={sectionRef}
+  variants={sectionVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.9 }} // thoda kam amount = late trigger
+  className="relative bg-white w-full py-12 px-4 md:py-20 md:px-20 overflow-hidden"
+>
+
       {/* Watermark Heading */}
       <motion.h1
         variants={headingVariants}

@@ -19,10 +19,10 @@ const AboutJago = () => {
     hidden: { x: -50, opacity: 0 },
     visible: { x: 0, opacity: 1, transition: { duration: 1, ease: "easeOut" } },
   };
-
+  
   const contentChildVariants = {
     hidden: { x: 40, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut" } },
+    visible: { x: 0, opacity: 1, transition: { duration: 2, ease: "easeOut" } },
   };
 
   return (
@@ -32,7 +32,7 @@ const AboutJago = () => {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{  amount: 0.3 }} 
+      viewport={{ amount: 0.5 }}
     >
       {/* Left Image */}
       <motion.div variants={imageVariants} className="relative">
@@ -67,7 +67,7 @@ const AboutJago = () => {
         </motion.p>
 
         {/* Button */}
-        <motion.div variants={contentChildVariants} className="bg-lime-300 hover:bg-lime-400 transition text-gray-900 font-semibold px-6 py-3 rounded-full w-fit shadow">
+        <motion.div variants={contentChildVariants} className="bg-lime-300 hover:bg-lime-400 text-gray-900 font-semibold px-6 py-3 rounded-full w-fit shadow">
           Discover Now
         </motion.div>
 
