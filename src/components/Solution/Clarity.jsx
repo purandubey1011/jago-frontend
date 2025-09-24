@@ -65,7 +65,7 @@ const Clarity = () => {
 
           {/* Button */}
           <motion.div variants={itemVariants}> 
-            <Link to='/contact' className="bg-lime-400 text-green-950 font-medium px-6 sm:px-8 py-2.5 sm:py-3 rounded-full hover:bg-lime-500 transition text-sm sm:text-base">
+            <Link to='/contact#booking-calendar' className="bg-lime-400 text-green-950 font-medium px-6 sm:px-8 py-2.5 sm:py-3 rounded-full hover:bg-lime-500 transition text-sm sm:text-base">
               Book Your First Session
             </Link>
           </motion.div>

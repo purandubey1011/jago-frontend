@@ -61,12 +61,14 @@ const Testimonials = () => {
           trigger: sectionRef.current,
           start: "top 60%",
           toggleActions: "play reverse play reverse",
+          // markers: true,
+          // scrub: true
         },
         opacity: 0,
         y: 50,
         stagger: 0.15,
-        duration: 1.2,
-        ease: "power2.out",
+        duration: 1,
+        ease: "power2.in",
         yoyo: true,
       });
     }, sectionRef);

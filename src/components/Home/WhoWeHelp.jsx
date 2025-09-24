@@ -34,7 +34,7 @@ const WhoWeHelp = () => {
       tl.from(imageRef.current, {
         scale: 1.05,
         opacity: 0.8,
-        duration: 1.5,
+        duration: 1.3,
         ease: "power2.out",
       });
 
@@ -52,8 +52,8 @@ const WhoWeHelp = () => {
       tl.from([headingRef.current, buttonRef.current], {
         x: -50,
         opacity: 0,
-        stagger: 0.2,
-        duration: 0.8,
+        stagger: 0.1,
+        duration: 0.6,
         ease: "power2.out",
       }, "-=0.5"); 
       tl.from(
@@ -61,9 +61,9 @@ const WhoWeHelp = () => {
         {
           y: 20,
           opacity: 0,
-          duration: 0.6,
+          duration: 0.7,
           ease: "power2.out",
-          stagger: 0.15,
+          stagger: 0.12,
         },
         "-=0.4"
       );

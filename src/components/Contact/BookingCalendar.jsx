@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { motion, AnimatePresence } from "framer-motion"; 
 
-const BookingCalendar = () => {
+const BookingCalendar = ({ id }) => {
   const [date, setDate] = useState(new Date());
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -140,6 +140,7 @@ const BookingCalendar = () => {
   return (
     <motion.section
       className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8"
+      id={id}
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"

@@ -47,7 +47,7 @@ const NextChapter = () => {
         >
           Your next chapter begins <br /> with one conversation
         </motion.h2>
-        <Link to='/contact'>
+        <Link to='/contact#booking-calendar'>
           <motion.button
             variants={childVariants}
             className="bg-white text-gray-900 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100"

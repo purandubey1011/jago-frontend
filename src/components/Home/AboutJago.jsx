@@ -1,9 +1,11 @@
 import React, { useRef } from "react";
 import { BsStars } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const AboutJago = () => {
   const sectionRef = useRef(null);
+  
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -17,12 +19,12 @@ const AboutJago = () => {
 
   const imageVariants = {
     hidden: { x: -50, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 1, ease: "easeOut" } },
+    visible: { x: 0, opacity: 1, transition: { duration:0.8, ease: "easeOut" } },
   };
-  
+
   const contentChildVariants = {
     hidden: { x: 40, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 2, ease: "easeOut" } },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } },
   };
 
   return (
@@ -32,7 +34,7 @@ const AboutJago = () => {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ amount: 0.5 }}
+      viewport={{  amount: 0.3 }} 
     >
       {/* Left Image */}
       <motion.div variants={imageVariants} className="relative">
@@ -67,9 +69,14 @@ const AboutJago = () => {
         </motion.p>
 
         {/* Button */}
-        <motion.div variants={contentChildVariants} className="bg-lime-300 hover:bg-lime-400 text-gray-900 font-semibold px-6 py-3 rounded-full w-fit shadow">
-          Discover Now
-        </motion.div>
+      <motion.div variants={contentChildVariants}>
+  <Link
+    to="/about"
+    className="bg-lime-300 hover:bg-lime-400 transition text-gray-900 font-semibold px-6 py-3 rounded-full w-fit shadow"
+  >
+    Discover Now
+  </Link>
+</motion.div>
 
         {/* Tags */}
         <div className="flex flex-wrap md:flex-nowrap gap-2 md:gap-4 mt-4">

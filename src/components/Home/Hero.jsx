@@ -92,7 +92,7 @@ const Hero = () => {
         </p>
 
         <Link
-          to="/contact"
+          to="/contact#booking-calendar"
           className="hero-btn mt-6 sm:mt-8 inline-block px-5 sm:px-6 py-2.5 sm:py-3
                      bg-[#EAFE45] hover:bg-yellow-400 text-black font-semibold
                      rounded-full shadow-md transition-colors duration-300
