@@ -52,6 +52,7 @@ const Navbar = () => {
     { to: "/faq", label: "FAQ" },
   ];
 
+  // Framer motion variants
   const itemVariants = {
     hidden: { y: -50, opacity: 0 },
     visible: {
@@ -86,27 +87,32 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="absolute top-0 left-0 w-full z-30 px-4 sm:px-8 lg:px-16 py-4 flex items-center justify-between">
+    <nav className="absolute top-0 left-0 w-full z-30 px-4 lg:px-5 xl:px-10 py-4 flex items-center justify-between">
       {/* Logo */}
       <motion.div variants={itemVariants} initial="hidden" animate="visible">
         <Link
           to="/"
-          className={`font-extrabold text-xl tracking-wide ${textColor}`}
+          className={`font-extrabold text-lg sm:text-xl md:text-2xl tracking-wide ${textColor}`}
           onClick={() => setOpen(false)}
         >
           JaGoCoach<span className="text-xs align-super">™</span>
         </Link>
       </motion.div>
 
-      {/* Desktop Links  */}
+      {/* Desktop Links (1000px and above) */}
       <motion.ul
-        className={`hidden md:flex items-center space-x-8 font-medium ${textColor}`}
+        className={`hidden lg:flex items-center space-x-3 lg:space-x-4 xl:space-x-8 font-medium ${textColor}`}
         variants={staggerContainerVariants}
         initial="hidden"
         animate="visible"
       >
         {navLinksData.map((link) => (
-          <motion.li key={link.to} variants={itemVariants}>
+          <motion.li
+            key={link.to}
+            variants={itemVariants}
+            // 👇 font adjust ho jayega shrink ke sath
+            className="text-xs lg:text-sm xl:text-base"
+          >
             <NavLink
               to={link.to}
               className={({ isActive }) =>
@@ -121,54 +127,60 @@ const Navbar = () => {
         ))}
       </motion.ul>
 
-      {/* Right buttons  */}
+      {/* Right buttons (Desktop only, from 1000px up) */}
       <motion.div
-        className="hidden md:flex items-center space-x-4"
+        className="hidden lg:flex items-center space-x-3 lg:space-x-1 xl:space-x-3"
         variants={staggerContainerVariants}
         initial="hidden"
         animate="visible"
       >
+        {/* Contact Button */}
         <motion.div variants={itemVariants}>
           <Link
             to="/contact"
-            className={`px-5 py-2 rounded-full border ${borderColor} ${textColor} ${contactHover} transition`}
+            className={`px-3 lg:px-4 xl:px-5 py-1.5 lg:py-2 rounded-full border ${borderColor} ${textColor} ${contactHover} 
+        transition text-xs sm:text-sm lg:text-base xl:text-base`}
           >
             Contact
           </Link>
         </motion.div>
 
+        {/* Language Selector */}
         <motion.div
           variants={mobileMenuItemVariants}
           className="w-full text-center px-2 relative"
         >
           <select
-            className="bg-white/10 text-white rounded-full px-5 pr-8 py-2 text-sm 
-               focus:outline-none appearance-none cursor-pointer w-full"
+            className="bg-white/10 text-white rounded-full 
+        px-3 lg:px-6 xl:px-6 py-1.5 lg:py-2 pr-8 
+        text-xs sm:text-sm lg:text-base xl:text-base
+        focus:outline-none appearance-none cursor-pointer w-full"
           >
             <option value="en">English</option>
             <option value="hi">हिंदी</option>
           </select>
 
           {/* Custom Arrow */}
-          <span className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-white text-xs">
+          <span className="pointer-events-none absolute right-3 lg:right-4 xl:right-4 top-1/2 -translate-y-1/2 text-white text-[10px] lg:text-xs">
             ▼
           </span>
         </motion.div>
+        
       </motion.div>
 
-      {/* Mobile Menu Toggle Button */}
+      {/* Mobile Menu Toggle (below 1000px) */}
       <motion.button
         onClick={() => setOpen(!open)}
-        className={`md:hidden  text-2xl ${textColor}`}
+        className={`lg:hidden text-2xl ${textColor}`}
         variants={itemVariants}
         initial="hidden"
         animate="visible"
         aria-label="Toggle menu"
-        z
       >
         {open ? <FaTimes className="z-50" /> : <FaBars />}
       </motion.button>
 
+      {/* Mobile Sidebar */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -177,19 +189,19 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black/70 z-40 md:hidden"
+            className="fixed inset-0 bg-black/70 z-40 xl:hidden"
             onClick={() => setOpen(false)}
           />
         )}
         {open && (
           <motion.div
             key="mobile-menu-content"
-            ref={menuRef} // Attach ref here
+            ref={menuRef}
             variants={mobileMenuVariants}
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-black text-white flex flex-col items-center justify-start pt-24 pb-8 space-y-6 text-lg shadow-lg z-50 md:hidden overflow-y-auto"
+            className="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-black text-white flex flex-col items-center justify-start pt-24 pb-8 space-y-6 text-lg shadow-lg z-50 xl:hidden overflow-y-auto"
           >
             <motion.div
               variants={staggerContainerVariants}
@@ -222,8 +234,6 @@ const Navbar = () => {
                 variants={mobileMenuItemVariants}
                 className="w-full text-center mt-8"
               >
-                {" "}
-                {/* Added mt-8 for spacing */}
                 <Link
                   to="/contact"
                   onClick={() => setOpen(false)}
@@ -233,24 +243,21 @@ const Navbar = () => {
                 </Link>
               </motion.div>
 
-               <motion.div
-          variants={mobileMenuItemVariants}
-          className="w-full text-center px-2 relative"
-        >
-          <select
-            className="bg-white/10 text-white rounded-full px-5 pr-8 py-2 text-sm 
-               focus:outline-none appearance-none cursor-pointer "
-          >
-            <option value="en">English</option>
-            <option value="hi">हिंदी</option>
-          </select>
-
-          {/* Custom Arrow */}
-          <span className="pointer-events-none absolute right-24 top-1/2 -translate-y-1/2 text-white text-xs">
-            ▼
-          </span>
-        </motion.div>
-
+              <motion.div
+                variants={mobileMenuItemVariants}
+                className="w-full text-center px-2 relative"
+              >
+                <select
+                  className="bg-white/10 text-white rounded-full px-5 pr-8 py-2 text-sm 
+                     focus:outline-none appearance-none cursor-pointer "
+                >
+                  <option value="en">English</option>
+                  <option value="hi">हिंदी</option>
+                </select>
+                <span className="pointer-events-none absolute right-24 top-1/2 -translate-y-1/2 text-white text-xs">
+                  ▼
+                </span>
+              </motion.div>
             </motion.div>
           </motion.div>
         )}
