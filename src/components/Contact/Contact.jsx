@@ -11,15 +11,23 @@ const Contact = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.hash) {
-      const el = document.querySelector(location.hash);
-      if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: "smooth" });
-        }, 100); // thoda delay taki render ho jaye
-      }
+  if (location.hash) {
+    const el = document.querySelector(location.hash);
+    if (el) {
+      setTimeout(() => {
+        const navbarHeight = 80; // apne navbar ki height px me
+        const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - navbarHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }, 100); // thoda delay taki render complete ho jaye
     }
-  }, [location]);
+  }
+}, [location]);
+
   return (
     <div className='w-full h-full overflow-hidden'>
       <ContactHero/>
