@@ -36,7 +36,7 @@ const Navbar = () => {
   const isLightBg =
     location.pathname === "/solutions" || location.pathname === "/resources";
 
-  const textColor = isLightBg ? "text-black" : "text-white";
+  const textColor = isLightBg ? "text-black " : "text-white";
   const hoverColor = isLightBg ? "hover:text-lime-600" : "hover:text-lime-300";
   const borderColor = isLightBg ? "border-black" : "border-white";
   const contactHover = isLightBg
@@ -145,26 +145,30 @@ const Navbar = () => {
           </Link>
         </motion.div>
 
-        {/* Language Selector */}
-        <motion.div
-          variants={mobileMenuItemVariants}
-          className="w-full text-center px-2 relative"
-        >
-          <select
-            className="bg-white/10 text-white rounded-full 
-        px-3 lg:px-6 xl:px-6 py-1.5 lg:py-2 pr-8 
-        text-xs sm:text-sm lg:text-base xl:text-base
-        focus:outline-none appearance-none cursor-pointer w-full"
-          >
-            <option value="en">English</option>
-            <option value="hi">हिंदी</option>
-          </select>
+       {/* Language Selector */}
+<motion.div
+  variants={mobileMenuItemVariants}
+  className="w-full text-center px-2 relative"
+>
+  <select
+    className={`bg-white/10 rounded-full 
+      px-3 lg:px-6 xl:px-6 py-1.5 lg:py-2 pr-10 
+      text-xs sm:text-sm lg:text-base xl:text-base
+      focus:outline-none appearance-none cursor-pointer w-full
+      ${textColor} ${isLightBg ? "bg-black/5 border" : "bg-white/10"}`}
+  >
+    <option value="en">English</option>
+    <option value="hi">हिंदी</option>
+  </select>
 
-          {/* Custom Arrow */}
-          <span className="pointer-events-none absolute right-3 lg:right-4 xl:right-4 top-1/2 -translate-y-1/2 text-white text-[10px] lg:text-xs">
-            ▼
-          </span>
-        </motion.div>
+  {/* Custom Arrow */}
+  <span
+    className={`pointer-events-none absolute right-3 lg:right-4 xl:right-4 
+      top-1/2 -translate-y-1/2 text-[10px] lg:text-xs ${textColor}`}
+  >
+    ▼
+  </span>
+</motion.div>
         
       </motion.div>
 
@@ -244,20 +248,23 @@ const Navbar = () => {
               </motion.div>
 
               <motion.div
-                variants={mobileMenuItemVariants}
-                className="w-full text-center px-2 relative"
-              >
-                <select
-                  className="bg-white/10 text-white rounded-full px-5 pr-8 py-2 text-sm 
-                     focus:outline-none appearance-none cursor-pointer "
-                >
-                  <option value="en">English</option>
-                  <option value="hi">हिंदी</option>
-                </select>
-                <span className="pointer-events-none absolute right-24 top-1/2 -translate-y-1/2 text-white text-xs">
-                  ▼
-                </span>
-              </motion.div>
+  variants={mobileMenuItemVariants}
+  className=" sm:w-[21vw] md:w-[15vw] lg:w-[13vw] text-center relative"
+>
+  <select
+    className="bg-white/10 text-white rounded-full px-5 pr-10 py-2 text-sm 
+       focus:outline-none appearance-none cursor-pointer w-full"
+  >
+    <option value="en">English</option>
+    <option value="hi">हिंदी</option>
+  </select>
+
+  {/* Custom Arrow */}
+  <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-white text-xs">
+    ▼
+  </span>
+</motion.div>
+
             </motion.div>
           </motion.div>
         )}
