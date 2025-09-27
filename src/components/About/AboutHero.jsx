@@ -73,7 +73,7 @@ const AboutHero = () => {
           <div className="flex items-center gap-2">
             <span className="text-yellow-300 text-base md:text-lg">✨</span>
             <span className="text-white/80 text-xs sm:text-lg font-medium">
-              About JaGo
+              About JaGoCoach
             </span>
           </div>
 
