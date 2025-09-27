@@ -22,8 +22,8 @@ const Hero = () => {
       tl.to(
         videoRef.current,
         {
-          scale: 1.4,
-          duration: 1.5,
+          // scale: 1.4,
+          duration: 1.3,
           delay: 0.2,
           objectPosition: "50% 10%",
         },
@@ -88,7 +88,7 @@ const Hero = () => {
       <video
         ref={videoRef}
         className="absolute top-0 left-0 w-full h-full object-cover"
-        src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/jago-bg.mp4?updatedAt=1758705769999"
+        src="https://cdn.pixabay.com/video/2023/09/23/181995-867576106_large.mp4"
         autoPlay
         muted
         loop
