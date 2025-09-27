@@ -170,7 +170,7 @@ const Coaching = () => {
         Coaching Packages
       </motion.h2>
 
-      <motion.div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2 text-[#0F2E15]">
+      <motion.div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 text-[#0F2E15]">
         {coachingData.map((item) => (
           <motion.div
             key={item.id}
