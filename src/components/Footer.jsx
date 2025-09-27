@@ -44,7 +44,7 @@ const Footer = () => {
               Transformation helps with Coaching.
             </p>
           </div>
-          <p className="text-xs text-gray-400">© 2025 JaGo Coach</p>
+          <p className="text-xs text-gray-400">© 2025 JaGoCoach</p>
         </motion.div>
 
         {/* Divider */}

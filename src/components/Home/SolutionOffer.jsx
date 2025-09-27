@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { FaHeart, FaHeadphones } from "react-icons/fa";
+import { FaComments, FaUserTie, FaUsers, FaLightbulb, FaExchangeAlt, FaBriefcase, FaWater } from "react-icons/fa";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -9,6 +11,44 @@ const SolutionOffer = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const itemsRef = useRef([]); 
+
+  const solutions = [
+  {
+    title: "Companion Chats",
+    description: "For all ages, all seasons of life",
+    icon: <FaComments className="text-xl sm:text-4xl text-gray-800 mb-1 sm:mb-2" />,
+  },
+  {
+    title: "1:1 Coaching",
+    description: "Personalised, powerful, and precision-led",
+    icon: <FaUserTie className="text-xl sm:text-4xl text-gray-800 mb-1 sm:mb-2" />,
+  },
+  {
+    title: "Group Coaching",
+    description: "Collective energy, shared growth",
+    icon: <FaUsers className="text-xl sm:text-4xl text-gray-800 mb-1 sm:mb-2" />,
+  },
+  {
+    title: "Leadership Development",
+    description: "Awaken the leader within",
+    icon: <FaLightbulb className="text-xl sm:text-4xl text-gray-800 mb-1 sm:mb-2" />,
+  },
+  {
+    title: "Change Management",
+    description: "Navigate transitions with confidence",
+    icon: <FaExchangeAlt className="text-xl sm:text-4xl text-gray-800 mb-1 sm:mb-2" />,
+  },
+  {
+    title: "Career Guidance",
+    description: "Clarity, strategy, and bold direction",
+    icon: <FaBriefcase className="text-xl sm:text-4xl text-gray-800 mb-1 sm:mb-2" />,
+  },
+  {
+    title: "Low Tide to High Tide",
+    description: "Turn setbacks into surges",
+    icon: <FaWater className="text-xl sm:text-4xl text-gray-800 mb-1 sm:mb-2" />,
+  },
+];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -42,6 +82,8 @@ const SolutionOffer = () => {
   }, []);
 
   return (
+
+    
     <div
       ref={sectionRef}
       className="bg-[#f9fbea] py-14 sm:py-16"
@@ -50,17 +92,15 @@ const SolutionOffer = () => {
         {/* Heading */}
         <div ref={headingRef}>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">
-            Solutions We Offer
+            Solutions That Work
           </h2>
-          <p className="text-gray-600 mt-2 max-w-lg text-sm sm:text-base">
-            From personal wellbeing to career crossroads, we help you navigate
-            with ease. Simple practices that create meaningful change.
+          <p className="text-gray-600 mt-2 max-w-3xl text-sm sm:text-base">
+            From burnout to breakthrough, confusion to clarity — JaGoCoach helps you take command of your life. Whether you're recalibrating your mindset, redefining your mission, making your next big move, or just need a confidential chat, we deliver tools that work and results that last. 
           </p>
         </div>
 
         {/* Solutions */}
-        <div className="flex flex-col md:flex-row gap-8 md:gap-8 justify-between">
-          {/* 1:1 Coaching */}
+        {/* <div className="flex flex-col md:flex-row gap-8 md:gap-8 justify-between">
           <div ref={(el) => (itemsRef.current[0] = el)} className="flex flex-col">
             <h3 className="text-lg sm:text-3xl font-bold text-gray-900">
               1:1
@@ -73,7 +113,6 @@ const SolutionOffer = () => {
             </p>
           </div>
 
-          {/* Wellbeing Resources */}
           <div ref={(el) => (itemsRef.current[1] = el)} className="flex flex-col">
             <FaHeart className="text-xl sm:text-4xl text-gray-800 mb-1 sm:mb-2" />
             <p className="font-semibold text-gray-900">Wellbeing Resources</p>
@@ -82,7 +121,6 @@ const SolutionOffer = () => {
             </p>
           </div>
 
-          {/* Audio Tools */}
           <div ref={(el) => (itemsRef.current[2] = el)} className="flex flex-col">
             <FaHeadphones className="text-xl sm:text-4xl text-gray-800 mb-1 sm:mb-2" />
             <p className="font-semibold text-gray-900">Audio Tools</p>
@@ -90,7 +128,21 @@ const SolutionOffer = () => {
               Simple guided practices for stress and focus.
             </p>
           </div>
+        </div> */}
+        
+         <div className="flex flex-col md:flex-row flex-wrap gap-8 md:gap-16 ">
+      {solutions.map((item, i) => (
+        <div
+          key={i}
+          className="flex flex-col items-start max-w-xs"
+        >
+          {item.icon}
+          <p className="font-semibold text-gray-900">{item.title}</p>
+          <p className="text-gray-600 mt-1 text-sm sm:text-base">{item.description}</p>
         </div>
+      ))}
+    </div>
+
       </div>
     </div>
   );
