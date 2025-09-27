@@ -171,46 +171,49 @@ const Coaching = () => {
       </motion.h2>
 
       <motion.div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 text-[#0F2E15]">
-        {coachingData.map((item) => (
-          <motion.div
-            key={item.id}
-            className="relative bg-lime-50 rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col"
-          >
-            {item.popular && (
-              <span className="absolute top-4 right-4 bg-yellow-300 text-green-900 text-xs font-semibold px-3 py-1 rounded-full">
-                Most Popular
-              </span>
-            )}
+  {coachingData.map((item) => (
+    <motion.div
+      key={item.id}
+      className="relative bg-lime-50 rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col justify-between"
+    >
+      <div>
+        {item.popular && (
+          <span className="absolute top-4 right-4 bg-yellow-300 text-green-900 text-xs font-semibold px-3 py-1 rounded-full">
+            Most Popular
+          </span>
+        )}
 
-            <h3 className="text-xl font-semibold text-green-900">{item.title}</h3>
-            <p className="text-sm text-gray-700 mt-1">{item.subtitle}</p>
+        <h3 className="text-xl font-semibold text-green-900">{item.title}</h3>
+        <p className="text-sm text-gray-700 mt-1 mb-5">{item.subtitle}</p>
 
-            <div className="mt-4 border rounded-md p-3 bg-white">
-              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                {item.details.map((d, idx) => (
-                  <li key={idx}>{d}</li>
-                ))}
-              </ul>
-            </div>
+        <div className="mt-4 border rounded-md p-3 bg-white">
+          <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
+            {item.details.map((d, idx) => (
+              <li key={idx}>{d}</li>
+            ))}
+          </ul>
+        </div>
 
-            <div className="mt-5">
-              <p className="text-lg font-bold text-red-600">{item.price}</p>
-              <p className="text-sm text-gray-600">{item.note}</p>
-              <p className="text-xs text-gray-500 mt-1">{item.conversion}</p>
-            </div>
+        <div className="mt-5">
+          <p className="text-lg font-bold text-red-600">{item.price}</p>
+          <p className="text-sm text-gray-600 pb-2">{item.note}</p>
+          {/* <p className="text-xs text-gray-500 mt-1">{item.conversion}</p> */}
+        </div>
+      </div>
 
-            <motion.button
-              className="mt-6 w-full bg-lime-300 text-green-900 font-medium py-2 rounded-md hover:bg-lime-400 transition"
-              onClick={() => {
-                setSelectedPackage(item);
-                setIsModalOpen(true);
-              }}
-            >
-              Enroll Now
-            </motion.button>
-          </motion.div>
-        ))}
-      </motion.div>
+      <motion.button
+        className="mt-auto w-full bg-lime-300 text-green-900 font-medium py-2 rounded-md hover:bg-lime-400 transition"
+        onClick={() => {
+          setSelectedPackage(item);
+          setIsModalOpen(true);
+        }}
+      >
+        Enroll Now
+      </motion.button>
+    </motion.div>
+  ))}
+</motion.div>
+
 
       {/* Modal */}
       <AnimatePresence>
