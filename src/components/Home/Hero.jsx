@@ -87,8 +87,8 @@ const Hero = () => {
     <div ref={heroRef} className="relative w-full h-screen overflow-hidden">
       <video
         ref={videoRef}
-        className="absolute top-0 left-0 w-[100vw] h-[100vh] object-cover"
-        src="https://ik.imagekit.io/b9tt0xvd7/jago-bgg2.mp4?updatedAt=1758961764854"
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        src="https://cdn.pixabay.com/video/2023/09/23/181995-867576106_large.mp4"
         autoPlay
         muted
         loop
