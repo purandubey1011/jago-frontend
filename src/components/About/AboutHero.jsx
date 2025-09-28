@@ -72,7 +72,7 @@ const AboutHero = () => {
         >
           <div className="flex items-center gap-2">
             <span className="text-white/80 text-xs sm:text-lg font-medium">
-              about JaGo-wording
+              about JaGoCoach
             </span>
           </div>
 
