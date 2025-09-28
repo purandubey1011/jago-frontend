@@ -12,34 +12,33 @@ const AboutHero = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } }); 
-
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
       tl.from(topRowRef.current.children, {
         opacity: 0,
-        y: -30, 
-        duration: 0.6, 
-        stagger: 0.15, 
+        y: -30,
+        duration: 0.6,
+        stagger: 0.15,
       });
       tl.from(
         headingRef.current,
         {
           opacity: 0,
-          y: 40, 
+          y: 40,
           duration: 0.8,
         },
-        "-=0.4" 
+        "-=0.4"
       );
       tl.from(
         [circle1Ref.current, circle2Ref.current],
         {
           opacity: 0,
-          scale: 0.6, 
-          duration: 1.2, 
-          ease: "elastic.out(1, 0.7)", 
+          scale: 0.6,
+          duration: 1.2,
+          ease: "elastic.out(1, 0.7)",
           stagger: 0.4,
         },
-        "<" 
+        "<"
       );
     }, heroRef);
     return () => ctx.revert();
@@ -50,7 +49,6 @@ const AboutHero = () => {
       ref={heroRef}
       className="relative w-full h-screen bg-[#0f2b14] flex flex-col"
     >
-
       <Navbar />
 
       {/* Hero content */}
@@ -71,33 +69,22 @@ const AboutHero = () => {
           className="flex items-center justify-between w-full mb-5 md:mb-8"
         >
           <div className="flex items-center gap-2">
-            <span className="text-white/80 text-xs sm:text-lg font-medium">
-              about JaGoCoach
+            <span className="text-white/80 text-sm sm:text-xl font-medium mb-5">
+              What sets JaGoCoach apart?
             </span>
           </div>
-
-          {/* Trophy visible on all screens now */}
-          {/* <div className="block">
-            <img
-              src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/Line-Trophy-Non-Filled--Streamline-Variable-Scribbles.png?updatedAt=1757446368292"
-              alt="Trophy Outline"
-              className="w-20 md:w-36 opacity-80"
-            />
-          </div> */}
         </div>
 
         {/* Main heading */}
         <div className="flex justify-center md:justify-end">
           <h1
             ref={headingRef}
-            className="text-4xl  md:text-6xl font-bold leading-tight text-white max-w-lg md:max-w-[75vw] text-left"
+            className="text-xl  md:text-[1.7vw] font-bold leading-[3.5vmax] md:leading-[2.7vmax] text-white max-w-lg md:max-w-[75vw] text-left"
           >
-            JaGo means to awaken.{" "}
-            <span className="text-gray-400 font-semibold">
-              To rise above confusion, to step into purpose, to live with
-              balance.
-            </span>{" "}
-            It’s not about quick fixes. It’s about lasting clarity.
+           JaGoCoach takes a bespoke approach, blending timeless insights — from MentalPhysics, Certified Coaching, Breathwork, Reiki, and proven Psychological Frameworks — into modern clarity for you. <br /> <br />
+JaGoCoach’s tools bespoke and simple, and impact is lasting. Just real, confidentiality assured conversations, practical shifts, and emotional precision. This is coaching for humans who want to rise — not rush. Reflect — not retreat. And design a life that feels true. Real talk. Simple practices. Big shifts. This isn’t therapy. It’s ignition — with a spark of soul and a dash of strategy.
+
+
           </h1>
         </div>
       </div>
