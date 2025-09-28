@@ -79,9 +79,7 @@ const OurPhilosophy = () => {
         className="max-w-md md:max-w-3xl text-[#0F2E15]/80 text-sm sm:text-base md:text-lg leading-relaxed"
         variants={textVariants}
       >
-        We don’t provide textbook solutions. We listen, we connect, and we
-        guide. Every conversation is a safe space — empathetic, confidential,
-        and tailored to you.
+        JaGoCoach listens, connects, and guides. Every conversation is a safe space — empathetic, confidential, and tailored to you. Because real change starts with real connection.
       </motion.p>
     </motion.section>
   );

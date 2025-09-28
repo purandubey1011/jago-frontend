@@ -7,26 +7,28 @@ const GlobalExperienceSection = () => {
     visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
-  const popupVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  };
+  // const popupVariants = {
+  //   hidden: { opacity: 0, y: 20 },
+  //   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  // };
 
   return (
     <section className="py-16 bg-white">
-      <div className="relative w-full max-w-6xl px-4 md:px-0 md:ml-24 mx-auto">
-        <motion.img
-          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/map.png?updatedAt=1757482092107"
-          alt="World map"
-          className="ge-map w-full h-64 sm:h-80 md:h-[80vh] object-contain mx-auto"
-          variants={mapVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{amount: 0.4 }}
-        />
+      <div className="relative w-full max-w-6xl px-4 md:px-0  mx-auto">
+      <div className="relative w-full overflow-hidden h-64 sm:h-80 md:h-[80vh] flex justify-center items-center ">
+  <motion.img
+    src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/map.png?updatedAt=1757482092107"
+    alt="World map"
+    className="ge-map object-contain w-[80vw] h-full"
+    variants={mapVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ amount: 0.4 }}
+  />
+</div>
 
         {/* Popup 1 */}
-        <motion.div
+        {/* <motion.div
           className="ge-popup absolute top-[-6%] left-[8%] md:top-[5%] md:left-[10%] bg-[#EAFE45] text-left rounded-lg shadow-lg p-3 sm:p-4 w-56 sm:w-80"
           variants={popupVariants}
           initial="hidden"
@@ -46,10 +48,10 @@ const GlobalExperienceSection = () => {
               </p>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Popup 2 */}
-        <motion.div
+        {/* <motion.div
           className="ge-popup absolute top-[32%] md:top-[20%] right-[5%] md:right-[5%] bg-[#EAFE45] text-left rounded-lg shadow-lg p-3 sm:p-4 w-56 sm:w-80"
           variants={popupVariants}
           initial="hidden"
@@ -69,10 +71,10 @@ const GlobalExperienceSection = () => {
               </p>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Popup 3 */}
-        <motion.div
+        {/* <motion.div
           className="ge-popup absolute -bottom-[5%] left-[20%] md:bottom-[15%] md:left-[35%] bg-[#EAFE45] text-left rounded-lg shadow-lg p-3 sm:p-4 w-60 sm:w-80"
           variants={popupVariants}
           initial="hidden"
@@ -92,7 +94,7 @@ const GlobalExperienceSection = () => {
               </p>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

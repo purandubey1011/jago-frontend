@@ -71,20 +71,19 @@ const AboutHero = () => {
           className="flex items-center justify-between w-full mb-5 md:mb-8"
         >
           <div className="flex items-center gap-2">
-            <span className="text-yellow-300 text-base md:text-lg">✨</span>
             <span className="text-white/80 text-xs sm:text-lg font-medium">
-              About JaGoCoach
+              about JaGo-wording
             </span>
           </div>
 
           {/* Trophy visible on all screens now */}
-          <div className="block">
+          {/* <div className="block">
             <img
               src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/Line-Trophy-Non-Filled--Streamline-Variable-Scribbles.png?updatedAt=1757446368292"
               alt="Trophy Outline"
               className="w-20 md:w-36 opacity-80"
             />
-          </div>
+          </div> */}
         </div>
 
         {/* Main heading */}

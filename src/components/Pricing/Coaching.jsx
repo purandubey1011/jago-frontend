@@ -170,12 +170,13 @@ const Coaching = () => {
         Coaching Packages
       </motion.h2>
 
-      <motion.div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 text-[#0F2E15]">
+     <motion.div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 text-[#0F2E15]">
   {coachingData.map((item) => (
     <motion.div
       key={item.id}
-      className="relative bg-lime-50 rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col justify-between"
+      className="relative bg-lime-50 rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col justify-between min-h-[40vh]" // 👈 static min height
     >
+      {/* Top Section */}
       <div>
         {item.popular && (
           <span className="absolute top-4 right-4 bg-yellow-300 text-green-900 text-xs font-semibold px-3 py-1 rounded-full">
@@ -183,33 +184,40 @@ const Coaching = () => {
           </span>
         )}
 
-        <h3 className="text-xl font-semibold text-green-900">{item.title}</h3>
-        <p className="text-sm text-gray-700 mt-1 mb-5">{item.subtitle}</p>
+        <h3 className="text-xl font-semibold text-green-900 sm:mb-2 md:mb-2">{item.title}</h3>
+        <p className="text-sm text-gray-700 mt-1 mb-4 md:mb-5">{item.subtitle}</p>
 
-        <div className="mt-4 border rounded-md p-3 bg-white">
+       
+      </div>
+
+      {/* Bottom Section */}
+      <div className="mt-auto">
+
+        {/* Details box with min-h */}
+        <div className="border rounded-md p-3 bg-white min-h-[15vh] sm:min-h-[18vh] md:min-h-[32vh]">
           <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
             {item.details.map((d, idx) => (
               <li key={idx}>{d}</li>
             ))}
           </ul>
         </div>
-
+        
         <div className="mt-5">
           <p className="text-lg font-bold text-red-600">{item.price}</p>
-          <p className="text-sm text-gray-600 pb-2">{item.note}</p>
+          <p className="text-sm text-gray-600 pb-2 h-12">{item.note}</p>
           {/* <p className="text-xs text-gray-500 mt-1">{item.conversion}</p> */}
         </div>
-      </div>
 
-      <motion.button
-        className="mt-auto w-full bg-lime-300 text-green-900 font-medium py-2 rounded-md hover:bg-lime-400 transition"
-        onClick={() => {
-          setSelectedPackage(item);
-          setIsModalOpen(true);
-        }}
-      >
-        Enroll Now
-      </motion.button>
+        <motion.button
+          className="w-full bg-lime-300 text-green-900 font-medium py-2 rounded-md hover:bg-lime-400 transition"
+          onClick={() => {
+            setSelectedPackage(item);
+            setIsModalOpen(true);
+          }}
+        >
+          Enroll Now
+        </motion.button>
+      </div>
     </motion.div>
   ))}
 </motion.div>

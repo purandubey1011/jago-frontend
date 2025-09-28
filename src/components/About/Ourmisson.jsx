@@ -48,10 +48,8 @@ const OurMission = () => {
           whileInView="visible"
           viewport={{  amount: 0.5 }}
         >
-          <p className="text-xl md:text-3xl leading-tight max-w-2xl">
-            We don’t provide textbook solutions. We listen, we connect, and we
-            guide. Every conversation is a safe space — empathetic,
-            confidential, and tailored to you.
+          <p className="text-sm sm:text-sm md:text-[1.5vw] md:font-medium lg:font-normal lg:text-lg leading-normal max-w-2xl">
+           JaGoCoach's mission is provide personalised coaching, guidance, and tools that give you the support to grow into your best self – at any age, at any stage, background, or where you are in life. JaGoCoach offers real support to help you move past temporary setbacks (yes, they are temporary), shift your limiting beliefs, and hep you build a stronger mindset for the future. Whether you're leading a global team or exploring personal growth, JaGoCoach meets you where you are—with real support and lasting impact.
           </p>
         </motion.div>
       </div>

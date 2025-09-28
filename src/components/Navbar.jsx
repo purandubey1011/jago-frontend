@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import LanguageDropdown from "../utils/LanguageDropdown";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -145,31 +146,13 @@ const Navbar = () => {
           </Link>
         </motion.div>
 
-       {/* Language Selector */}
-<motion.div
-  variants={mobileMenuItemVariants}
-  className="w-full text-center px-2 relative"
->
-  <select
-    className={`bg-white/10 rounded-full 
-      px-3 lg:px-6 xl:px-6 py-1.5 lg:py-2 pr-10 
-      text-xs sm:text-sm lg:text-base xl:text-base
-      focus:outline-none appearance-none cursor-pointer w-full
-      ${textColor} ${isLightBg ? "bg-black/5 border" : "bg-white/10"}`}
-  >
-    <option value="en">English</option>
-    <option value="hi">हिंदी</option>
-  </select>
-
-  {/* Custom Arrow */}
-  <span
-    className={`pointer-events-none absolute right-3 lg:right-4 xl:right-4 
-      top-1/2 -translate-y-1/2 text-[10px] lg:text-xs ${textColor}`}
-  >
-    ▼
-  </span>
-</motion.div>
-        
+        {/* Language Selector */}
+        <motion.div
+          variants={mobileMenuItemVariants}
+          className="w-full text-center px-2 relative"
+        >
+          <LanguageDropdown textColor={"text-white"}/>
+        </motion.div>
       </motion.div>
 
       {/* Mobile Menu Toggle (below 1000px) */}
@@ -211,7 +194,7 @@ const Navbar = () => {
               variants={staggerContainerVariants}
               initial="hidden"
               animate="visible"
-              className="flex flex-col items-center space-y-6 w-full"
+              className="flex flex-col items-center space-y-4 w-full"
             >
               {navLinksData.map((link) => (
                 <motion.div
@@ -234,9 +217,17 @@ const Navbar = () => {
                   </NavLink>
                 </motion.div>
               ))}
+
               <motion.div
                 variants={mobileMenuItemVariants}
-                className="w-full text-center mt-8"
+                className=" sm:w-[21vw] md:w-[15vw] lg:w-[13vw] text-center relative"
+              >
+                <LanguageDropdown />
+              </motion.div>
+
+              <motion.div
+                variants={mobileMenuItemVariants}
+                className="w-full text-center mt-2"
               >
                 <Link
                   to="/contact"
@@ -247,23 +238,7 @@ const Navbar = () => {
                 </Link>
               </motion.div>
 
-              <motion.div
-  variants={mobileMenuItemVariants}
-  className=" sm:w-[21vw] md:w-[15vw] lg:w-[13vw] text-center relative"
->
-  <select
-    className="bg-white/10 text-white rounded-full px-5 pr-10 py-2 text-sm 
-       focus:outline-none appearance-none cursor-pointer w-full"
-  >
-    <option value="en">English</option>
-    <option value="hi">हिंदी</option>
-  </select>
-
-  {/* Custom Arrow */}
-  <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-white text-xs">
-    ▼
-  </span>
-</motion.div>
+              
 
             </motion.div>
           </motion.div>
