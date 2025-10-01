@@ -70,7 +70,7 @@ const AboutHero = () => {
         >
           <div className="flex items-center gap-2">
             <span className="text-white/80 text-sm sm:text-xl font-medium mb-5">
-              What sets JaGoCoach apart?
+              about JaGoCoach
             </span>
           </div>
         </div>
@@ -79,11 +79,15 @@ const AboutHero = () => {
         <div className="flex justify-center md:justify-end">
           <h1
             ref={headingRef}
-            className="text-xl  md:text-[1.7vw] font-bold leading-[3.5vmax] md:leading-[2.7vmax] text-white max-w-lg md:max-w-[75vw] text-left"
+            className="text-4xl  md:text-6xl font-bold leading-tight text-white max-w-lg md:max-w-[75vw] text-left"
           >
-           JaGoCoach takes a bespoke approach, blending timeless insights — from MentalPhysics, Certified Coaching, Breathwork, Reiki, and proven Psychological Frameworks — into modern clarity for you. <br /> <br />
-JaGoCoach’s tools bespoke and simple, and impact is lasting. Just real, confidentiality assured conversations, practical shifts, and emotional precision. This is coaching for humans who want to rise — not rush. Reflect — not retreat. And design a life that feels true. Real talk. Simple practices. Big shifts. This isn’t therapy. It’s ignition — with a spark of soul and a dash of strategy.
-
+          
+         JaGo means to awaken.{" "}
+            <span className="text-gray-400 font-semibold">
+              To rise above confusion, to step into purpose, to live with
+              balance.
+            </span>{" "}
+            It’s not about quick fixes. It’s about lasting clarity.
 
           </h1>
         </div>

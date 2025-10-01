@@ -41,17 +41,11 @@ const GlobalExperienceSection = () => {
     <PiSparkleFill className="text-green-900 mt-1 text-lg" />
     <div>
       <h3 className="font-semibold text-green-900 text-base sm:text-lg mb-2">
-        Our Mission
+        What sets JaGoCoach apart?
       </h3>
       <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
-        JaGoCoach's mission is provide personalised coaching, guidance, and
-        tools that give you the support to grow into your best self – at any
-        age, at any stage, background, or where you are in life. JaGoCoach
-        offers real support to help you move past temporary setbacks (yes,
-        they are temporary), shift your limiting beliefs, and help you build a
-        stronger mindset for the future. Whether you're leading a global team
-        or exploring personal growth, JaGoCoach meets you where you are—with
-        real support and lasting impact.
+         JaGoCoach takes a bespoke approach, blending timeless insights — from MentalPhysics, Certified Coaching, Breathwork, Reiki, and proven Psychological Frameworks — into modern clarity for you. <br /> <br />
+JaGoCoach’s tools bespoke and simple, and impact is lasting. Just real, confidentiality assured conversations, practical shifts, and emotional precision. This is coaching for humans who want to rise — not rush. Reflect — not retreat. And design a life that feels true. Real talk. Simple practices. Big shifts. This isn’t therapy. It’s ignition — with a spark of soul and a dash of strategy.
       </p>
     </div>
   </div>

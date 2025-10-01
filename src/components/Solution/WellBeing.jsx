@@ -88,11 +88,11 @@ const WellBeing = () => {
             <motion.div
               key={index}
               className="bg-white rounded-2xl shadow-md w-full md:w-[45%] lg:w-[30%] overflow-hidden p-6 flex flex-col justify-between"
-              variants={cardVariants}
+              // variants={cardVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ amount: 0.3 }}
-              transition={{ delay: 0.2 * index }}
+              // transition={{ delay: 0.2 * index }}
             >
               <p className="text-gray-700 text-sm leading-relaxed mb-5">{t.quote}</p>
               <span className="text-gray-800 text-sm font-medium">{t.author}</span>

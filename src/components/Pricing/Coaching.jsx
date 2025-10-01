@@ -146,7 +146,7 @@ const Coaching = () => {
       <div className="mt-auto">
 
         {/* Details box with min-h */}
-        <div className="border rounded-md p-3 bg-white min-h-[15vh] sm:min-h-[18vh] md:min-h-[32vh]">
+        <div className="border rounded-md p-3 bg-white min-h-[15vh] sm:min-h-[18vh] md:min-h-[20vh]">
           <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
             {item.details.map((d, idx) => (
               <li key={idx}>{d}</li>
@@ -167,7 +167,7 @@ const Coaching = () => {
             setIsModalOpen(true);
           }}
         >
-          Enroll Now
+          Know more
         </motion.button>
       </div>
     </motion.div>
