@@ -6,92 +6,44 @@ import "react-toastify/dist/ReactToastify.css";
 const coachingData = [
   {
     id: 1,
-    title: "Clarity Catalyst",
-    subtitle: "For seekers ready to shift gears and gain direction.",
+    title: "The JaGoCoach Signature: 12-Week Program",
+    subtitle: "A 12-week journey of clarity, vitality, and sustainable transformation.",
     details: [
-      "Includes: 3 x 60-minute sessions (virtual)",
-      "Bonus: Personalized clarity workbook + 1 follow-up check-in",
-      "Positioning: Entry-level, high impact. Ideal for new clients or giftable coaching.",
+      "Weekly 1:1 60-min sessions (virtual or in-person)",
+      "Covers Awareness → Beliefs & Big Goals → Change",
+      "Bonus: Breathwork, Meditation, Persona Mapping, Voice-note check-ins",
     ],
-    price: "$495",
-    note: "for three sessions",
-    conversion:
-      "Approximate conversions: EUR (€), AUD (A$), INR (₹), SGD (S$), GBP (£). All prices quoted in USD.",
-    inrPrice: 41000, // example INR test value
+    price: "$3,600 (discounted from $5,000)",
+    note: "Payment Plan: 3 × $1,200",
     popular: true,
   },
   {
     id: 2,
-    title: "Awakening Intensive",
-    subtitle: "For those craving a breakthrough moment.",
+    title: "JaGoCoach Launchpad: Obstacle Breaker",
+    subtitle: "Bust resistance, reset energy, and ignite clarity in 3 sessions.",
     details: [
-      "Includes: Half-day immersive (3.5 hours) + pre-session discovery + post-session integration call",
-      "Bonus: JaGo Coach Awakening Journal + curated resource kit",
-      "Positioning: Premium single-session experience. Great for high-achievers or corporate clients.",
+      "3 × 60-min 1:1 sessions",
+      "Framework: Awareness → Audit → Reset",
+      "Bonus: Follow-up check-in",
     ],
-    price: "$895",
-    note: "Single immersive session",
-    conversion:
-      "Approximate conversions: EUR (€), AUD (A$), INR (₹), SGD (S$), GBP (£). All prices quoted in USD.",
-    inrPrice: 74000,
+    price: "$595 (was $695)",
+    note: "Includes: 3 sessions + bonus check-in",
     popular: false,
   },
   {
     id: 3,
-    title: "Legacy Builder: 3-Month Coaching Journey",
-    subtitle:
-      "For those ready to rewrite their story and build a legacy with clarity, courage, and conviction.",
+    title: "JaGoCoach Lifeline: Emergency Call",
+    subtitle: "Quick recalibration for urgent clarity or overwhelm.",
     details: [
-      "12 weeks (approx. 90 days) • Weekly 60-minute sessions",
-      "Optional bi-weekly voice note check-ins",
-      "Onboarding: 45-min goal & legacy mapping + custom Legacy Map",
-      "Core: 12 x 60-min sessions with narrative psychology & strategic visioning",
-      "Integration: Final wrap-up + 30-day follow-up call",
-      "Bonuses: Client portal, curated resources, JaGo Legacy Journal",
+      "45-min focused virtual call",
+      "For tough decisions, overwhelm, or urgent mindset reset",
     ],
-    price: "$3,600",
-    note: "Payment plans: 3 x $1,200 or 6 x $600 • Corporate sponsorship options",
-    conversion:
-      "Approximate conversions: EUR (€), AUD (A$), INR (₹), SGD (S$), GBP (£). All prices quoted in USD.",
-    inrPrice: 295000,
-    popular: false,
-  },
-  {
-    id: 4,
-    title: "Clarity Pulse: 30-Minute Emergency Call",
-    subtitle: "For those moments when clarity can’t wait.",
-    details: [
-      "30-minute virtual coaching session",
-      "Rapid intake form to focus the session",
-      "One actionable insight or reframing tool",
-      "Optional follow-up resource (quote card, worksheet, journaling prompt)",
-    ],
-    price: "$195",
-    note: "Instant booking • Delivered within 24–48 hours (subject to availability)",
-    conversion:
-      "Approximate conversions: EUR (€), AUD (A$), INR (₹), SGD (S$), GBP (£). All prices quoted in USD.",
-    inrPrice: 16000,
-    popular: false,
-  },
-  {
-    id: 5,
-    title: "JaGo Executive Clarity Program",
-    subtitle: "Quarterly coaching for managers who lead with impact.",
-    details: [
-      "4 x 75-minute coaching sessions per manager per year",
-      "Delivered virtually • Scheduled quarterly or flexibly",
-      "Includes pre-session intake & tailored session notes",
-      "Optional HR/L&D sponsor onboarding • Quarterly anonymized summaries",
-      "Access to leadership resource kit • Priority JaGo Whisper support",
-    ],
-    price: "$1,200",
-    note: "per manager per year • Volume discounts for teams of 10+",
-    conversion:
-      "Approximate conversions: EUR (€), AUD (A$), INR (₹), SGD (S$), GBP (£). All prices quoted in USD.",
-    inrPrice: 98000,
+    price: "$295",
+    note: "Quick access, fast turnaround",
     popular: false,
   },
 ];
+
 
 const Coaching = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -174,12 +126,12 @@ const Coaching = () => {
   {coachingData.map((item) => (
     <motion.div
       key={item.id}
-      className="relative bg-lime-50 rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col justify-between min-h-[40vh]" // 👈 static min height
+      className="relative bg-lime-50 rounded-xl shadow-sm border border-gray-100 px-6 py-8 flex flex-col justify-between min-h-[40vh]" // 👈 static min height
     >
       {/* Top Section */}
       <div>
         {item.popular && (
-          <span className="absolute top-4 right-4 bg-yellow-300 text-green-900 text-xs font-semibold px-3 py-1 rounded-full">
+          <span className="absolute top-2 right-4 bg-yellow-300 text-green-900 text-xs font-semibold px-3 py-1 rounded-full">
             Most Popular
           </span>
         )}

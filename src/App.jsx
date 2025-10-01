@@ -6,18 +6,25 @@ import Contact from './components/Contact/Contact';
 import Resources from './components/FreeResources/Resources';
 import Faq from './components/Faq/Faq';
 import Pricing from './components/Pricing/Pricing.jsx';
+import PopupModal from './utils/PopupModal.jsx';
 
 const App = () => {
   return (
-     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/solutions" element={<Solution />} />
-      <Route path="/resources" element={<Resources />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/faq" element={<Faq />} />
-      <Route path="/pricing" element={<Pricing />} />
-    </Routes>
+      <>
+      {/* Routes ke andar sirf Route components hi hone chahiye */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/solutions" element={<Solution />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/pricing" element={<Pricing />} />
+      </Routes>
+
+      {/* Global Popup Routes ke bahar */}
+      <PopupModal />
+    </>
   )
 }
 

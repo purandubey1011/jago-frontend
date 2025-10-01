@@ -84,6 +84,7 @@ const AboutJago = () => {
     "Breathwork",
     "Reiki",
     "Psychological Frameworks",
+    'Narrative'
   ].map((item, i) => (
     <motion.div
       key={i}

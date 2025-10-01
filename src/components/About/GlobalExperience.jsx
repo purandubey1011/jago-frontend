@@ -7,19 +7,19 @@ const GlobalExperienceSection = () => {
     visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
-  // const popupVariants = {
-  //   hidden: { opacity: 0, y: 20 },
-  //   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  // };
+  const popupVariants = {
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
 
   return (
     <section className="py-16 bg-white">
       <div className="relative w-full max-w-6xl px-4 md:px-0  mx-auto">
-      <div className="relative w-full overflow-hidden h-64 sm:h-80 md:h-[80vh] flex justify-center items-center ">
+     <div className="relative w-full overflow-hidden h-[50vh] sm:h-[60vh] md:h-[80vh] flex justify-center items-center">
   <motion.img
     src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/map.png?updatedAt=1757482092107"
     alt="World map"
-    className="ge-map object-contain w-[80vw] h-full"
+    className="ge-map object-contain w-[90vw] h-full"
     variants={mapVariants}
     initial="hidden"
     whileInView="visible"
@@ -28,27 +28,35 @@ const GlobalExperienceSection = () => {
 </div>
 
         {/* Popup 1 */}
-        {/* <motion.div
-          className="ge-popup absolute top-[-6%] left-[8%] md:top-[5%] md:left-[10%] bg-[#EAFE45] text-left rounded-lg shadow-lg p-3 sm:p-4 w-56 sm:w-80"
-          variants={popupVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay: 0.2 }}
-        >
-          <div className="flex flex-col items-start space-x-2">
-            <PiSparkleFill className="text-green-900 mt-1" />
-            <div>
-              <h3 className="font-semibold text-green-900 text-xs sm:text-base">
-                Global Experience That Inspires
-              </h3>
-              <p className="text-gray-700 text-[2.3vw] sm:text-sm mt-1">
-                Over 25 years in people management and development across UK,
-                Europe, India.
-              </p>
-            </div>
-          </div>
-        </motion.div> */}
+       <motion.div
+  className="ge-popup absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+             bg-[#EAFE45]/50 md:bg-[#EAFE45]/80 rounded-lg shadow-lg p-4 sm:p-6 w-72 sm:w-[32rem] text-left"
+  variants={popupVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.5 }}
+  transition={{ delay: 0.2 }}
+>
+  <div className="flex flex-col items-start space-x-2">
+    <PiSparkleFill className="text-green-900 mt-1 text-lg" />
+    <div>
+      <h3 className="font-semibold text-green-900 text-base sm:text-lg mb-2">
+        Our Mission
+      </h3>
+      <p className="text-gray-700 text-xs sm:text-sm leading-relaxed">
+        JaGoCoach's mission is provide personalised coaching, guidance, and
+        tools that give you the support to grow into your best self – at any
+        age, at any stage, background, or where you are in life. JaGoCoach
+        offers real support to help you move past temporary setbacks (yes,
+        they are temporary), shift your limiting beliefs, and help you build a
+        stronger mindset for the future. Whether you're leading a global team
+        or exploring personal growth, JaGoCoach meets you where you are—with
+        real support and lasting impact.
+      </p>
+    </div>
+  </div>
+</motion.div>
+
 
         {/* Popup 2 */}
         {/* <motion.div

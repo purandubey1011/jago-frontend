@@ -5,9 +5,9 @@ import { useState } from "react";
 const LanguageDropdown = ({ textColor, isLightBg }) => {
   const languages =[
     { id: "en", label: "English" },
-    { id: "fr", label: "Français" },
-    { id: "es", label: "Español" },
-    { id: "de", label: "Deutsch" }
+    { id: "fr", label: "French" },
+    { id: "es", label: "Espanol" },
+    { id: "de", label: "German" }
 ]
   const [selected, setSelected] = useState(languages[0]);
 
