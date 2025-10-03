@@ -79,7 +79,7 @@ const Coaching = () => {
             )}
 
             {/* Title */}
-            <h3 className="text-xl font-bold text-green-900 font-serif">{item.title}</h3>
+            <h3 className="text-xl font-bold text-green-900 font-serif min-h-[7vh]">{item.title}</h3>
 
             {/* Subtitle */}
             <div className="mt-3 space-y-2">
@@ -94,12 +94,12 @@ const Coaching = () => {
             </div>
 
             {/* View Details */}
-            <div className="mt-5 border border-gray-300 rounded p-1">
+            <div className="mt-5 border border-gray-300 rounded p-1 ">
               <button className="w-full text-left  px-1 py-1 rounded text-xs font-medium hover:bg-white/70 transition">
                 View Details
               </button>
               <hr className="my-1 border-gray-300" />
-              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1 px-3 py-1">
+              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1 px-3 py-1 min-h-[13vh]">
                 {item.details.map((d, idx) => (
                   <li key={idx}>{d}</li>
                 ))}
