@@ -8,8 +8,8 @@ const coachingData = [
   {
     id: 1,
     title: "The JaGoCoach Signature: 12-Week Program",
-    subtitle: "A 12-week journey of clarity, vitality, and sustainable transformation.",
-    details: ["Weekly 1:1 60-min sessions (virtual or in-person)", "Covers Awareness → Beliefs & Big Goals → Change", "Bonus: Breathwork, Meditation, Persona Mapping, Voice-note check-ins"],
+    subtitle: "Weekly 1:1 60-min sessions (virtual or in-person)",
+    details: [ "Covers Awareness → Beliefs & Big Goals → Change", "Bonus: Breathwork, Meditation, Persona Mapping, Voice-note check-ins"],
     price: "INR 2,99,999",
     oldPrice: "INR 5,00,000",
     note: "Payment Plan: 3 × $1,200",
@@ -18,8 +18,8 @@ const coachingData = [
   {
     id: 2,
     title: "JaGoCoach Launchpad: Obstacle Breaker",
-    subtitle: "Bust resistance, reset energy, and ignite clarity in 3 sessions.",
-    details: ["3 × 60-min 1:1 sessions", "Framework: Awareness → Audit → Reset", "Bonus: Follow-up check-in"],
+    subtitle: "3 × 60-min 1:1 sessions",
+    details: ["Framework: Awareness → Audit → Reset", "Bonus: Follow-up check-in"],
     price: "INR 49,999",
     oldPrice: "INR 69,999",
     note: "Includes: 3 sessions + bonus check-in",
@@ -28,8 +28,8 @@ const coachingData = [
   {
     id: 3,
     title: "JaGoCoach Lifeline: Emergency Call",
-    subtitle: "Quick recalibration for urgent clarity or overwhelm.",
-    details: ["45-min focused virtual call", "For tough decisions, overwhelm, or urgent mindset reset"],
+    subtitle:"45-min focused virtual call",
+    details: [ "For tough decisions, overwhelm, or urgent mindset reset"],
     price: "INR 19,999",
     oldPrice: "INR 29,999",
     note: "Quick access, fast turnaround",
@@ -69,7 +69,7 @@ const Coaching = () => {
         {coachingData.map((item) => (
           <motion.div
             key={item.id}
-            className="relative bg-[#def24324] rounded-lg  px-6 py-8 flex flex-col justify-between"
+            className="relative bg-[#f8fce0] rounded-lg  px-6 py-8 flex flex-col justify-between"
           >
             {/* Popular Badge */}
             {item.popular && (
@@ -99,7 +99,7 @@ const Coaching = () => {
                 View Details
               </button>
               <hr className="my-1 border-gray-300" />
-              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1 px-3 py-1 min-h-[13vh]">
+              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1 px-3 py-1 min-h-[9vh]">
                 {item.details.map((d, idx) => (
                   <li key={idx}>{d}</li>
                 ))}
