@@ -120,7 +120,7 @@ const Coaching = () => {
                 {item.price}
               </p>
 
-              <p className="text-sm text-gray-500 line-through">
+              <p className="text-xs text-gray-500 line-through">
                 {item.oldPrice}
               </p>
               {/* <p className="text-xs text-gray-600">{item.note}</p> */}
@@ -128,7 +128,7 @@ const Coaching = () => {
 
             {/* CTA Button */}
             <motion.button
-              className="mt-3 w-full bg-lime-300 text-green-900 font-medium py-2 rounded-md hover:bg-lime-400 transition"
+              className="mt-4 w-full bg-lime-300 text-green-900 font-medium py-2 rounded-md hover:bg-lime-400 transition"
               onClick={() => {
                 setSelectedPackage(item);
                 setIsModalOpen(true);
