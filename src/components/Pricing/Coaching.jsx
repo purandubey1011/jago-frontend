@@ -9,7 +9,10 @@ const coachingData = [
     id: 1,
     title: "The JaGoCoach Signature: 12-Week Program",
     subtitle: "Weekly 1:1 60-min sessions (virtual or in-person)",
-    details: [ "Covers Awareness → Beliefs & Big Goals → Change", "Bonus: Breathwork, Meditation, Persona Mapping, Voice-note check-ins"],
+    details: [
+      "Covers Awareness → Beliefs & Big Goals → Change",
+      "Bonus: Breathwork, Meditation, Persona Mapping, Voice-note check-ins",
+    ],
     price: "INR 2,99,999",
     oldPrice: "INR 5,00,000",
     note: "Payment Plan: 3 × $1,200",
@@ -19,7 +22,10 @@ const coachingData = [
     id: 2,
     title: "JaGoCoach Launchpad: Obstacle Breaker",
     subtitle: "3 × 60-min 1:1 sessions",
-    details: ["Framework: Awareness → Audit → Reset", "Bonus: Follow-up check-in"],
+    details: [
+      "Framework: Awareness → Audit → Reset",
+      "Bonus: Follow-up check-in",
+    ],
     price: "INR 49,999",
     oldPrice: "INR 69,999",
     note: "Includes: 3 sessions + bonus check-in",
@@ -28,8 +34,8 @@ const coachingData = [
   {
     id: 3,
     title: "JaGoCoach Lifeline: Emergency Call",
-    subtitle:"45-min focused virtual call",
-    details: [ "For tough decisions, overwhelm, or urgent mindset reset"],
+    subtitle: "45-min focused virtual call",
+    details: ["For tough decisions, overwhelm, or urgent mindset reset"],
     price: "INR 19,999",
     oldPrice: "INR 29,999",
     note: "Quick access, fast turnaround",
@@ -79,7 +85,9 @@ const Coaching = () => {
             )}
 
             {/* Title */}
-            <h3 className="text-xl font-bold text-green-900 font-serif min-h-[7vh]">{item.title}</h3>
+            <h3 className="text-xl font-bold text-green-900 font-serif min-h-[7vh]">
+              {item.title}
+            </h3>
 
             {/* Subtitle */}
             <div className="mt-3 space-y-2">
@@ -94,7 +102,7 @@ const Coaching = () => {
             </div>
 
             {/* View Details */}
-            <div className="mt-5 border border-gray-300 rounded p-1 ">
+            <div className="mt-3 border border-gray-300 rounded p-1 ">
               <button className="w-full text-left  px-1 py-1 rounded text-xs font-medium hover:bg-white/70 transition">
                 View Details
               </button>
@@ -107,18 +115,20 @@ const Coaching = () => {
             </div>
 
             {/* Price */}
-            <div className="mt-5">
+            <div className="mt-2">
               <p className="text-lg font-bold bg-gradient-to-r from-[#b8cc21] via-[#061309] to-green-400 bg-clip-text text-transparent">
-  {item.price}
-</p>
+                {item.price}
+              </p>
 
-              <p className="text-sm text-gray-500 line-through">{item.oldPrice}</p>
+              <p className="text-sm text-gray-500 line-through">
+                {item.oldPrice}
+              </p>
               {/* <p className="text-xs text-gray-600">{item.note}</p> */}
             </div>
 
             {/* CTA Button */}
             <motion.button
-              className="mt-5 w-full bg-lime-300 text-green-900 font-medium py-2 rounded-md hover:bg-lime-400 transition"
+              className="mt-3 w-full bg-lime-300 text-green-900 font-medium py-2 rounded-md hover:bg-lime-400 transition"
               onClick={() => {
                 setSelectedPackage(item);
                 setIsModalOpen(true);
@@ -155,7 +165,9 @@ const Coaching = () => {
                 {selectedPackage.title}
               </h3>
 
-              <p className="text-sm text-gray-600 mb-4">{selectedPackage.subtitle}</p>
+              <p className="text-sm text-gray-600 mb-4">
+                {selectedPackage.subtitle}
+              </p>
 
               <ul className="list-disc list-inside text-sm text-gray-600 mb-4">
                 {selectedPackage.details.map((d, idx) => (
@@ -163,11 +175,15 @@ const Coaching = () => {
                 ))}
               </ul>
 
-              <p className="text-lg font-bold text-green-800">{selectedPackage.price}</p>
+              <p className="text-lg font-bold text-green-800">
+                {selectedPackage.price}
+              </p>
               <p className="text-sm text-gray-500 line-through">
                 {selectedPackage.oldPrice}
               </p>
-              <p className="text-xs text-gray-600 mb-4">{selectedPackage.note}</p>
+              <p className="text-xs text-gray-600 mb-4">
+                {selectedPackage.note}
+              </p>
 
               <motion.button
                 type="button"
