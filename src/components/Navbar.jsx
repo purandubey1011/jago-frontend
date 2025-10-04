@@ -35,7 +35,7 @@ const Navbar = () => {
   }, [open]);
 
   const isLightBg =
-    location.pathname === "/solutions" || location.pathname === "/resources";
+    location.pathname === "/solutions" || location.pathname === "/resources" ||  location.pathname.startsWith("/program/");
 
   const textColor = isLightBg ? "text-black " : "text-white";
   const hoverColor = isLightBg ? "hover:text-lime-600" : "hover:text-lime-300";

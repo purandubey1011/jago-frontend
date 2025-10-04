@@ -130,7 +130,7 @@ const Testimonials = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-white w-full py-12 px-4 md:py-20 md:px-20 overflow-hidden"
+      className="relative bg-white w-full py-6 px-4 md:py-20 md:px-20 overflow-hidden"
     >
       {/* Watermark Heading */}
       <h1
@@ -149,7 +149,7 @@ const Testimonials = () => {
             <img
               src={img}
               alt={name}
-              className="w-[83vw] h-[280px] md:w-[280px] md:h-[340px] object-cover rounded shadow"
+              className="w-[83vw] h-[230px] md:w-[280px] md:h-[340px] object-cover rounded shadow"
             />
           </div>
 
@@ -163,7 +163,7 @@ const Testimonials = () => {
         {/* Text */}
         <div
           ref={textRef}
-          className="testimonial-text text-gray-800 leading-relaxed text-base md:text-lg max-w-full md:max-w-[470px] px-2 md:px-4 text-left relative z-10"
+          className="testimonial-text text-gray-800 leading-relaxed text-xs md:text-lg max-w-full md:max-w-[470px] px-2 md:px-4 text-left relative z-10"
         >
           {text}
         </div>

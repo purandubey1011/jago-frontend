@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import { AiOutlineCalendar, AiOutlineClockCircle } from "react-icons/ai";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const coachingData = [
   {
@@ -46,6 +47,7 @@ const coachingData = [
 const Coaching = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState(null);
+  const navigate = useNavigate()
 
   const modalBackdrop = {
     hidden: { opacity: 0 },
@@ -76,10 +78,11 @@ const Coaching = () => {
           <motion.div
             key={item.id}
             className="relative bg-[#f8fce0] rounded-lg  px-6 py-8 flex flex-col justify-between"
+            onClick={() => navigate(`/program/${item.id}`)}
           >
             {/* Popular Badge */}
             {item.popular && (
-              <span className="absolute top-2 right-4 bg-yellow-400 text-green-900 text-xs font-semibold px-3 py-1 rounded-full">
+              <span className="absolute top-3 md:top-1.5 right-4 bg-yellow-400 text-green-900 text-[2vw] md:text-[.5vw] font-semibold px-3 py-1 rounded-full">
                 Most Popular
               </span>
             )}

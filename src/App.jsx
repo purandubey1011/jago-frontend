@@ -7,6 +7,7 @@ import Resources from './components/FreeResources/Resources';
 import Faq from './components/Faq/Faq';
 import Pricing from './components/Pricing/Pricing.jsx';
 import PopupModal from './utils/PopupModal.jsx';
+import ProgramDetails from './components/Pricing/ProgramDetails.jsx';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/pricing" element={<Pricing />} />
+        <Route path="/program/:id" element={<ProgramDetails />} />
       </Routes>
 
       {/* Global Popup Routes ke bahar */}
