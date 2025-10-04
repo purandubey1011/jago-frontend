@@ -1,10 +1,15 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation, Pagination, Autoplay } from "swiper";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-gsap.registerPlugin(ScrollTrigger);
+// Swiper CSS
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const Testimonials = () => {
+  // SwiperCore.use([ Navigation, Pagination]);
  const testimonials = [
     {
       img: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6",
@@ -56,82 +61,9 @@ const Testimonials = () => {
     },
   ];
 
-  const [current, setCurrent] = useState(0);
-  const { img, name, role, text } = testimonials[current];
 
-  const thumbsToShow = Array.from({ length: 3 }, (_, i) =>
-    testimonials[(current + i) % testimonials.length]
-  );
-
-  const sectionRef = useRef(null);
-  const contentRef = useRef(null); // image + desktop name/role
-  const textRef = useRef(null);
-
-  // Scroll-triggered staggered entrance
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      const elems = gsap.utils.toArray(
-        ".testimonial-heading, .testimonial-image, .testimonial-text, .testimonial-mobile, .testimonial-thumbs"
-      );
-
-      gsap.from(elems, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 60%",
-          toggleActions: "play reverse play reverse",
-          // markers: true,
-          // scrub: true
-        },
-        opacity: 0,
-        y: 50,
-        stagger: 0.15,
-        duration: 1,
-        ease: "power2.in",
-        yoyo: true,
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  // Smooth Next/Thumbnail animation
-  const animateChange = (newIndex) => {
-    if (newIndex === current) return;
-
-    const tl = gsap.timeline({ defaults: { duration: .2, ease: "power2.inOut" } });
-
-    // Animate out old content
-    tl.to(contentRef.current, { opacity: 0, y: -30 });
-    tl.to(textRef.current, { opacity: 0, y: -30 }, "<"); // sync with previous
-
-    // Update state after fade out
-    tl.add(() => setCurrent(newIndex));
-
-    // Animate in new content
-    tl.fromTo(
-      contentRef.current,
-      { opacity: 0, y: 25 },
-      { opacity: 1, y: 0, duration: 1.1 }
-    );
-    tl.fromTo(
-      textRef.current,
-      { opacity: 0, y: 25 },
-      { opacity: 1, y: 0, duration: 1.1 },
-      "<"
-    );
-  };
-
-  const handleNext = () => animateChange((current + 1) % testimonials.length);
-  const handleThumbClick = (i) => {
-    if (i === current) return;
-    animateChange(i);
-  };
-
-  return (
-    <section
-      ref={sectionRef}
-      className="relative bg-white w-full py-6 px-4 md:py-20 md:px-20 overflow-hidden"
-    >
+   return (
+     <section className="relative w-full py-16 px-4 md:px-20 bg-white h-[90vh]">
       {/* Watermark Heading */}
       <h1
         className="testimonial-heading absolute top-4 left-4 md:top-8 md:left-20 text-[2.3rem] md:text-[7rem] font-bold text-transparent leading-none select-none z-0"
@@ -140,71 +72,46 @@ const Testimonials = () => {
         Testimonials
       </h1>
 
-      {/* Main content */}
-      <div className="mt-12 md:mt-20 flex flex-col md:flex-row md:gap-12 md:items-center md:justify-center">
-        {/* Image + Desktop Name/Role */}
-        <div ref={contentRef} className=" flex flex-col items-center md:items-start mb-6 md:mb-0">
-          <div className="testimonial-image relative mb-4">
-            <div className="absolute top-0 left-0 w-[4px] md:w-[8px] h-full bg-lime-400" />
-            <img
-              src={img}
-              alt={name}
-              className="w-[83vw] h-[230px] md:w-[280px] md:h-[340px] object-cover rounded shadow"
-            />
-          </div>
-
-          {/* Desktop Name/Role */}
-          <div className="testimonial-image hidden md:block text-left">
-            <h3 className="text-xl md:text-2xl font-bold">{name}</h3>
-            <p className="text-sm text-gray-600">{role}</p>
-          </div>
-        </div>
-
-        {/* Text */}
-        <div
-          ref={textRef}
-          className="testimonial-text text-gray-800 leading-relaxed text-xs md:text-lg max-w-full md:max-w-[470px] px-2 md:px-4 text-left relative z-10"
-        >
-          {text}
-        </div>
-      </div>
-
-      {/* Mobile Name/Role */}
-      <div className="testimonial-mobile md:hidden text-center mt-4">
-        <h3 className="text-lg font-bold">{name}</h3>
-        <p className="text-sm text-gray-600">{role}</p>
-      </div>
-
-      {/* Thumbnails & Next Button */}
-      <div className="testimonial-thumbs flex flex-row justify-end md:items-center gap-4 mt-8">
-        <div className="flex justify-center md:justify-end gap-3">
-          {thumbsToShow.map((t) => {
-            const idx = testimonials.findIndex((x) => x.img === t.img);
-            return (
-              <button
-                key={t.img}
-                onClick={() => handleThumbClick(idx)}
-                className={`overflow-hidden rounded focus:outline-none ${
-                  idx === current ? "ring-4 ring-lime-400" : ""
-                }`}
-              >
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={30}
+        slidesPerView={1}
+        loop={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        navigation={true}
+        pagination={{ clickable: true }}
+        speed={1000}
+        className="relative z-10 md:top-40 pt-36 md:pt-40 pb-22 min-h-[75vh] md:min-h-[53vh] "
+      >
+        {testimonials.map((t, idx) => (
+          <SwiperSlide key={idx}>
+            <div className="flex flex-col md:flex-row md:items-center justify-center gap-6 md:gap-12 px-2 md:px-0">
+              {/* Image */}
+              <div className="flex-shrink-0 w-full max-w-[280px] md:max-w-[280px] mx-auto md:mx-0">
                 <img
                   src={t.img}
                   alt={t.name}
-                  className="w-[45px] h-[60px] md:w-[70px] md:h-[70px] object-cover"
+                  className="w-full h-[280px] md:h-[340px] object-cover rounded-lg shadow-md"
                 />
-              </button>
-            );
-          })}
-        </div>
+              </div>
 
-        <button
-          onClick={handleNext}
-          className="bg-lime-300 hover:bg-lime-400 text-black font-medium px-6 py-2 rounded-full"
-        >
-          Next →
-        </button>
-      </div>
+              {/* Text */}
+              <div className="text-gray-800 max-w-full md:max-w-[600px] text-center md:text-left">
+                <h3 className="text-xl md:text-2xl font-bold">{t.name}</h3>
+                <p className="text-sm md:text-base text-gray-600 mb-4">{t.role}</p>
+               <p className="text-[1.4vh] md:text-base leading-relaxed">
+  {t.text.split(" ").slice(0, 70).join(" ")}
+  <span className="md:hidden">...</span>
+</p>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 };

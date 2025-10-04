@@ -32,7 +32,7 @@ const Bonus = () => {
           {/* Left Column */}
           <div className="md:col-span-7 flex flex-col space-y-1 md:space-y-0">
             {/* Bonus Tag */}
-            <div className="flex items-center space-x-2 w-fit px-3 py-1 rounded-full bg-black/10 mb-2">
+            <div className="flex items-center space-x-2 w-fit px-3 py-1 rounded-full bg-black/10 mb-2 border-2 border-black/50">
               <SVGCheck className="w-4 h-4 text-gray-700" />
               <span className="text-sm font-semibold text-gray-700">Bonus</span>
             </div>
@@ -50,19 +50,24 @@ const Bonus = () => {
               Who Should Attend the PMP Course Online
             </p>
 
+          <div className='flex md:flex-col md:gap-1 gap-4'>
             {/* CTA Button Section */}
             <div className="pt-1">
-              <div className="px-4 sm:px-6 py-2 w-fit rounded-full bg-white shadow-md flex flex-col sm:flex-row items-baseline sm:items-center space-y-1 sm:space-y-0 sm:space-x-2 transition duration-300 hover:scale-[1.01] cursor-pointer">
-                <span className="text-sm sm:text-lg font-semibold text-gray-800">
-                  Enroll Now at $3,600
-                </span>
-                <div className="flex gap-2 text-xs leading-none">
-                  <span className="text-gray-700 opacity-70">25% off</span>
-                  <span className="line-through text-gray-500 opacity-50">
-                    $5,000
-                  </span>
-                </div>
-              </div>
+             <div
+  className="px-4 sm:px-6 py-2 w-fit rounded-full bg-white flex flex-col sm:flex-row items-baseline sm:items-center space-y-1 sm:space-y-0 sm:space-x-2 transition duration-300 hover:scale-[1.01] cursor-pointer"
+  style={{
+    boxShadow: '-10px 10px 15px rgba(128,128,128,0.4)',
+  }}
+>
+  <span className="text-sm sm:text-lg font-semibold text-gray-800">
+    Enroll Now at $3,600
+  </span>
+  <div className="flex gap-2 text-xs leading-none">
+    <span className="text-gray-700 opacity-70">25% off</span>
+    <span className="line-through text-gray-500 opacity-50">$5,000</span>
+  </div>
+</div>
+
             </div>
 
             {/* Plan Text */}
@@ -70,15 +75,19 @@ const Bonus = () => {
               <p className="text-xs sm:text-sm text-gray-600 opacity-80 font-medium leading-2.5">Plan</p>
               <p className="text-xs sm:text-sm text-gray-800 font-medium">*3*1200</p>
             </div>
+
+            
+
+            </div>
           </div>
 
           {/* Right Column: List */}
-          <div className="md:col-span-5 flex flex-col justify-center mt-6 md:mt-0">
+          <div className="md:col-span-5 flex flex-col justify-center mt-2 md:mt-0">
             <ul className="space-y-3 md:space-y-4 text-sm sm:text-base pl-0 list-none">
               {features.map((item, index) => (
                 <li key={index} className="flex gap-2 md:gap-3 items-center text-black">
                   <span className="text-lg md:text-xl leading-none mr-2">•</span>
-                  <span className="font-bold text-[3.5vw] sm:text-[1vw] md:text-[1vw] font-serif">{item}</span>
+                  <span className="font-bold text-[3.5vw] sm:text-[1vw] md:text-[1vw] ">{item}</span>
                 </li>
               ))}
             </ul>
