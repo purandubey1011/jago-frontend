@@ -7,7 +7,7 @@ import Resources from './components/FreeResources/Resources';
 import Faq from './components/Faq/Faq';
 import Pricing from './components/Pricing/Pricing.jsx';
 import PopupModal from './utils/PopupModal.jsx';
-import ProgramDetails from './components/Pricing/ProgramDetails.jsx';
+import ProgramDetails from './components/Pricing/Programdetails/ProgramDetails.jsx';
 
 const App = () => {
   return (

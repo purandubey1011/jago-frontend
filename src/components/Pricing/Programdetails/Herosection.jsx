@@ -1,16 +1,8 @@
-import React from "react";
-import { BsStars } from "react-icons/bs";
-import Navbar from "../Navbar";
-import Footer from "../Footer";
-import Testimonials from "../Home/Testimonials";
+import React from 'react'
 
-const ProgramDetails = () => {
+const Herosection = () => {
   return (
-    <div className="w-full h-full overflow-hidden relative">
-      {/* navbar */}
-      <div className="h-[10vh] w-full bg-white">
-        <Navbar />
-      </div>
+    <div>
       {/* hero section */}
      <section className="relative flex items-start pt-30 md:pt-0 md:items-center justify-start min-h-[90vh] bg-[#DDFE47] overflow-hidden">
       {/* Left Content */}
@@ -20,9 +12,10 @@ const ProgramDetails = () => {
           <br className="hidden sm:block" /> Coaching Program
         </h2>
 
-        <p className="text-[#0F2E15]/80 font-medium text-[2vmax] md:text-[1.2vmax] leading-[1.4] max-w-[40vmax]">
-          A journey of clarity, vitality, and mental recalibration.
-        </p>
+      <p className="text-[#0F2E15]/80 font-medium text-center md:text-left text-[4vmin] sm:text-[3.5vmin] md:text-[1.2vmax] leading-[1.4] md:max-w-[40vmax]">
+  A journey of clarity, vitality, and mental recalibration.
+</p>
+
 
         <button className="inline-block mt-[2vmin] bg-white text-[#0F2E15] font-semibold py-[1.5vh] md:py-[2vh] px-[10vw] md:px-[3vw] rounded-[5vmax] hover:bg-[#f5f5f5] transition-all duration-300 border border-[#0F2E15]/10">
           Enroll Now
@@ -63,14 +56,8 @@ const ProgramDetails = () => {
         </svg>
       </div>
     </section>
-
-      {/* testimonials */}
-      <Testimonials />
-
-      {/* footer */}
-      <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default ProgramDetails;
+export default Herosection
