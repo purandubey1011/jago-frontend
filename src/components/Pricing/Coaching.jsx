@@ -91,11 +91,11 @@ const Coaching = () => {
 
             {/* Subtitle */}
             <div className="mt-3 space-y-2">
-              <div className="flex items-center gap-2 text-sm text-gray-700">
+              <div className="flex items-center gap-2 text-sm text-black font-medium">
                 <AiOutlineCalendar className="text-lg" />
                 <span>Mar 02 – Mar 17</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-700">
+              <div className="flex items-center gap-2 text-sm text-black font-medium">
                 <AiOutlineClockCircle className="text-lg" />
                 <span>{item.subtitle}</span>
               </div>
@@ -107,7 +107,7 @@ const Coaching = () => {
                 View Details
               </button>
               <hr className="my-1 border-gray-300" />
-              <ul className="list-disc list-inside text-sm text-gray-600 space-y-1 px-3 py-1 min-h-[9vh]">
+              <ul className="list-disc list-inside text-sm text-gray-700 space-y-1 px-3 py-1 min-h-[9vh]">
                 {item.details.map((d, idx) => (
                   <li key={idx}>{d}</li>
                 ))}
