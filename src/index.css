@@ -15,6 +15,6 @@ select option {
 /* Mobile */
 @media (max-width: 768px) {
   .swiper-pagination {
-    bottom: -5px !important; /* mobile ke liye aur neeche */
+    bottom: 10px !important; /* mobile ke liye aur neeche */
   }
 }

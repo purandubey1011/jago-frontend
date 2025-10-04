@@ -72,21 +72,28 @@ const Testimonials = () => {
         Testimonials
       </h1>
 
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={30}
-        slidesPerView={1}
-        loop={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        navigation={true}
-        pagination={{ clickable: true }}
-        speed={1000}
-        className="relative z-10 md:top-40 pt-36 md:pt-40 pb-22 min-h-[75vh] md:min-h-[53vh] "
-      >
+     <Swiper
+  modules={[Navigation, Pagination, Autoplay]}
+  spaceBetween={30}
+  slidesPerView={1}
+  loop={true}
+  autoplay={{
+    delay: 5000,
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  }}
+  pagination={{ clickable: true }}
+  speed={1000}
+  className="relative z-10 top-5 md:top-40 pt-36 md:pt-40 pb-22 min-h-[75vh] md:min-h-[53vh] "
+  breakpoints={{
+    0: {
+      navigation: false, // ✅ Mobile pe off
+    },
+    768: {
+      navigation: true, // ✅ Tablet & Desktop pe on
+    },
+  }}
+>
         {testimonials.map((t, idx) => (
           <SwiperSlide key={idx}>
             <div className="flex flex-col md:flex-row md:items-center justify-center gap-6 md:gap-12 px-2 md:px-0">
