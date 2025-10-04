@@ -32,9 +32,9 @@ const Isthisprogram = () => {
   ];
 
   return (
-    <section className="w-full bg-white flex flex-col items-center justify-center py-16 px-6 sm:px-10 lg:px-20">
+    <section className="w-full bg-white flex flex-col items-center justify-center py-10 md:py-16  px-6 sm:px-10 lg:px-20">
       {/* Heading */}
-      <div className="w-full max-w-6xl mb-12 text-center md:text-left">
+      <div className="w-full max-w-6xl mb-6 md:mb-12 text-center md:text-left">
         <h2 className="text-[#0F2E15] font-serif font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">
           Is This Program For You?
         </h2>
@@ -44,7 +44,7 @@ const Isthisprogram = () => {
       </div>
 
       {/* Cards Grid */}
-      <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6">
         {cards.map((card, i) => (
           <div
             key={i}
