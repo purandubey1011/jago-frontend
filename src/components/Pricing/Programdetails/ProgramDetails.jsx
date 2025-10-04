@@ -17,7 +17,7 @@ const ProgramDetails = () => {
       <div className="h-[8vh] md:h-[10vh] w-full bg-white">
         <Navbar />
       </div>
-      
+
       {/* hero section */}
       <Herosection />
 
@@ -28,7 +28,7 @@ const ProgramDetails = () => {
       <Awareness />
 
       {/* goals */}
-      <Goals/>
+      <Goals />
 
       {/* change */}
       <Change />
