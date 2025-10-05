@@ -169,7 +169,7 @@ const BookingCalendar = ({ id }) => {
               <h3 className="text-lg font-semibold">ACME Inc.</h3>
             </div>
 
-            <h4 className="text-2xl font-bold mb-5">Product Demo</h4>
+            <h4 className="text-2xl font-bold mb-5">Book a powerful session</h4>
 
             <div className="flex items-center gap-2 mb-2 text-gray-700">
               <FiClock className="text-gray-600" /> <span>15 min</span>

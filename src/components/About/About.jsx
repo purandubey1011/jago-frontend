@@ -15,7 +15,6 @@ const About = () => {
       <GlobalExperience/>
       <Credentials/>
       <OurMission/>
-      <Testimonials/>
       <Footer />
     </div>
   )

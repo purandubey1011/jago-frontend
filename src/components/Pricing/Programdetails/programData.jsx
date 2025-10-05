@@ -133,18 +133,7 @@ export const programsData = [
       discountedFrom: "$5,000",
       paymentPlan: "3 x $1,200",
       bonusNote: "",
-    },
-    testimonialSection: {
-      heading: "Testimonials",
-      items: [
-        {
-          name: "Carolyn Willms",
-          designation: "Global Accountability Officer",
-          image: "/images/carolyn.png",
-          text: "Lorem ipsum dolor sit amet consectetur. Massa sed dapibus adipiscing felis a. Integer et dictum ullamcorper magna nam eget. Elementum semper ultricies quam elementum dignissim etiam velit molestie diam.",
-        },
-      ],
-    },
+    }
   },
   {
     heroSection: {
@@ -234,18 +223,7 @@ export const programsData = [
       discountedFrom: "$695",
       paymentPlan: "Includes 3 x 60-minute sessions (virtual)",
       bonusNote: "Bonus: 1 follow-up check-in included",
-    },
-    testimonialSection: {
-      heading: "Testimonials",
-      items: [
-        {
-          name: "Client Name",
-          designation: "Professional / Entrepreneur",
-          image: "/images/client1.png",
-          text: "This program helped me rediscover my focus and overcome patterns that held me back. In just three sessions, I felt more grounded and clear than I had in years.",
-        },
-      ],
-    },
+    }
   },
   {
     heroSection: {
@@ -356,17 +334,6 @@ export const programsData = [
       paymentPlan: "Quick access, fast turnaround",
       bonusNote:
         "Ideal for flashpoint moments, emotional pivots, or urgent clarity needs",
-    },
-    testimonialSection: {
-      heading: "Testimonials",
-      items: [
-        {
-          name: "Anonymous Client",
-          designation: "Senior Executive",
-          image: "/images/client2.png",
-          text: "I booked a Lifeline Call when everything felt like too much. In 45 minutes, I went from chaos to clarity. It felt like exhaling after holding my breath for days.",
-        },
-      ],
-    },
+    }
   },
 ];
