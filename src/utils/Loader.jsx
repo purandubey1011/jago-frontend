@@ -55,7 +55,7 @@ const Loader = ({ greetings }) => {
     top: 0,
     left: 0,
     zIndex: 9999,
-    paddingBottom: isMobile ? "55%" : "15%", // responsive
+    paddingBottom: isMobile ? "270px" : "15%", // responsive
     overflow: "hidden",
   }}
 >
