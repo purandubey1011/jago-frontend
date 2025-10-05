@@ -70,7 +70,7 @@ const SolutionHero = () => {
           </motion.p>
 
           <motion.div variants={itemVariants}>
-            <Link to='/contact#booking-calendar' className="bg-lime-400 text-green-900 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-medium hover:bg-lime-500 transition text-sm sm:text-base">
+            <Link to='/contact#booking-calendar' className="bg-[#0c2b16] text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-medium hover:bg-lime-500 transition text-sm sm:text-base">
               Book a Free 15-Minute Call
             </Link>
           </motion.div>
@@ -105,14 +105,14 @@ const SolutionHero = () => {
           <div className="hidden md:block absolute bottom-0 right-0 w-80 h-80 bg-green-900 rounded-full opacity-20 translate-x-1/3 -translate-y-1/3"></div>
 
           <div className="relative z-10">
-            <p className="text-xs sm:text-sm text-lime-300 mb-2 sm:mb-3">✨ 1:1 Coaching</p>
+            <p className="text-xs sm:text-sm text-white mb-2 sm:mb-3">✨ 1:1 Coaching</p>
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold leading-snug mb-4 sm:mb-6 max-w-2xl mx-auto font-serif">
               Career clarity, personal purpose, identity, stress management.
             </h2>
             <p className="text-gray-300 text-sm sm:text-base mb-6 sm:mb-8">
               60-minute online sessions.
             </p>
-            <Link to='/contact#booking-calendar' className="bg-lime-400 text-green-900 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-medium hover:bg-lime-500 transition text-sm sm:text-base">
+            <Link to='/contact#booking-calendar' className="bg-white text-green-900 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-medium hover:bg-gray-200 transition text-sm sm:text-base">
               Book a Free 15-Minute Call
             </Link>
           </div>

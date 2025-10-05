@@ -90,15 +90,24 @@ const Navbar = () => {
   return (
     <nav className="absolute top-0 left-0 w-full z-30 px-4 lg:px-5 xl:px-10 py-4 flex items-center justify-between">
       {/* Logo */}
-      <motion.div variants={itemVariants} initial="hidden" animate="visible">
-        <Link
-          to="/"
-          className={`font-extrabold text-lg sm:text-xl md:text-2xl tracking-wide ${textColor}`}
-          onClick={() => setOpen(false)}
-        >
-          JaGoCoach<span className="text-xs align-super">™</span>
-        </Link>
-      </motion.div>
+<motion.div variants={itemVariants} initial="hidden" animate="visible">
+  <Link
+    to="/"
+    onClick={() => setOpen(false)}
+    className="block w-[120px] sm:w-[140px] md:w-[160px]"
+  >
+    <img
+      src={
+        isLightBg
+          ? "https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/jago%20logo%20green.png?updatedAt=1759678906834"
+          : "https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/jago%20logo%20white.png?updatedAt=1759678906840"
+      }
+      alt="JaGoCoach Logo"
+      className="w-2/3 h-auto object-contain transition-transform duration-300 hover:scale-105"
+    />
+  </Link>
+</motion.div>
+
 
       {/* Desktop Links (1000px and above) */}
       <motion.ul

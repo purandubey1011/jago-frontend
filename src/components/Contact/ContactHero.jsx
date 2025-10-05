@@ -155,7 +155,7 @@ const ContactHero = () => {
             <motion.button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#EAFE45] text-green-950 font-semibold py-3 rounded-full hover:bg-[#b6c811] disabled:opacity-50"
+              className="w-full bg-white text-black font-semibold py-3 rounded-full hover:bg-gray-200 disabled:opacity-50"
               variants={formItemVariants}
             >
               {loading ? "Sending..." : "Send Message"}

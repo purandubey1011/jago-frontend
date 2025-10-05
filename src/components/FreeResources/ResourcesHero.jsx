@@ -92,19 +92,19 @@ const Resources = () => {
           variants={containerVariants} 
         >
           <motion.button
-            className="px-4 sm:px-5 py-2 bg-lime-300 text-black rounded-full font-medium shadow-sm hover:bg-lime-400 text-sm sm:text-base"
+            className="px-4 sm:px-5 py-2 bg-[#0c2b16] text-white rounded-full font-medium shadow-sm hover:bg-[#195a2e] text-sm sm:text-base"
             variants={buttonVariants}
           >
             Stress relief
           </motion.button>
           <motion.button
-            className="px-4 sm:px-5 py-2 border border-lime-300 text-black rounded-full font-medium hover:bg-lime-50 text-sm sm:text-base"
+            className="px-4 sm:px-5 py-2 border border-[#0c2b16] text-black rounded-full font-medium hover:bg-lime-50 text-sm sm:text-base"
             variants={buttonVariants}
           >
             Navigating career crossroads
           </motion.button>
           <motion.button
-            className="px-4 sm:px-5 py-2 border border-lime-300 text-black rounded-full font-medium hover:bg-lime-50 text-sm sm:text-base"
+            className="px-4 sm:px-5 py-2 border border-[#0c2b16] text-black rounded-full font-medium hover:bg-lime-50 text-sm sm:text-base"
             variants={buttonVariants}
           >
             Purpose vs Confusion

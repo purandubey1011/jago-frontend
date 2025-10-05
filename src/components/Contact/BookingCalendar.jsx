@@ -172,7 +172,7 @@ const BookingCalendar = ({ id }) => {
             <h4 className="text-2xl font-bold mb-5">Product Demo</h4>
 
             <div className="flex items-center gap-2 mb-2 text-gray-700">
-              <FiClock className="text-gray-600" /> <span>30 min</span>
+              <FiClock className="text-gray-600" /> <span>15 min</span>
             </div>
             <div className="flex items-center gap-2 text-gray-700">
               <FiPhone className="text-gray-600" /> <span>Phone call</span>

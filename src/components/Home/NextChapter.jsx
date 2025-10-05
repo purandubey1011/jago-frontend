@@ -28,9 +28,9 @@ const NextChapter = () => {
     >
       {/* Background Image */}
       <motion.img
-  src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/nextChapterbg.jpg?updatedAt=1757792355898"
+  src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/nextchapterimg.jpg?updatedAt=1759672770584"
   alt="Next Chapter"
-  className="w-full h-full object-cover rounded-t-3xl object-[50%_50%]"
+  className="w-full h-full object-cover rounded-t-3xl object-[50%_48%]"
   initial={{ opacity: 0, scale: 1.05 }}   // start thoda zoom aur invisible
   whileInView={{ opacity: 1, scale: 1 }}  // scroll me fade-in aur zoom-out
   transition={{ duration: 1.2, ease: "easeOut" }}
@@ -52,8 +52,8 @@ const NextChapter = () => {
             variants={childVariants}
             className="bg-white text-gray-900 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100"
           >
-            Book a Free 20-minute Discovery Call
-          </motion.button>
+            Request a callback
+              </motion.button>
         </Link>
       </div>
     </motion.div>

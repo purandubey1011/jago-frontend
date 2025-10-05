@@ -68,7 +68,7 @@ const Credentials = () => {
         {credentials.map((item, idx) => (
           <motion.div
             key={idx}
-            className="w-full md:w-64 rounded-xl border border-lime-600 overflow-hidden flex flex-col bg-transparent"
+            className="w-full md:w-64 rounded-xl border border-[#f9fbea] overflow-hidden flex flex-col bg-transparent"
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"

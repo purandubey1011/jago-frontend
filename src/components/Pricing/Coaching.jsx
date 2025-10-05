@@ -131,7 +131,7 @@ const Coaching = () => {
 
             {/* CTA Button */}
             <motion.button
-              className="mt-4 w-full bg-lime-300 text-green-900 font-medium py-2 rounded-md hover:bg-lime-400 transition"
+              className="mt-4 w-full bg-[#0c2b16] text-white font-medium py-2 rounded-md hover:bg-[#1a5b2f] transition"
               onClick={() => {
                 setSelectedPackage(item);
                 setIsModalOpen(true);

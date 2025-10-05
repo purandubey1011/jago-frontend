@@ -44,7 +44,7 @@ const PopupModal = () => {
               <h4 className="text-sm text-gray-500 mb-2">
                 Feeling Stuck or Unmotivated?
               </h4>
-              <h2 className="text-2xl font-bold text-lime-600 mb-4">
+              <h2 className="text-2xl font-bold text-[#0c2b16] mb-4">
                 Book a Free 20-Minute Session
               </h2>
               <p className="text-gray-700 text-sm mb-4 leading-relaxed">
@@ -59,7 +59,7 @@ const PopupModal = () => {
               <div className="flex gap-3">
                 <Link
                   to="/contact#booking-calendar"
-                  className="px-4 py-2 bg-lime-600 text-white rounded-md shadow hover:bg-lime-800"
+                  className="px-4 py-2 bg-[#0c2b16] text-white rounded-md shadow hover:bg-[#0c2b16]/90"
                   onClick={() => setOpen(false)}
                 >
                   Book a Session

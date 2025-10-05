@@ -86,7 +86,7 @@ const WhoWeHelp = () => {
       <div className="relative">
         <img
           ref={imageRef}
-          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/whowe.jpg?updatedAt=1757413575312"
+          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/whowehelp.jpg?updatedAt=1759672681289"
           alt="Who We Help"
           className="w-full h-[90vh] sm:h-[75vh] md:h-[80vh] object-cover object-top"
         />
@@ -137,8 +137,8 @@ const WhoWeHelp = () => {
         >
           {items.map((item, i) => (
             <div key={i} className="flex items-start gap-3">
-              <div className="bg-lime-400/20 p-2 rounded-full">
-                <BsStars className="text-lime-300 text-lg" />
+              <div className="bg-white/70 p-2 rounded-full">
+                <BsStars className="text-[#0c2b16] text-lg" />
               </div>
               <p className="text-white text-sm sm:text-sm md:text-base font-medium w-full sm:max-w-[18vw]">
                 {item}

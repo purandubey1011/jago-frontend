@@ -58,12 +58,12 @@ const WellBeing = () => {
   };
 
   return (
-    <section className="w-full bg-[#E8FF47] py-20 px-4 md:px-12">
+    <section className="w-full bg-[#0c2b16] py-20 px-4 md:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-14">
           <motion.h2
-            className="text-3xl md:text-4xl font-semibold text-green-950"
+            className="text-3xl md:text-4xl font-semibold text-white"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -72,7 +72,7 @@ const WellBeing = () => {
             <span className="italic font-medium">Well Being</span> Resources
           </motion.h2>
           <motion.p
-            className="text-gray-800 mt-3 max-w-2xl mx-auto text-base md:text-lg"
+            className="text-white mt-3 max-w-2xl mx-auto text-base md:text-lg"
             variants={subheadingVariants}
             initial="hidden"
             whileInView="visible"

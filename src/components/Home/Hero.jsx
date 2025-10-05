@@ -116,11 +116,11 @@ const Hero = () => {
         <Link
           to="/contact#booking-calendar"
           className="hero-btn mt-6 sm:mt-8 inline-block px-5 sm:px-6 py-2.5 sm:py-3
-                     bg-[#EAFE45] hover:bg-yellow-400 text-black font-semibold
+                     bg-[#ffffff] hover:bg-gray-300 text-black font-semibold
                      rounded-full shadow-md transition-colors duration-300
-                     text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                     text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-gray-300"
         >
-          Book a Free 20-Minute Call
+          Book a Free 15-Minute Call
         </Link>
       </div>
     </div>

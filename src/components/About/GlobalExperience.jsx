@@ -30,7 +30,7 @@ const GlobalExperienceSection = () => {
         {/* Popup 1 */}
        <motion.div
   className="ge-popup absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-             bg-[#EAFE45]/50 md:bg-[#EAFE45]/80 rounded-lg shadow-lg p-4 sm:p-6 w-72 sm:w-[32rem] text-left"
+             bg-[#f9fbea]/50 md:bg-[#f9fbea]/80 rounded-lg shadow-lg p-4 sm:p-6 w-72 sm:w-[32rem] text-left"
   variants={popupVariants}
   initial="hidden"
   whileInView="visible"

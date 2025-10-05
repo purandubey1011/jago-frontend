@@ -70,14 +70,14 @@ const WhyChoose = () => {
             transition={{ delay: 0.3 }} // Stagger delay for first box
           >
             <motion.div
-              className="bg-lime-400 rounded-xl p-5 flex items-center justify-center mb-5 shadow-sm"
+              className="bg-[#0c2b16] rounded-xl p-5 flex items-center justify-center mb-5 shadow-sm"
               variants={iconVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{  amount: 0.5 }}
               transition={{ delay: 0.5 }} // Delay icon animation a bit more
             >
-              <FaRegStar className="text-green-950 w-5 h-5" />
+              <FaRegStar className="text-white w-5 h-5" />
             </motion.div>
             <p className="text-green-950 font-medium text-lg leading-snug">
               Deep empathy + 25 years global experience.
@@ -94,14 +94,14 @@ const WhyChoose = () => {
             transition={{ delay: 0.5 }} // Stagger delay for second box
           >
             <motion.div
-              className="bg-lime-400 rounded-xl p-5 flex items-center justify-center mb-5 shadow-sm"
+              className="bg-[#0c2b16] rounded-xl p-5 flex items-center justify-center mb-5 shadow-sm"
               variants={iconVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{  amount: 0.5 }}
               transition={{ delay: 0.7 }}
             >
-              <FaLightbulb className="text-green-950 w-5 h-5" />
+              <FaLightbulb className="text-white w-5 h-5" />
             </motion.div>
             <p className="text-green-950 font-medium text-lg leading-snug">
               Tailored solutions, never cookie-cutter advice.
@@ -118,14 +118,14 @@ const WhyChoose = () => {
             transition={{ delay: 0.7 }} // Stagger delay for third box
           >
             <motion.div
-              className="bg-lime-400 rounded-xl p-5 flex items-center justify-center mb-5 shadow-sm"
+              className="bg-[#0c2b16] rounded-xl p-5 flex items-center justify-center mb-5 shadow-sm"
               variants={iconVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{  amount: 0.5 }}
               transition={{ delay: 0.9 }}
             >
-              <FaUserFriends className="text-green-950 w-5 h-5" />
+              <FaUserFriends className="text-white w-5 h-5" />
             </motion.div>
             <p className="text-green-950 font-medium text-lg leading-snug">
               Safe, private, supportive environment.

@@ -27,7 +27,7 @@ const QuickContact = () => {
 
   return (
     <motion.section
-      className="w-full bg-[#EAFE45] text-green-950 py-16 px-6 md:px-12"
+      className="w-full bg-[#eff2de] text-green-950 py-16 px-6 md:px-12"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible" 

@@ -34,9 +34,9 @@ const PricingHero = () => {
     >
       {/* Background image */}
       <motion.img
-        src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/priceheroimg.jpg?updatedAt=1757598641823"
+        src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/coachingbg.jpg?updatedAt=1759672894713"
         alt="Pricing Hero"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover object-[50%_20%]"
         variants={imageVariants}
       />
 
