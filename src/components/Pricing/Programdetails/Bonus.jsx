@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { programsData } from "./programData";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // ✅ Custom Inline SVG for Checkmark
 const SVGCheck = (props) => (
@@ -25,7 +27,8 @@ const Bonus = () => {
   const [selectedProgram, setSelectedProgram] = useState(null);
 
   const program = programsData[id - 1];
-  if (!program) return <div className="text-center py-10">Program not found.</div>;
+  if (!program)
+    return <div className="text-center py-10">Program not found.</div>;
 
   const { bonusAddons, investment } = program;
 
@@ -113,7 +116,10 @@ const Bonus = () => {
             <div className="col-span-5 flex flex-col justify-center mt-2 md:mt-0">
               <ul className="space-y-4 text-base pl-0 list-none">
                 {bonusAddons?.items?.map((item, index) => (
-                  <li key={index} className="flex gap-3 items-center text-black">
+                  <li
+                    key={index}
+                    className="flex gap-3 items-center text-black"
+                  >
                     <span className="text-xl leading-none">•</span>
                     <span className="font-bold text-[1vw]">{item}</span>
                   </li>
@@ -231,14 +237,57 @@ const Bonus = () => {
                 {investment?.paymentPlan}
               </p>
 
-              <motion.button
-                type="button"
-                className="w-full py-2 px-4 bg-green-700 text-white rounded hover:bg-green-800 transition"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Confirm Enroll
-              </motion.button>
+             <motion.button
+  type="button"
+  className="w-full py-2 px-4 bg-green-700 text-white rounded hover:bg-green-800 transition"
+  whileHover={{ scale: 1.02 }}
+  whileTap={{ scale: 0.98 }}
+  onClick={() => {
+    if (!window.Razorpay) {
+      toast.error("Razorpay SDK not loaded!");
+      return;
+    }
+
+    const options = {
+      key: "rzp_test_RIZb5le1ykNbRN", // Razorpay test key
+      amount: (selectedProgram.investment?.inrPrice || 0) * 100, // paisa
+      currency: "INR",
+      name: "JaGoCoach",
+      description: `Booking: ${selectedProgram.title}`,
+      handler: async function (response) {
+        try {
+          await fetch("https://jago-backend.onrender.com/api/v1/form/bookings", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: "Guest", // optional: add name/email input if needed
+              email: "guest@example.com",
+              package: selectedProgram.title,
+              paymentId: response.razorpay_payment_id,
+            }),
+          });
+
+          toast.success("✅ Booking confirmed!", { position: "top-right", autoClose: 3000 });
+
+          // ✅ Close modal after successful payment
+          setIsModalOpen(false);
+        } catch (error) {
+          toast.error("Booking save failed!");
+          console.error(error);
+        }
+      },
+      theme: { color: "#10b981" },
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+  }}
+>
+  Confirm Enroll
+</motion.button>
+
+
+
             </motion.div>
           </motion.div>
         )}
