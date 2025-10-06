@@ -22,7 +22,8 @@ const Bonus = () => {
   const { id } = useParams();
   const program = programsData[id - 1]; // get current program by id
 
-  if (!program) return <div className="text-center py-10">Program not found.</div>;
+  if (!program)
+    return <div className="text-center py-10">Program not found.</div>;
 
   const { bonusAddons, investment } = program;
 
@@ -58,27 +59,23 @@ const Bonus = () => {
             {/* CTA + Plan */}
             <div className="flex md:flex-col md:gap-1 gap-4">
               {/* CTA Button Section */}
-              <div className="pt-1">
-                <div
-                  className="px-4 sm:px-6 py-2 w-fit rounded-full bg-white flex flex-col sm:flex-row items-baseline sm:items-center space-y-1 sm:space-y-0 sm:space-x-2 transition duration-300 hover:scale-[1.01] cursor-pointer"
-                  style={{
-                    boxShadow: "-10px 10px 15px rgba(128,128,128,0.4)",
-                  }}
-                >
-                  <span className="text-sm sm:text-lg font-semibold text-gray-800">
-                    Enroll Now at {investment?.price || "$0"}
-                  </span>
-                  {investment?.discountedFrom && (
-                    <div className="flex gap-2 text-xs leading-none">
-                      <span className="text-gray-700 opacity-70">
-                        25% off
-                      </span>
-                      <span className="line-through text-gray-500 opacity-50">
-                        {investment.discountedFrom}
-                      </span>
-                    </div>
-                  )}
-                </div>
+              <div
+                className="px-4 sm:px-6 py-2 w-fit rounded-full bg-white flex flex-col sm:flex-row items-baseline sm:items-center space-y-1 sm:space-y-0 sm:space-x-2 transition duration-300 hover:scale-[1.01] cursor-pointer"
+                style={{
+                  boxShadow: "-10px 10px 15px rgba(128,128,128,0.4)",
+                }}
+              >
+                <span className="text-sm sm:text-lg font-semibold text-gray-800">
+                  Enroll Now at {investment?.price || "$0"}
+                </span>
+                {investment?.discountedFrom && (
+                  <div className="flex gap-2 text-xs leading-none">
+                    <span className="text-gray-700 opacity-70">25% off</span>
+                    <span className="line-through text-gray-500 opacity-50">
+                      {investment.discountedFrom}
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Plan Text */}
@@ -103,7 +100,9 @@ const Bonus = () => {
                   key={index}
                   className="flex gap-2 md:gap-3 items-center text-black"
                 >
-                  <span className="text-lg md:text-xl leading-none mr-2">•</span>
+                  <span className="text-lg md:text-xl leading-none mr-2">
+                    •
+                  </span>
                   <span className="font-bold text-[3.5vw] sm:text-[1vw] md:text-[1vw]">
                     {item}
                   </span>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Hero from './Hero'
-import AboutJago from './AboutJago'
-import SolutionOffer from './SolutionOffer'
-import WhoWeHelp from './WhoWeHelp.jsx'
-import NotSure from './NotSure.jsx'
-import NextChapter from './NextChapter.jsx'
-import Testimonials from './Testimonials.jsx'
-import Footer from '../Footer.jsx'
+import Hero from './Hero';
+import AboutJago from './AboutJago';
+import SolutionOffer from './SolutionOffer';
+import WhoWeHelp from './WhoWeHelp.jsx';
+import NotSure from './NotSure.jsx';
+import NextChapter from './NextChapter.jsx';
+import Testimonials from './Testimonials.jsx';
+import Footer from '../Footer.jsx';
 import Loader from '../../utils/Loader.jsx';
 
 const greetings = [
@@ -21,29 +21,36 @@ const greetings = [
 ];
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3200); // 3.2 seconds
-    return () => clearTimeout(timer);
+    // Check if loader has already been shown this session
+    const hasLoaded = sessionStorage.getItem('hasLoaded');
+
+    if (!hasLoaded) {
+      setLoading(true);
+      const timer = setTimeout(() => {
+        setLoading(false);
+        sessionStorage.setItem('hasLoaded', 'true'); // Mark as shown
+      }, 3200);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   if (loading) return <Loader greetings={greetings} />;
 
   return (
-    <div className='overflow-hidden'>
+    <div className="overflow-hidden">
       <Hero />
       <AboutJago />
       <SolutionOffer />
       <WhoWeHelp />
       <NotSure />
       <NextChapter />
-      <Testimonials/>
+      <Testimonials />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default Home;
