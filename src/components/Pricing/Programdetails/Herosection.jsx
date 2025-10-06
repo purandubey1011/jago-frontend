@@ -20,7 +20,7 @@ const Herosection = () => {
             {programsData[params.id - 1]?.heroSection?.subtitle}
           </p>
 
-          <button className="inline-block mt-[2vmin] bg-white text-[#0F2E15] font-semibold py-[1.5vh] md:py-[2vh] px-[10vw] md:px-[3vw] rounded-[5vmax] hover:bg-[#f5f5f5] transition-all duration-300 border border-[#0F2E15]/10">
+          <button className="inline-block mt-[2vmin] bg-white text-[#0F2E15] font-semibold py-[1.3vh] md:py-[2vh] px-[27vw] md:px-[3vw] rounded-[5vmax] hover:bg-[#f5f5f5] transition-all duration-300 border border-[#0F2E15]/10">
             {programsData[params.id - 1]?.heroSection?.buttonText}
           </button>
         </div>
@@ -29,11 +29,11 @@ const Herosection = () => {
         <img
           src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/start.png?updatedAt=1757792039803"
           alt="Star"
-          className="absolute top-[63vh] md:top-[8vh] right-[22vw] md:right-[40vw] w-[6vmax] md:w-[4vmax] h-auto z-[3] object-contain"
+          className="absolute top-[53vh] md:top-[8vh] right-[22vw] md:right-[40vw] w-[6vmax] md:w-[4vmax] h-auto z-[3] object-contain"
         />
 
         {/* Right Image (absolute position, bottom-right corner) */}
-        <div className="absolute bottom-[0vh] right-[10vw] w-[40vmax] md:w-[55vmax] h-auto z-[1]">
+        <div className="absolute bottom-[0vh] right-[12vw] md:right-[10vw] w-[53vmax] md:w-[55vmax] h-auto z-[1]">
           <img
             src="https://ik.imagekit.io/b9tt0xvd7/Falverra/manimg.png?updatedAt=1759573907161"
             alt="Coach"
