@@ -49,7 +49,7 @@ const AboutJago = () => {
         <div className="rounded-lg w-full max-w-[80vw] md:max-w-[30vw] md:h-[70vh] h-[55vh] overflow-hidden">
 
         <img
-          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/aboutjagocoach.jpg?updatedAt=1759672427989"
+          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/arise.png?updatedAt=1759733610704"
           alt="About Jago"
           className=" object-cover w-full h-full"
           />

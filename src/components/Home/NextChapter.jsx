@@ -28,9 +28,9 @@ const NextChapter = () => {
     >
       {/* Background Image */}
       <motion.img
-  src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/nextchapterimg.jpg?updatedAt=1759672770584"
+  src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/next%20chapter.png?updatedAt=1759733745332"
   alt="Next Chapter"
-  className="w-full h-full object-cover rounded-t-3xl object-[50%_48%]"
+  className="w-full h-full object-cover rounded-t-3xl object-[50%_30%]"
   initial={{ opacity: 0, scale: 1.05 }}   // start thoda zoom aur invisible
   whileInView={{ opacity: 1, scale: 1 }}  // scroll me fade-in aur zoom-out
   transition={{ duration: 1.2, ease: "easeOut" }}

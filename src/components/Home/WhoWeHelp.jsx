@@ -86,7 +86,7 @@ const WhoWeHelp = () => {
       <div className="relative">
         <img
           ref={imageRef}
-          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/whowehelp.jpg?updatedAt=1759672681289"
+          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/who%20we%20help.png?updatedAt=1759733698881"
           alt="Who We Help"
           className="w-full h-[90vh] sm:h-[75vh] md:h-[80vh] object-cover object-top"
         />
