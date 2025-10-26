@@ -52,7 +52,7 @@ const NextChapter = () => {
             variants={childVariants}
             className="bg-white text-gray-900 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100"
           >
-            Request a callback
+            Book a Free 15-minute Call
               </motion.button>
         </Link>
       </div>

@@ -40,10 +40,10 @@ const GlobalExperienceSection = () => {
   <div className="flex flex-col items-start space-x-2">
     <PiSparkleFill className="text-green-900 mt-1 text-lg" />
     <div>
-      <h3 className="font-semibold text-green-900 text-base sm:text-lg mb-2">
+      <h3 className="font-semibold text-green-900 text-lg sm:text-xl mb-2">
         What sets JaGoCoach apart?
       </h3>
-      <p className="text-gray-700 text-[3vw] sm:text-sm leading-relaxed">
+      <p className="text-gray-700 text-[3.5vw] sm:text-[1.07vw] leading-relaxed">
          JaGoCoach takes a bespoke approach, blending timeless insights — from MentalPhysics, Certified Coaching, Breathwork, Reiki, and proven Psychological Frameworks — into modern clarity for you. <br /> <br />
 JaGoCoach’s tools bespoke and simple, and impact is lasting. Just real, confidentiality assured conversations, practical shifts, and emotional precision. This is coaching for humans who want to rise — not rush. Reflect — not retreat. And design a life that feels true. Real talk. Simple practices. Big shifts. This isn’t therapy. It’s ignition — with a spark of soul and a dash of strategy.
       </p>

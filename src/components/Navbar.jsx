@@ -97,7 +97,7 @@ const Navbar = () => {
         <Link
           to="/"
           onClick={() => setOpen(false)}
-          className="block w-[120px] sm:w-[140px] md:w-[160px]"
+          className="block w-[140px] sm:w-[140px] md:w-[160px]"
         >
           <img
             src={
@@ -106,7 +106,7 @@ const Navbar = () => {
                 : "https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/jago%20logo%20white.png?updatedAt=1759678906840"
             }
             alt="JaGoCoach Logo"
-            className="w-2/3 h-auto object-contain transition-transform duration-300 hover:scale-105"
+            className="w-3/4 h-auto object-contain transition-transform duration-300 hover:scale-105"
           />
         </Link>
       </motion.div>

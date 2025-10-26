@@ -59,7 +59,7 @@ const Footer = () => {
               JaGoCoach™
             </h2>
             <p className="text-sm text-gray-300 mb-6">
-              Transformation helps with Coaching.
+              Coaching helps with Transformation.
             </p>
           </div>
           <p className="text-xs text-gray-400">© 2025 JaGoCoach</p>

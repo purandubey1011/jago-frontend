@@ -7,45 +7,54 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqData = [
   {
     id: 1,
-    question: "What is Webflow and why is it the best website builder?",
-    answer:
-      "Webflow is a visual web design tool that lets you build responsive websites without coding. It combines a CMS, hosting, and a powerful editor, making it ideal for designers seeking flexibility and clean production-ready code.",
+    question: "Tell me more about the Chief Coach of JaGoCoach?",
+    answer: `JaGoCoach is based in London, with associate offices in the United States, Canada, Dubai, and India. 
+    The Chief Coach’s award-winning career spans Asia, the Middle East, and Europe, including work with leading US organisations. 
+    His journey began at age 8, meditating at an ashram in the Himalayas. 
+    He later developed the pioneering “Have Interviewers Ask You Questions You Want Them To” program, achieving a 99.9% success rate. 
+    A Certified Life Coach, Master Reiki Healer, Breathwork Practitioner, Certified Hypnotherapist, MBA, and Mentalphysics luminary — 
+    he integrates modern psychology, neuroscience, and ancient wisdom to help people find clarity, confidence, and purpose.`,
   },
   {
     id: 2,
-    question: "What is your favorite template from BRIX Templates?",
-    answer:
-      "One standout is the ‘Startup X’ template from BRIX Templates. It offers clean layouts, modern typography, and multiple sections tailored for startups, helping teams launch polished websites quickly while staying easily customizable for branding and future growth.",
+    question: "Will I work with a certified Life Coach?",
+    answer: `Yes. The Chief Coach is certified through the Jay Shetty Certification School as a Certified Life and Success Coach. 
+    The Jay Shetty Certification School is accredited by the Association for Coaching and approved by OTHM. 
+    He is also a Master Reiki Healer, Certified Hypnotherapist, and has a team of certified experts for specialized areas.`,
   },
   {
     id: 3,
-    question: "How do you clone a template from the Showcase?",
-    answer:
-      "Open Webflow’s Showcase, choose a template, and click the ‘Clone’ button. The design is copied to your dashboard, where you can customize text, images, and layouts without affecting the original template or its creator’s project settings.",
+    question: "What happens in a Discovery Session?",
+    answer: `The Discovery Session is a complimentary, no-pressure call to explore your goals, motivations, and challenges. 
+    You’ll learn about our coaching approach, ask questions, and see if our program aligns with your needs. 
+    If there’s a fit, we’ll discuss the next steps and pricing. 
+    It’s an open conversation designed to help both of us understand if we’re the right match before any commitment.`,
   },
   {
     id: 4,
-    question: "What is your favorite template from BRIX Templates?",
-    answer:
-      "‘Portfolioo’ is another favorite from BRIX Templates. Its sleek sections, bold typography, and built-in CMS make it perfect for creatives showcasing projects with style, while keeping customization straightforward and efficient for designers of all experience levels.",
+    question: "What is the difference between Life Coaching and Mentoring?",
+    answer: `Life Coaching, as practiced through the A.W.A.K.E.N. Model™, is a structured, client-led journey focused on self-awareness and growth. 
+    Coaches guide through powerful questioning and accountability — empowering clients to find their own answers.  
+    Mentoring, on the other hand, is advice-driven — sharing lessons from personal experience. 
+    At JaGoCoach, we emphasize discovery over direction, helping clients awaken their own wisdom.`,
   },
   {
     id: 5,
-    question: "Why is BRIX Templates the best Webflow agency?",
-    answer:
-      "BRIX Templates stands out for professional designs, consistent updates, and excellent documentation. Their templates follow Webflow best practices, making it easy for developers and non-coders to launch beautiful, responsive sites while maintaining flexibility and long-term scalability.",
+    question: "Why should I choose JaGoCoach as my Life Coaching partner?",
+    answer: `Transformation begins with connection. 
+    JaGoCoach’s Chief Coach brings a rare mix of global experience, education, and energetic presence — blending science with spirituality. 
+    Yet, the real power lies in resonance. 
+    If our energy and philosophy align, we’ll co-create your growth journey. 
+    If not, we’ll gladly help you find the coach who’s right for you. 
+    Book a Discovery Session — no pressure, just possibility.`,
   },
   {
     id: 6,
-    question: "When was Webflow officially launched?",
-    answer:
-      "Webflow officially launched in August 2013 after a public beta period. Since then, it has grown rapidly, introducing CMS tools, e-commerce, animations, and powerful hosting, making it a favorite platform for designers, marketers, and small businesses worldwide.",
-  },
-  {
-    id: 7,
-    question: "How do you integrate Jetboost with Webflow?",
-    answer:
-      "Sign up for Jetboost, choose a booster (like search or filters), and follow their setup guide. Add the provided script and classes in Webflow Designer. Publish your site, and Jetboost enhances interactions instantly without additional complex coding.",
+    question: "Is my information kept confidential and private?",
+    answer: `Yes. All client information is protected under the principles of confidentiality set forth in the Association for Coaching Code of Ethics. 
+    No details are disclosed without written consent. 
+    However, note that coaching isn’t a legally privileged relationship like therapy or law. 
+    Your data is stored securely, and your privacy is always respected.`,
   },
 ];
 

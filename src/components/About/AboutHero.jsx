@@ -66,11 +66,11 @@ const AboutHero = () => {
         {/* Top row */}
         <div
           ref={topRowRef}
-          className="flex items-center justify-between w-full mb-5 md:mb-8"
+          className="flex items-center justify-between w-full mb-5 md:mb-0"
         >
           <div className="flex items-center gap-2">
-            <span className="text-white/80 text-sm sm:text-xl font-medium mb-5">
-              about JaGoCoach
+            <span className="text-white/80 text-md sm:text-xl font-medium mb-5">
+              About JaGoCoach
             </span>
           </div>
         </div>
@@ -79,15 +79,10 @@ const AboutHero = () => {
         <div className="flex justify-center md:justify-end">
           <h1
             ref={headingRef}
-            className="text-4xl  md:text-6xl font-bold leading-tight text-white max-w-lg md:max-w-[75vw] text-left"
+            className="text-xl  md:text-[2.2vw] font-bold leading-relaxed text-white max-w-lg md:max-w-[75vw] text-left"
           >
           
-         JaGo means to awaken.{" "}
-            <span className="text-gray-400 font-semibold">
-              To rise above confusion, to step into purpose, to live with
-              balance.
-            </span>{" "}
-            It’s not about quick fixes. It’s about lasting clarity.
+          JaGo means Awaken. JaGoCoach is a call to awaken. Whether you’re stuck, curious, or ready to level up — JaGoCoach is your ignition. Transform yourself and benefit from timeless insights — from Certified Coaching, MentalPhysics, Breathwork, Reiki, Hypnotherapy, Meditation and proven Psychological Frameworks — into a clear, actionable path. Cut through the noise. Reconnect with purpose. Design a life that feels true. This isn’t therapy. It’s ignition.
 
           </h1>
         </div>
