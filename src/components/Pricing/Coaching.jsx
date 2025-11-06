@@ -14,9 +14,9 @@ const coachingData = [
       "Covers Awareness → Beliefs & Big Goals → Change",
       "Bonus: Breathwork, Meditation, Persona Mapping, Voice-note check-ins",
     ],
-    price: "INR 2,99,999",
-    oldPrice: "INR 5,00,000",
-    note: "Payment Plan: 3 × $1,200",
+    price: "£2,999",
+    oldPrice: "£5,000",
+    note: "Payment Plan: 3 × £1,200",
     popular: true,
   },
   {
@@ -27,8 +27,8 @@ const coachingData = [
       "Framework: Awareness → Audit → Reset",
       "Bonus: Follow-up check-in",
     ],
-    price: "INR 49,999",
-    oldPrice: "INR 69,999",
+    price: "£499",
+    oldPrice: "£699",
     note: "Includes: 3 sessions + bonus check-in",
     popular: false,
   },
@@ -37,12 +37,13 @@ const coachingData = [
     title: "JaGoCoach Lifeline: Emergency Call",
     subtitle: "45-min focused virtual call",
     details: ["For tough decisions, overwhelm, or urgent mindset reset"],
-    price: "INR 19,999",
-    oldPrice: "INR 29,999",
+    price: "£199",
+    oldPrice: "£299",
     note: "Quick access, fast turnaround",
     popular: false,
   },
 ];
+
 
 const Coaching = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

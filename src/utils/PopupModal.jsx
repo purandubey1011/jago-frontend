@@ -45,7 +45,7 @@ const PopupModal = () => {
                 Feeling Stuck or Unmotivated?
               </h4>
               <h2 className="text-2xl font-bold text-[#0c2b16] mb-4">
-                Book a Free 20-Minute Session
+                Book a Free 15-Minute Session
               </h2>
               <p className="text-gray-700 text-sm mb-4 leading-relaxed">
                 Take the first step towards unlocking your full potential.

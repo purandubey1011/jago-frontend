@@ -4,7 +4,7 @@ import "react-calendar/dist/Calendar.css";
 import { FiClock, FiPhone } from "react-icons/fi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { motion, AnimatePresence } from "framer-motion"; 
+import { motion, AnimatePresence } from "framer-motion";
 
 const BookingCalendar = ({ id }) => {
   const [date, setDate] = useState(new Date());
@@ -16,12 +16,13 @@ const BookingCalendar = ({ id }) => {
   });
   const [bookedSlots, setBookedSlots] = useState([]);
 
-  const slots = [
-    "4:00 - 5:00 PM",
-    "5:00 - 6:00 PM",
-    "7:00 - 8:00 PM",
-    "8:00 - 9:00 PM",
+    const slots = [
+    "10:30 - 11:30 AM",
+    "11:30 AM - 12:30 PM",
+    "1:30 - 2:30 PM",
+    "2:30 - 3:30 PM",
   ];
+
 
   // Fetch already booked slots for the selected date
   useEffect(() => {
@@ -63,17 +64,20 @@ const BookingCalendar = ({ id }) => {
       handler: async function (response) {
         try {
           // save booking to backend
-          await fetch("https://jago-backend.onrender.com/api/v1/form/bookings", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              name: formData.name,
-              email: formData.email,
-              date: date.toDateString(),
-              slot: formData.slot,
-              paymentId: response.razorpay_payment_id,
-            }),
-          });
+          await fetch(
+            "https://jago-backend.onrender.com/api/v1/form/bookings",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                name: formData.name,
+                email: formData.email,
+                date: date.toDateString(),
+                slot: formData.slot,
+                paymentId: response.razorpay_payment_id,
+              }),
+            }
+          );
 
           // ✅ Update bookedSlots locally
           setBookedSlots((prev) => [...prev, formData.slot]);
@@ -104,27 +108,47 @@ const BookingCalendar = ({ id }) => {
   // Framer Motion Variants
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
   };
 
   const headingVariants = {
     hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: "easeOut" },
+    },
   };
 
   const cardVariants = {
     hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease: "easeOut", delay: 0.3 } },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.7, ease: "easeOut", delay: 0.3 },
+    },
   };
 
   const leftPanelVariants = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   const rightPanelVariants = {
     hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.2 } },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.2 },
+    },
   };
 
   const modalBackdropVariants = {
@@ -134,7 +158,11 @@ const BookingCalendar = ({ id }) => {
 
   const modalContentVariants = {
     hidden: { y: "-100vh", opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 100, damping: 20 } },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { type: "spring", stiffness: 100, damping: 20 },
+    },
   };
 
   return (
@@ -144,7 +172,7 @@ const BookingCalendar = ({ id }) => {
       variants={sectionVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{amount: 0.2 }}
+      viewport={{ amount: 0.2 }}
     >
       <ToastContainer />
 
@@ -161,26 +189,36 @@ const BookingCalendar = ({ id }) => {
           variants={cardVariants}
         >
           {/* Left Info */}
+          {/* Left Info */}
           <motion.div className="flex-1" variants={leftPanelVariants}>
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-12 w-12 rounded-md bg-blue-500 flex items-center justify-center text-white font-bold text-lg">
-                A
+              <div className="h-18 w-18 rounded-md bg-blue-500 flex items-center justify-center text-white font-bold text-lg">
+                <img
+                  src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/jago%20O%20white.png?updatedAt=1762417860972"
+                  alt=""
+                  className="p-1"
+                />
               </div>
-              <h3 className="text-lg font-semibold">ACME Inc.</h3>
+              <h3 className="text-lg font-semibold">JaGoCoach</h3>
             </div>
 
-            <h4 className="text-2xl font-bold mb-5">Book a powerful session</h4>
+            <h4 className="text-2xl font-bold mb-5">
+              Book a Free 15-Minute 
+            </h4>
 
             <div className="flex items-center gap-2 mb-2 text-gray-700">
               <FiClock className="text-gray-600" /> <span>15 min</span>
             </div>
             <div className="flex items-center gap-2 text-gray-700">
-              <FiPhone className="text-gray-600" /> <span>Phone call</span>
+              <FiPhone className="text-gray-600" /> <span>Phone Call</span>
             </div>
 
+            {/* ✅ Updated Real Text */}
             <p className="mt-5 text-gray-600 text-sm leading-relaxed max-w-xs">
-              This is an example of a meeting you would have with a potential
-              customer to demonstrate your product.
+              In this free clarity session, you'll connect with a certified
+              JaGoCoach to explore your goals, challenges, and the next steps to
+              awaken your potential. No charges, just genuine guidance to help
+              you start your transformation journey.
             </p>
           </motion.div>
 
@@ -198,12 +236,19 @@ const BookingCalendar = ({ id }) => {
               />
             </div>
 
+            {/* ✅ UK Time Zone Section */}
             <div className="mt-5 pt-4 border-t border-gray-200 text-xs text-gray-500">
               Time zone:{" "}
               <span className="font-medium text-gray-700">
-                Central European Time
+                United Kingdom (GMT / BST)
               </span>{" "}
-              (8:11 pm)
+              (
+              {new Date().toLocaleTimeString("en-GB", {
+                timeZone: "Europe/London",
+                hour: "2-digit",
+                minute: "2-digit",
+              })}{" "}
+              local time)
             </div>
 
             <motion.button
@@ -239,7 +284,9 @@ const BookingCalendar = ({ id }) => {
                 ✕
               </button>
 
-              <h3 className="text-xl font-semibold mb-4">Complete Your Booking</h3>
+              <h3 className="text-xl font-semibold mb-4">
+                Complete Your Booking
+              </h3>
 
               <form className="space-y-4" onSubmit={handlePayment}>
                 <input
@@ -278,7 +325,11 @@ const BookingCalendar = ({ id }) => {
                 >
                   <option value="">Select slot</option>
                   {slots.map((s) => (
-                    <option key={s} value={s} disabled={bookedSlots.includes(s)}>
+                    <option
+                      key={s}
+                      value={s}
+                      disabled={bookedSlots.includes(s)}
+                    >
                       {s} {bookedSlots.includes(s) ? "(Booked)" : ""}
                     </option>
                   ))}

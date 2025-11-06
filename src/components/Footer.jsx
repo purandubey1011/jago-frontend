@@ -42,11 +42,11 @@ const Footer = () => {
 
   return (
     <motion.footer
-      className="bg-[#0c2b16] text-gray-100 py-12 px-6"
+      className="bg-[#0c2b16] text-gray-100 py-12 px-6 relative"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ amount: 0.5, once: true }} // Trigger when 30% of the footer is in view
+      viewport={{ amount: 0.5, once: true }}
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-16">
         {/* === Left column === */}
@@ -55,14 +55,32 @@ const Footer = () => {
           className="w-full md:w-1/3 flex flex-col gap-2 md:gap-10"
         >
           <div>
-            <h2 className="text-xl font-semibold mb-2 tracking-wide">
-              JaGoCoach™
-            </h2>
-            <p className="text-sm text-gray-300 mb-6">
+            <div className="text-xl font-semibold mb-8 tracking-wide">
+              <img
+                src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/jago%20logo%20white.png?updatedAt=1759678906840"
+                alt="JaGoCoach Logo"
+                className="w-28"
+              />
+            </div>
+            <p className="text-sm text-gray-300 mb-0">
               Coaching helps with Transformation.
             </p>
           </div>
-          <p className="text-xs text-gray-400">© 2025 JaGoCoach</p>
+
+          {/* ✅ Updated Footer Rights Section */}
+          <div>
+            <p className="text-xs text-gray-400">© 2025 JaGoCoach</p>
+            <p className="text-xs text-gray-400 mt-1">
+              All Rights Reserved |{" "}
+              <Link to="/terms" className="hover:text-white transition">
+                Terms & Conditions
+              </Link>{" "}
+              |{" "}
+              <Link to="/privacy" className="hover:text-white transition">
+                Privacy Policy
+              </Link>
+            </p>
+          </div>
         </motion.div>
 
         {/* Divider */}
@@ -128,75 +146,84 @@ const Footer = () => {
           variants={childVariants}
           className="w-full md:w-1/3 flex flex-col gap-5"
         >
-          <div>
-            <h3 className="font-semibold text-sm mb-1">Contact Us</h3>
-            <p className="text-sm text-gray-300">+91 08041015439</p>
-          </div>
+          {/* ✅ Removed phone number section */}
           <div>
             <h3 className="font-semibold text-sm mb-1">Email Us</h3>
-            <p className="text-sm text-gray-300">hello@example.com</p>
+            <p className="text-sm text-gray-300">contact@jagocoach.com</p>
           </div>
-         <motion.div
-  className="flex gap-3 pt-1"
-  variants={{
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }}
->
-  <motion.a
-    href="https://facebook.com/jagocoach"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="p-2 border border-white rounded-full text-white bg-[#0c2b16] hover:bg-[#124121] transition"
-    variants={socialIconVariants}
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.9 }}
-  >
-    <FaFacebookF />
-  </motion.a>
 
-  <motion.a
-    href="https://linkedin.com/company/jagocoach"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="p-2 border border-white rounded-full text-white bg-[#0c2b16] hover:bg-[#237f40] transition"
-    variants={socialIconVariants}
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.9 }}
-  >
-    <FaLinkedinIn />
-  </motion.a>
+          <motion.div
+            className="flex gap-3 pt-1"
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+          >
+            <motion.a
+              href="https://facebook.com/jagocoach"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 border border-white rounded-full text-white bg-[#0c2b16] hover:bg-[#124121] transition"
+              variants={socialIconVariants}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <FaFacebookF />
+            </motion.a>
 
-  <motion.a
-    href="https://instagram.com/jagocoach"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="p-2 border border-white rounded-full text-white bg-[#0c2b16] hover:bg-[#237f40] transition"
-    variants={socialIconVariants}
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.9 }}
-  >
-    <FaInstagram />
-  </motion.a>
+            <motion.a
+              href="https://linkedin.com/company/jagocoach"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 border border-white rounded-full text-white bg-[#0c2b16] hover:bg-[#237f40] transition"
+              variants={socialIconVariants}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <FaLinkedinIn />
+            </motion.a>
 
-  <motion.a
-    href="https://youtube.com/@jagocoach"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="p-2 border border-white rounded-full text-white bg-[#0c2b16] hover:bg-[#237f40] transition"
-    variants={socialIconVariants}
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.9 }}
-  >
-    <FaYoutube />
-  </motion.a>
-</motion.div>
+            <motion.a
+              href="https://instagram.com/jagocoach"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 border border-white rounded-full text-white bg-[#0c2b16] hover:bg-[#237f40] transition"
+              variants={socialIconVariants}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <FaInstagram />
+            </motion.a>
 
-
+            <motion.a
+              href="https://youtube.com/@jagocoach"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 border border-white rounded-full text-white bg-[#0c2b16] hover:bg-[#237f40] transition"
+              variants={socialIconVariants}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <FaYoutube />
+            </motion.a>
+          </motion.div>
         </motion.div>
+      </div>
+
+      {/* ✅ Bottom Center - Developed by Falverra */}
+      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-[12px] text-gray-400">
+        Developed by{" "}
+        <a
+          href="https://falverra.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-300 hover:text-white transition font-medium"
+        >
+          Falverra
+        </a>
       </div>
     </motion.footer>
   );
