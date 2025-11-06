@@ -3,6 +3,8 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import ScrollToTop from './utils/ScrollToTop.jsx'
+import './utils/i18n.js'
+ // 👈 import here once
 
 createRoot(document.getElementById('root')).render(
      <BrowserRouter>
