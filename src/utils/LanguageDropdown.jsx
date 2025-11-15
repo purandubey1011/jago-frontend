@@ -27,7 +27,8 @@ const LanguageDropdown = ({ textColor, isLightBg }) => {
 
   return (
     <div className="relative w-40">
-      <Listbox value={selected} onChange={handleChange}>
+      {/* <Listbox value={selected} onChange={handleChange}> */}
+      <Listbox >
         <div className="relative">
           <Listbox.Button
             className={`rounded-full flex items-center justify-between
