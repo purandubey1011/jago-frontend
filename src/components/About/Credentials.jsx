@@ -83,7 +83,7 @@ const Credentials = () => {
               />
             </div>
             <div className="px-4 pb-6 pt-2">
-              <p className="text-white text-sm leading-snug">{item.text}</p>
+              <p className="text-white text-sm md:text-[1vw] leading-snug">{item.text}</p>
             </div>
           </motion.div>
         ))}

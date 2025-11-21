@@ -76,7 +76,7 @@ const NotSure = () => {
           <h2 ref={headingRef} className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 mb-3 leading-snug font-serif">
             Not sure if coaching is <br className="hidden sm:block" /> for you?
           </h2>
-          <p ref={textRef} className="text-gray-800 text-sm sm:text-base">
+          <p ref={textRef} className="text-gray-800 text-sm sm:text-[1.3vw]">
             Take our free online self-assessment and discover where you stand today
           </p>
         </div>

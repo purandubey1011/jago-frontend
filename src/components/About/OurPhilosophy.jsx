@@ -76,7 +76,7 @@ const OurPhilosophy = () => {
 
       {/* Paragraph */}
       <motion.p
-        className="max-w-md md:max-w-3xl text-[#0F2E15]/80 text-sm sm:text-base md:text-lg leading-relaxed"
+        className="max-w-md md:max-w-3xl text-[#0F2E15]/80 text-sm md:text-[1.25vw] md:text-lg leading-relaxed"
         variants={textVariants}
       >
         JaGoCoach listens, connects, and guides. Every conversation is a safe space — empathetic, confidential, and tailored to you. Because real change starts with real connection.

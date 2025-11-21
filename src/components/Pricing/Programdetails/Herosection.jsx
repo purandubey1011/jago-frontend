@@ -19,62 +19,48 @@ const Herosection = () => {
 
   return (
     <motion.section
-      className="relative flex items-start pt-30 md:pt-0 md:items-center justify-start min-h-[90vh] bg-[#DDFE47] overflow-hidden"
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.3 }}
+  className="relative flex flex-col items-center justify-center min-h-[90vh] bg-[#DDFE47] overflow-hidden text-center px-6"
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true, amount: 0.3 }}
+>
+  {/* Center Content */}
+  <motion.div variants={fadeUp} className="relative z-[2] w-full max-w-[900px] space-y-[3vmin]">
+    
+    <motion.h2
+      variants={fadeUp}
+      transition={{ delay: 0.1 }}
+      className="font-serif font-extrabold text-[#0F2E15] leading-[1.2] text-[3.5vmax]"
     >
-      {/* Left Content */}
-      <motion.div
-        variants={fadeUp}
-        className="relative z-[2] w-[80vw] md:w-[45vw] ml-[8vw] text-center md:text-left space-y-[3vmin]"
-      >
-        <motion.h2
-          variants={fadeUp}
-          transition={{ delay: 0.1 }}
-          className="font-serif font-extrabold text-[#0F2E15] leading-[1.2] text-[3.5vmax]"
-        >
-          {programsData[params.id - 1]?.heroSection?.title}
-        </motion.h2>
+      {programsData[params.id - 1]?.heroSection?.title}
+    </motion.h2>
 
-        <motion.p
-          variants={fadeUp}
-          transition={{ delay: 0.25 }}
-          className="text-[#0F2E15]/80 font-medium text-center md:text-left text-[4vmin] sm:text-[3.5vmin] md:text-[1.2vmax] leading-[1.4] md:max-w-[40vmax]"
-        >
-          {programsData[params.id - 1]?.heroSection?.subtitle}
-        </motion.p>
+    <motion.p
+      variants={fadeUp}
+      transition={{ delay: 0.25 }}
+      className="text-[#0F2E15]/80 font-medium text-[4vmin] sm:text-[3.5vmin] md:text-[1.2vmax] leading-[1.4]"
+    >
+      {programsData[params.id - 1]?.heroSection?.subtitle}
+    </motion.p>
 
-        <motion.button
-          variants={fadeUp}
-          transition={{ delay: 0.5 }}
-          className="inline-block mt-[2vmin] bg-white text-[#0F2E15] font-semibold py-[1.3vh] md:py-[2vh] px-[27vw] md:px-[3vw] rounded-[5vmax] hover:bg-[#f5f5f5] duration-300 border border-[#0F2E15]/10"
-        >
-          {programsData[params.id - 1]?.heroSection?.buttonText}
-        </motion.button>
-      </motion.div>
+    <motion.button
+      variants={fadeUp}
+      transition={{ delay: 0.5 }}
+      className="inline-block bg-white text-[#0F2E15] font-semibold py-[1.3vh] md:py-[2vh] px-[22vw] sm:px-[10vw] md:px-[4vw] rounded-[5vmax] hover:bg-[#f5f5f5] duration-300 border border-[#0F2E15]/10"
+    >
+      {programsData[params.id - 1]?.heroSection?.buttonText}
+    </motion.button>
 
-      {/* Star Icon */}
-      <motion.img
-        variants={fadeUp}
-        transition={{ delay: 0.55, duration: 0.8 }}
-        src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/start.png?updatedAt=1757792039803"
-        alt="Star"
-        className="absolute top-[53vh] md:top-[8vh] right-[22vw] md:right-[40vw] w-[6vmax] md:w-[4vmax] h-auto z-[3] object-contain"
-      />
+  </motion.div>
 
-      {/* Right Image (man) */}
-      <motion.div
-        variants={zoomIn}
-        transition={{ delay: 0.3 }}
-        className="absolute bottom-[0vh] right-[12vw] md:right-[10vw] w-[53vmax] md:w-[55vmax] h-auto z-[1]"
-      >
-        <img
-          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/manimg.png?updatedAt=1759573907161"
-          alt="Coach"
-          className="w-full h-auto object-contain"
-        />
-      </motion.div>
+  {/* Star Icon (optional) */}
+  <motion.img
+    variants={fadeUp}
+    transition={{ delay: 0.55, duration: 0.8 }}
+    src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/start.png?updatedAt=1757792039803"
+    alt="Star"
+    className="absolute bottom-[5vh] right-[10vw] w-[6vmax] md:w-[4vmax] h-auto z-[3]"
+  />
 
       {/* Background Circle */}
       <motion.div

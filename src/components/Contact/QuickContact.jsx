@@ -52,26 +52,26 @@ const QuickContact = () => {
           <motion.div variants={itemVariants}>
             <div className="flex items-center gap-3 mb-2">
               <FiMapPin className="text-xl" />
-              <h4 className="font-medium">Address</h4>
+              <h4 className="font-medium md:text-[1.2vw]">Address</h4>
             </div>
-            <p className="text-sm">UK</p>
+            <p className="text-sm md:text-md">UK</p>
           </motion.div>
 
           {/* Contact details */}
           <motion.div variants={itemVariants}>
             <div className="flex items-center gap-3 mb-2">
               <FiPhoneCall className="text-xl" />
-              <h4 className="font-medium">Contact Details</h4>
+              <h4 className="font-medium md:text-[1.2vw]">Contact Details</h4>
             </div>
-            <p className="text-sm">
+            <p className="text-sm md:text-[1vw]">
               Booking Inquiries:{" "}
               <a href="tel:+9711234567" className="underline">
                 +971 123 4567
               </a>
             </p>
-            <p className="text-sm">
+            <p className="text-sm md:text-[1vw]">
               Support:{" "}
-              <a href="tel:+9719876543" className="underline">
+              <a href="tel:+9719876543" className="underline ">
                 +971 987 6543
               </a>
             </p>
@@ -81,9 +81,9 @@ const QuickContact = () => {
           <motion.div variants={itemVariants}>
             <div className="flex items-center gap-3 mb-2">
               <FiMail className="text-xl" />
-              <h4 className="font-medium">Email Us</h4>
+              <h4 className="font-medium md:text-[1.2vw]">Email Us</h4>
             </div>
-            <p className="text-sm">
+            <p className="text-sm md:text-[1vw]">
               General Inquiries:{" "}
               <a href="mailto:support@jagocoach.com" className="underline">
                 support@jagocoach.com

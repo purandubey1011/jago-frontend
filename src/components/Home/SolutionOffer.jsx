@@ -94,7 +94,7 @@ const SolutionOffer = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">
             Solutions That Work
           </h2>
-          <p className="text-gray-600 mt-2 max-w-3xl text-sm sm:text-base">
+          <p className="text-gray-600 mt-2 max-w-3xl text-sm sm:text-lg">
             From burnout to breakthrough, confusion to clarity — JaGoCoach helps you take command of your life. Whether you're recalibrating your mindset, redefining your mission, making your next big move, or just need a confidential chat, we deliver tools that work and results that last. 
           </p>
         </div>
@@ -137,8 +137,8 @@ const SolutionOffer = () => {
           className="flex flex-col items-start max-w-xs"
         >
           {item.icon}
-          <p className="font-semibold text-gray-900">{item.title}</p>
-          <p className="text-gray-600 mt-1 text-sm sm:text-base">{item.description}</p>
+          <p className="font-semibold text-gray-900 text-sm sm:text-lg">{item.title}</p>
+          <p className="text-gray-600 mt-1 text-sm sm:text-lg">{item.description}</p>
         </div>
       ))}
     </div>

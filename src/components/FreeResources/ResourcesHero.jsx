@@ -81,7 +81,7 @@ const Resources = () => {
         </motion.h1>
 
         <motion.p
-          className="res-paragraph mt-5 sm:mt-6 max-w-xl text-gray-700 text-base sm:text-lg relative z-10"
+          className="res-paragraph mt-5 sm:mt-6 max-w-xl text-gray-700 text-base md:text-[1.3vw] relative z-10"
           variants={itemVariants}
         >
           Explore free tools, practices, and reflections to begin your journey.

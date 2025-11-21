@@ -195,19 +195,20 @@ const Navbar = () => {
               onClick={() => setOpen(false)}
             />
             <motion.div
-              key="menu"
-              ref={menuRef}
-              variants={mobileMenuVariants}
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              className="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-black text-white flex flex-col items-center justify-start pt-24 pb-8 space-y-6 text-lg shadow-lg z-50 xl:hidden overflow-y-auto"
-            >
+  key="menu"
+  ref={menuRef}
+  variants={mobileMenuVariants}
+  initial="hidden"
+  animate="visible"
+  exit="hidden"
+  className="fixed top-[0px] right-0 h-[calc(100vh-72px)] w-3/4 max-w-sm bg-black text-white flex flex-col items-center justify-start pb-8 space-y-6 text-lg shadow-lg z-50 xl:hidden overflow-y-auto"
+>
+
               <motion.div
                 variants={staggerContainerVariants}
                 initial="hidden"
                 animate="visible"
-                className="flex flex-col items-center space-y-4 w-full"
+                className="flex flex-col items-center space-y-4 w-full pt-[100px]"
               >
                 {navLinksData.map((link) => (
                   <motion.div
@@ -235,7 +236,7 @@ const Navbar = () => {
                   variants={mobileMenuItemVariants}
                   className="sm:w-[21vw] md:w-[15vw] lg:w-[13vw] text-center relative"
                 >
-                  <LanguageDropdown />
+                  <CountryDropdown />
                 </motion.div>
 
                 <motion.div

@@ -124,7 +124,7 @@ const WhoWeHelp = () => {
         </div>
 
         {/* description */}
-        <p ref={headingRef} className="text-white/90 max-w-3xl mb-6 text-sm sm:text-base md:text-lg">
+        <p ref={headingRef} className="text-white/90 max-w-3xl mb-6 text-sm sm:text-base md:text-xl">
           JaGoCoach works with humans ready to reconnect, realign, and reclaim
           clarity. Whether you're navigating change or craving deeper purpose,
           we meet you where you are.

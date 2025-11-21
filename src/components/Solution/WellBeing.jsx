@@ -72,7 +72,7 @@ const WellBeing = () => {
             <span className="italic font-medium">Well Being</span> Resources
           </motion.h2>
           <motion.p
-            className="text-white mt-3 max-w-2xl mx-auto text-base md:text-lg"
+            className="text-white mt-3 max-w-2xl mx-auto text-base md:text-[1.2vw]"
             variants={subheadingVariants}
             initial="hidden"
             whileInView="visible"
@@ -94,7 +94,7 @@ const WellBeing = () => {
               viewport={{ amount: 0.3 }}
               // transition={{ delay: 0.2 * index }}
             >
-              <p className="text-gray-700 text-sm leading-relaxed mb-5">{t.quote}</p>
+              <p className="text-gray-700 text-sm md:text-[1vw] leading-relaxed mb-5">{t.quote}</p>
               <span className="text-gray-800 text-sm font-medium">{t.author}</span>
             </motion.div>
           ))}

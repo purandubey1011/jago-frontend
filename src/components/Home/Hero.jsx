@@ -51,13 +51,13 @@ const Hero = () => {
           dangerouslySetInnerHTML={{ __html: t("heroTitle") }}
         />
 
-        <p className="hero-subtitle mt-4 text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed">
+        <p className="hero-subtitle mt-4 text-base sm:text-lg md:text-[1.45vw] text-gray-200 max-w-2xl leading-relaxed">
           {t("heroSubtitle")}
         </p>
 
         <Link
           to="/contact#booking-calendar"
-          className="hero-btn mt-6 inline-block px-6 py-3 bg-white hover:bg-gray-300 text-black font-semibold rounded-full shadow-md transition"
+          className="hero-btn mt-6 inline-block px-6 py-3 bg-white hover:bg-gray-300 text-black font-semibold rounded-full shadow-md"
         >
           {t("heroButton")}
         </Link>

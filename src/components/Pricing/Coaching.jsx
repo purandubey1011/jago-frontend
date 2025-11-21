@@ -121,11 +121,11 @@ const Coaching = () => {
             </div>
 
             <div className="mt-3 border border-gray-300 rounded p-1">
-              <button className="w-full text-left px-1 py-1 rounded text-xs font-medium hover:bg-white/70 transition">
+              <button className="w-full text-left px-1 py-1 rounded text-xs md:text-sm font-medium hover:bg-white/70 transition">
                 View Details
               </button>
               <hr className="my-1 border-gray-300" />
-              <ul className="list-disc list-inside text-sm text-gray-700 space-y-1 px-3 py-1 min-h-[9vh]">
+              <ul className="list-disc list-inside text-sm md:text-[1vw] text-gray-700 space-y-1 px-3 py-1 min-h-[9vh]">
                 {item.details.map((d, idx) => (
                   <li key={idx}>{d}</li>
                 ))}

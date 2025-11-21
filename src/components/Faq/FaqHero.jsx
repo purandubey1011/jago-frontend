@@ -151,7 +151,7 @@ const FaqHero = () => {
             <AnimatePresence initial={false}> 
               {openId === faq.id && faq.answer && (
                 <motion.p
-                  className="mt-3 text-gray-600 text-sm leading-relaxed font-serif"
+                  className="mt-3 text-gray-600 text-sm md:text-[1.2vw] leading-relaxed font-serif"
                   variants={answerVariants}
                   initial="hidden"
                   animate="visible"

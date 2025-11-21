@@ -137,7 +137,7 @@ const cardVariants = {
               {card.type}
             </span>
           </div>
-          <p className="mt-2 text-gray-600 text-sm flex-grow">{card.desc}</p>
+          <p className="mt-2 text-gray-600 text-sm md:text-[1vw] flex-grow">{card.desc}</p>
           <button className="mt-6 w-full bg-[#0c2b16] text-white font-medium py-2 rounded-full hover:bg-[#134322] transition">
             Download
           </button>

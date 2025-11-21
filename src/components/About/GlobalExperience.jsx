@@ -51,7 +51,7 @@ const GlobalExperienceSection = () => {
               <h3 className="font-semibold text-green-900 text-lg sm:text-2xl mb-2">
                 What sets JaGoCoach apart?
               </h3>
-              <p className="text-gray-700 text-[3.5vw] sm:text-[1.07vw] leading-relaxed mb-4">
+              <p className="text-gray-700 text-[3.5vw] sm:text-[1.2vw] leading-relaxed mb-4">
                 JaGoCoach takes a bespoke approach, blending timeless insights —
                 from MentalPhysics, Certified Coaching, Breathwork, Reiki, and
                 proven Psychological Frameworks — into modern clarity for you.{" "}

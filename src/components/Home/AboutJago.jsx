@@ -57,14 +57,14 @@ const AboutJago = () => {
       </motion.div>
 
       {/* Right Content */}
-      <div className="flex flex-col gap-6 max-w-[600px] px-2 sm:px-0">
+      <div className="flex flex-col gap-8 max-w-[600px] px-2 sm:px-0">
         {/* Small heading with icon */}
         <motion.div
           variants={contentChildVariants}
           className="flex items-center gap-2 text-gray-600 text-sm font-medium"
         >
-          <BsStars className="text-yellow-400" />
-          About JaGoCoach
+          <BsStars className="text-yellow-400 " />
+          <p className="md:text-xl">About JaGoCoach</p>
         </motion.div>
 
         {/* Main Heading */}
@@ -80,7 +80,7 @@ const AboutJago = () => {
         {/* Subtext */}
         <motion.p
           variants={contentChildVariants}
-          className="text-gray-600 text-base leading-relaxed "
+          className="text-gray-600 text-lg leading-relaxed "
         >
           JaGo means Awaken. JaGoCoach is a call to awaken. Whether you’restuck,
           curious, or ready to level up — JaGoCoach is your ignition. Transform

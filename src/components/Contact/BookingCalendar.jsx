@@ -192,7 +192,7 @@ const BookingCalendar = ({ id }) => {
           {/* Left Info */}
           <motion.div className="flex-1" variants={leftPanelVariants}>
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-18 w-18 rounded-md bg-blue-500 flex items-center justify-center text-white font-bold text-lg">
+              <div className="h-18 w-18 rounded-md bg-green-600 flex items-center justify-center text-white font-bold text-lg">
                 <img
                   src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/jago%20O%20white.png?updatedAt=1762417860972"
                   alt=""
@@ -214,7 +214,7 @@ const BookingCalendar = ({ id }) => {
             </div>
 
             {/* ✅ Updated Real Text */}
-            <p className="mt-5 text-gray-600 text-sm leading-relaxed max-w-xs">
+            <p className="mt-5 text-gray-600 text-sm md:text-[1.1vw]  max-w-xs">
               In this free clarity session, you'll connect with a certified
               JaGoCoach to explore your goals, challenges, and the next steps to
               awaken your potential. No charges, just genuine guidance to help
@@ -232,7 +232,7 @@ const BookingCalendar = ({ id }) => {
               <Calendar
                 onChange={setDate}
                 value={date}
-                className="w-full border-none"
+                className="w-full border-none text-sm text-green-900"
               />
             </div>
 
