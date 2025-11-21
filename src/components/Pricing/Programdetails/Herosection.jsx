@@ -25,7 +25,7 @@ const Herosection = () => {
   viewport={{ once: true, amount: 0.3 }}
 >
   {/* Center Content */}
-  <motion.div variants={fadeUp} className="relative z-[2] w-full max-w-[900px] space-y-[3vmin]">
+  <motion.div variants={fadeUp} className="relative z-[2] w-full max-w-[900px] space-y-[9vmin] md:space-y-[3vmin]">
     
     <motion.h2
       variants={fadeUp}
