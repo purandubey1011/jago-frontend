@@ -47,6 +47,14 @@ const ResourcesCards = () => {
       img: "https://cdn.pixabay.com/photo/2015/09/05/21/51/reading-925589_1280.jpg",
       type: "PDF",
     },
+   {
+  id: 7,
+  title: "Parking Lot Principle",
+  desc: "How visibility creates credibility — why one empty parking lot was stopping millions.",
+   img: "https://cdn.pixabay.com/photo/2015/09/05/21/51/reading-925589_1280.jpg",
+  type: "PDF",
+}
+
   ];
 
 //   const containerVariants = {

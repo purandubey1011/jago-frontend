@@ -5,7 +5,7 @@ import { programsData } from "./programData";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// ✅ Custom Inline SVG for Checkmark
+// SVG Check Icon
 const SVGCheck = (props) => (
   <svg
     {...props}
@@ -21,6 +21,37 @@ const SVGCheck = (props) => (
   </svg>
 );
 
+// Animation Variants
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const staggerContainer = {
+  visible: {
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+  },
+};
+
+const listItem = {
+  hidden: { opacity: 0, x: 30 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+};
+
+const modalBackdrop = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.3 } },
+};
+
+const modalContent = {
+  hidden: { y: "-100vh", opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 100, damping: 20 },
+  },
+};
+
 const Bonus = () => {
   const { id } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -32,63 +63,70 @@ const Bonus = () => {
 
   const { bonusAddons, investment } = program;
 
-  // Animation Variants
-  const modalBackdrop = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.3 } },
-  };
-
-  const modalContent = {
-    hidden: { y: "-100vh", opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { type: "spring", stiffness: 100, damping: 20 },
-    },
-  };
-
   return (
     <>
-      <div className="w-full bg-[#133216] py-10 px-4 sm:px-6 md:px-16 font-['Inter',_sans-serif]">
-        <div className="max-w-6xl mx-auto bg-[#EAFE45] rounded-2xl py-10 md:py-20 px-4 sm:px-8 md:px-16 relative overflow-hidden flex flex-col md:flex-row items-center md:justify-around">
-          {/* --- DESKTOP GRID --- */}
+      <motion.div
+        className="w-full bg-[#133216] py-10 px-4 sm:px-6 md:px-16 font-['Inter',_sans-serif]"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.div
+          className="max-w-6xl mx-auto bg-[#EAFE45] rounded-2xl py-10 md:py-20 px-4 sm:px-8 md:px-16 relative overflow-hidden flex flex-col md:flex-row items-center md:justify-around"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {/* DESKTOP */}
           <div className="hidden md:grid grid-cols-12 gap-x-12 w-full">
             {/* Left Column */}
-            <div className="col-span-7 flex flex-col space-y-3">
-              {/* Bonus Tag */}
-              <div className="flex items-center space-x-2 w-fit px-3 py-1 rounded-full bg-black/10 border-2 border-black/50">
+            <motion.div
+              className="col-span-7 flex flex-col space-y-3"
+              variants={staggerContainer}
+            >
+              <motion.div
+                className="flex items-center space-x-2 w-fit px-3 py-1 rounded-full bg-black/10 border-2 border-black/50"
+                variants={fadeUp}
+              >
                 <SVGCheck className="w-4 h-4 text-gray-700" />
                 <span className="text-sm font-semibold text-gray-700">
                   {bonusAddons?.heading || "Bonus"}
                 </span>
-              </div>
+              </motion.div>
 
-              {/* Heading */}
-              <h2 className="text-4xl font-serif font-extrabold text-black leading-tight pt-2">
-                {program.whoThisIsFor?.heading || "Who This Course Is For"}
-              </h2>
+              <motion.h2
+                className="text-4xl font-serif font-extrabold text-black leading-tight pt-2"
+                variants={fadeUp}
+              >
+                {program.whoThisIsFor?.heading}
+              </motion.h2>
 
-              {/* Description */}
-              <p className="text-md text-gray-700 font-medium opacity-90 mb-4">
-                {program.whoThisIsFor?.description ||
-                  "Who Should Attend the PMP Course Online"}
-              </p>
+              <motion.p
+                className="text-md text-gray-700 font-medium opacity-90 mb-4"
+                variants={fadeUp}
+              >
+                {program.whoThisIsFor?.description}
+              </motion.p>
 
               {/* CTA Button */}
-              <div
+              <motion.div
                 onClick={() => {
                   setSelectedProgram(program);
                   setIsModalOpen(true);
                 }}
-                className="px-6 py-3 w-fit rounded-full bg-white flex items-center space-x-2 transition duration-300 hover:scale-[1.03] cursor-pointer"
+                className="px-6 py-3 w-fit rounded-full bg-white flex items-center space-x-2 duration-300 hover:scale-[1.03] cursor-pointer"
+                variants={fadeUp}
                 style={{
                   boxShadow:
                     "-10px 10px 15px rgba(128,128,128,0.4), 0 4px 10px rgba(0,0,0,0.2)",
                 }}
               >
                 <span className="text-lg font-semibold text-gray-800">
-                  Enroll Now at {investment?.price || "$0"}
+                  Enroll Now at {investment?.price}
                 </span>
+
                 {investment?.discountedFrom && (
                   <div className="flex gap-2 text-xs leading-none">
                     <span className="text-gray-700 opacity-70">25% off</span>
@@ -97,97 +135,108 @@ const Bonus = () => {
                     </span>
                   </div>
                 )}
-              </div>
+              </motion.div>
 
               {/* Plan */}
               {investment?.paymentPlan && (
-                <div className="pt-4">
+                <motion.div className="pt-4" variants={fadeUp}>
                   <p className="text-sm text-gray-600 opacity-80 font-medium leading-2.5">
                     Plan
                   </p>
                   <p className="text-sm text-gray-800 font-medium">
                     {investment.paymentPlan}
                   </p>
-                </div>
+                </motion.div>
               )}
-            </div>
+              
+            </motion.div>
 
             {/* Right Column */}
-            <div className="col-span-5 flex flex-col justify-center mt-2 md:mt-0">
-              <ul className="space-y-4 text-base pl-0 list-none">
-                {bonusAddons?.items?.map((item, index) => (
-                  <li
-                    key={index}
-                    className="flex gap-3 items-center text-black"
-                  >
-                    <span className="text-xl leading-none">•</span>
-                    <span className="font-bold text-[1vw]">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <motion.ul
+              className="col-span-5 flex flex-col justify-center mt-2 md:mt-0 space-y-4 text-base pl-0 list-none"
+              variants={staggerContainer}
+            >
+              {bonusAddons?.items?.map((item, index) => (
+                <motion.li
+                  key={index}
+                  className="flex gap-3 items-center text-black"
+                  variants={listItem}
+                >
+                  <span className="text-xl leading-none">•</span>
+                  <span className="font-bold text-[1vw]">{item}</span>
+                </motion.li>
+              ))}
+            </motion.ul>
           </div>
 
-          {/* --- MOBILE STACK --- */}
-          <div className="flex flex-col md:hidden items-center text-center w-full space-y-6">
-            {/* 1️⃣ Bonus Tag */}
-            <div className="flex items-center justify-center space-x-2 w-fit px-4 py-1 rounded-full bg-black/10 border-2 border-black/50">
+          {/* MOBILE */}
+          <motion.div
+            className="flex flex-col md:hidden items-center text-center w-full space-y-6"
+            variants={staggerContainer}
+          >
+            <motion.div
+              className="flex items-center justify-center space-x-2 w-fit px-4 py-1 rounded-full bg-black/10 border-2 border-black/50"
+              variants={fadeUp}
+            >
               <SVGCheck className="w-4 h-4 text-gray-700" />
               <span className="text-sm font-semibold text-gray-700">
-                {bonusAddons?.heading || "Bonus"}
+                {bonusAddons?.heading}
               </span>
-            </div>
+            </motion.div>
 
-            {/* 2️⃣ Heading */}
-            <h2 className="text-2xl font-serif font-extrabold text-black leading-snug">
-              {program.whoThisIsFor?.heading || "Who This Course Is For"}
-            </h2>
+            <motion.h2
+              className="text-2xl font-serif font-extrabold text-black leading-snug"
+              variants={fadeUp}
+            >
+              {program.whoThisIsFor?.heading}
+            </motion.h2>
 
-            {/* 3️⃣ List Items */}
-            <ul className="space-y-3 text-sm sm:text-base w-full max-w-sm">
+            <motion.ul
+              className="space-y-3 text-sm sm:text-base w-full max-w-sm"
+              variants={staggerContainer}
+            >
               {bonusAddons?.items?.map((item, index) => (
-                <li
+                <motion.li
                   key={index}
                   className="flex items-start justify-start text-black text-base font-semibold"
+                  variants={listItem}
                 >
                   <span className="mr-2 text-md leading-none">•</span>
                   <span>{item}</span>
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
 
-            {/* 4️⃣ Enroll Now Button */}
-            <div
+            {/* Button */}
+            <motion.div
               onClick={() => {
                 setSelectedProgram(program);
                 setIsModalOpen(true);
               }}
-              className="mt-4 px-6 py-3 rounded-full bg-white shadow-md hover:scale-[1.03] transition duration-300 cursor-pointer"
-              style={{
-                boxShadow: "0 4px 10px rgba(0,0,0,0.25)",
-              }}
+              className="mt-4 px-6 py-3 rounded-full bg-white shadow-md hover:scale-[1.03] duration-300 cursor-pointer"
+              style={{ boxShadow: "0 4px 10px rgba(0,0,0,0.25)" }}
+              variants={fadeUp}
             >
               <span className="text-base font-semibold text-gray-800">
-                Enroll Now at {investment?.price || "$0"}
+                Enroll Now at {investment?.price}
               </span>
-            </div>
+            </motion.div>
 
-            {/* 5️⃣ Plan */}
             {investment?.paymentPlan && (
-              <div className="pt-1">
+              <motion.div className="pt-1" variants={fadeUp}>
                 <p className="text-xs text-gray-600 opacity-80 font-medium leading-2.5">
                   Plan
                 </p>
                 <p className="text-sm text-gray-800 font-semibold">
                   {investment.paymentPlan}
                 </p>
-              </div>
+              </motion.div>
             )}
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
 
-      {/* --- Modal (same as Coaching.js) --- */}
+      {/* MODAL */}
       <AnimatePresence>
         {isModalOpen && selectedProgram && (
           <motion.div
@@ -209,85 +258,53 @@ const Bonus = () => {
               </button>
 
               <h3 className="text-xl font-semibold mb-3">
-                {selectedProgram.title || "Confirm Enrollment"}
+                {selectedProgram.title}
               </h3>
 
               <p className="text-sm text-gray-600 mb-4">
-                {selectedProgram.whoThisIsFor?.description ||
-                  "You are about to enroll in this program."}
+                {selectedProgram.whoThisIsFor?.description}
               </p>
 
-              {bonusAddons?.items && (
-                <ul className="list-disc list-inside text-sm text-gray-600 mb-4">
-                  {bonusAddons.items.map((d, idx) => (
-                    <li key={idx}>{d}</li>
-                  ))}
-                </ul>
-              )}
+              <ul className="list-disc list-inside text-sm text-gray-600 mb-4">
+                {bonusAddons.items.map((d, idx) => (
+                  <li key={idx}>{d}</li>
+                ))}
+              </ul>
 
               <p className="text-lg font-bold text-green-800">
-                {investment?.price || "INR 0"}
-              </p>
-              {investment?.discountedFrom && (
-                <p className="text-sm text-gray-500 line-through">
-                  {investment.discountedFrom}
-                </p>
-              )}
-              <p className="text-xs text-gray-600 mb-4">
-                {investment?.paymentPlan}
+                {investment?.price}
               </p>
 
-             <motion.button
-  type="button"
-  className="w-full py-2 px-4 bg-green-700 text-white rounded hover:bg-green-800 transition"
-  whileHover={{ scale: 1.02 }}
-  whileTap={{ scale: 0.98 }}
-  onClick={() => {
-    if (!window.Razorpay) {
-      toast.error("Razorpay SDK not loaded!");
-      return;
-    }
+              <motion.button
+                type="button"
+                className="w-full py-2 px-4 bg-green-700 text-white rounded hover:bg-green-800"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => {
+                  const amount = (selectedProgram.investment?.inrPrice || 0) * 100;
 
-    const options = {
-      key: "rzp_test_RIZb5le1ykNbRN", // Razorpay test key
-      amount: (selectedProgram.investment?.inrPrice || 0) * 100, // paisa
-      currency: "INR",
-      name: "JaGoCoach",
-      description: `Booking: ${selectedProgram.title}`,
-      handler: async function (response) {
-        try {
-          await fetch("https://jago-backend.onrender.com/api/v1/form/bookings", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              name: "Guest", // optional: add name/email input if needed
-              email: "guest@example.com",
-              package: selectedProgram.title,
-              paymentId: response.razorpay_payment_id,
-            }),
-          });
+                  if (!window.Razorpay) {
+                    toast.error("Razorpay SDK not loaded!");
+                    return;
+                  }
 
-          toast.success("✅ Booking confirmed!", { position: "top-right", autoClose: 3000 });
+                  const rzp = new window.Razorpay({
+                    key: "rzp_test_RIZb5le1ykNbRN",
+                    amount,
+                    currency: "INR",
+                    name: "JaGoCoach",
+                    description: `Booking: ${selectedProgram.title}`,
+                    handler: () => {
+                      toast.success("Booking confirmed!");
+                      setIsModalOpen(false);
+                    },
+                  });
 
-          // ✅ Close modal after successful payment
-          setIsModalOpen(false);
-        } catch (error) {
-          toast.error("Booking save failed!");
-          console.error(error);
-        }
-      },
-      theme: { color: "#10b981" },
-    };
-
-    const rzp = new window.Razorpay(options);
-    rzp.open();
-  }}
->
-  Confirm Enroll
-</motion.button>
-
-
-
+                  rzp.open();
+                }}
+              >
+                Confirm Enroll
+              </motion.button>
             </motion.div>
           </motion.div>
         )}

@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { programsData } from "./programData";
+import { motion } from "framer-motion";
 
 // --- Custom Inline SVG Icons ---
 const SVGClipboardList = (props) => (
@@ -102,6 +103,20 @@ const BackgroundPath = () => (
   </svg>
 );
 
+// ANIMATION VARIANTS
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+      ease: "easeOut",
+      delay: i * 0.18,
+    },
+  }),
+};
+
 const Change = () => {
   const { id } = useParams();
   const program = programsData[id - 1];
@@ -109,7 +124,6 @@ const Change = () => {
     (section) => section.id === "change" || section.id === "respond"
   );
 
-  // Match icons to cards dynamically
   const icons = [SVGClipboardList, SVGCheckSquare, SVGLink, SVGMaximize];
 
   return (
@@ -126,7 +140,7 @@ const Change = () => {
             {changeSection.title}
           </h1>
           <p
-            className={`text-base sm:text-lg ${PRIMARY_COLOR} font-normal opacity-80 max-w-full sm:max-w-[70%] lg:max-w-[40%] mx-auto sm:mx-0`}
+            className={`text-base sm:text-lg ${PRIMARY_COLOR} opacity-80 max-w-full sm:max-w-[70%] lg:max-w-[40%] mx-auto sm:mx-0`}
           >
             {changeSection.subtitle}
           </p>
@@ -136,34 +150,36 @@ const Change = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {changeSection.cards.map((card, index) => {
             const IconComponent = icons[index] || SVGClipboardList;
+
             return (
-              <div
+              <motion.div
                 key={index}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={cardVariants}
                 className="flex flex-col space-y-3 text-center sm:text-left"
               >
-                <div
-                  className={`p-1 w-fit mx-auto sm:mx-0 rounded-full ${PRIMARY_COLOR} mb-3`}
-                >
+                <div className={`p-1 w-fit mx-auto sm:mx-0 rounded-full ${PRIMARY_COLOR} mb-3`}>
                   <IconComponent className="w-10 h-10 md:w-12 md:h-12" />
                 </div>
+
                 <h2 className="text-lg sm:text-xl font-bold text-black opacity-80">
                   {card.title}
                 </h2>
-                <p
-                  className={`text-sm sm:text-base ${PRIMARY_COLOR} opacity-90 leading-relaxed`}
-                >
+
+                <p className={`text-sm sm:text-base ${PRIMARY_COLOR} opacity-90 leading-relaxed`}>
                   {card.description}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
         </div>
       </div>
 
       {/* Reflection Footer */}
-      <div
-        className={`mt-16 sm:mt-20 w-full ${ACCENT_YELLOW_COLOR} py-6 px-4 sm:px-8 lg:px-16`}
-      >
+      <div className={`mt-16 sm:mt-20 w-full ${ACCENT_YELLOW_COLOR} py-6 px-4 sm:px-8 lg:px-16`}>
         <p className="max-w-4xl mx-auto text-base sm:text-xl md:text-2xl font-medium text-black text-center italic">
           {changeSection.reflection}
         </p>
