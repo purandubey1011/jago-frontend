@@ -1,10 +1,28 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { AiOutlineCalendar, AiOutlineClockCircle } from "react-icons/ai";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import { useCurrencyStore } from "../store/currencyStore.jsx";
 
+// ------------ CURRENCY RATES -------------
+const conversionRates = {
+  "£": 1,       // GBP (BASE)
+  "₹": 105,     // INR
+  "$": 1.25,    // USD
+  "€": 1.15,    // EURO
+  "د.إ": 4.60   // AED
+};
+
+// ------------ PRICE FORMATTER -------------
+const formatPrice = (currency, amount) => {
+  const rate = conversionRates[currency] || 1;
+  const converted = Math.round(amount * rate);
+  return currency + converted.toLocaleString();
+};
+
+// ------------ COACHING DATA -------------
 const coachingData = [
   {
     id: 1,
@@ -14,8 +32,8 @@ const coachingData = [
       "Covers Awareness → Beliefs & Big Goals → Change",
       "Bonus: Breathwork, Meditation, Persona Mapping, Voice-note check-ins",
     ],
-    price: "£2,999",
-    oldPrice: "£5,000",
+    price: 2999,
+    oldPrice: 5000,
     note: "Payment Plan: 3 × £1,200",
     popular: true,
   },
@@ -27,8 +45,8 @@ const coachingData = [
       "Framework: Awareness → Audit → Reset",
       "Bonus: Follow-up check-in",
     ],
-    price: "£499",
-    oldPrice: "£699",
+    price: 499,
+    oldPrice: 699,
     note: "Includes: 3 sessions + bonus check-in",
     popular: false,
   },
@@ -37,18 +55,19 @@ const coachingData = [
     title: "JaGoCoach Lifeline: Emergency Call",
     subtitle: "45-min focused virtual call",
     details: ["For tough decisions, overwhelm, or urgent mindset reset"],
-    price: "£199",
-    oldPrice: "£299",
+    price: 199,
+    oldPrice: 299,
     note: "Quick access, fast turnaround",
     popular: false,
   },
 ];
 
-
 const Coaching = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState(null);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  const currency = useCurrencyStore((state) => state.currency);
 
   const modalBackdrop = {
     hidden: { opacity: 0 },
@@ -68,7 +87,6 @@ const Coaching = () => {
     <motion.section className="bg-white py-20 px-4 md:px-12">
       <ToastContainer />
 
-      {/* Heading */}
       <motion.h2 className="text-5xl font-bold text-green-900 mb-12 font-serif">
         Coaching
       </motion.h2>
@@ -78,22 +96,19 @@ const Coaching = () => {
         {coachingData.map((item) => (
           <motion.div
             key={item.id}
-            className="relative bg-[#f8fce0] rounded-lg  px-6 py-8 flex flex-col justify-between"
+            className="relative bg-[#f8fce0] rounded-lg px-6 py-8 flex flex-col justify-between"
             onClick={() => navigate(`/program/${item.id}`)}
           >
-            {/* Popular Badge */}
             {item.popular && (
               <span className="absolute top-3 md:top-1.5 right-4 bg-yellow-400 text-green-900 text-[2vw] md:text-[.5vw] font-semibold px-3 py-1 rounded-full">
                 Most Popular
               </span>
             )}
 
-            {/* Title */}
             <h3 className="text-xl font-bold text-green-900 font-serif min-h-[7vh]">
               {item.title}
             </h3>
 
-            {/* Subtitle */}
             <div className="mt-3 space-y-2">
               <div className="flex items-center gap-2 text-sm text-black font-medium">
                 <AiOutlineCalendar className="text-lg" />
@@ -105,9 +120,8 @@ const Coaching = () => {
               </div>
             </div>
 
-            {/* View Details */}
-            <div className="mt-3 border border-gray-300 rounded p-1 ">
-              <button className="w-full text-left  px-1 py-1 rounded text-xs font-medium hover:bg-white/70 transition">
+            <div className="mt-3 border border-gray-300 rounded p-1">
+              <button className="w-full text-left px-1 py-1 rounded text-xs font-medium hover:bg-white/70 transition">
                 View Details
               </button>
               <hr className="my-1 border-gray-300" />
@@ -118,19 +132,17 @@ const Coaching = () => {
               </ul>
             </div>
 
-            {/* Price */}
+            {/* PRICE WITH CONVERSION */}
             <div className="mt-2">
               <p className="text-lg font-bold bg-gradient-to-r from-[#b8cc21] via-[#061309] to-green-400 bg-clip-text text-transparent">
-                {item.price}
+                {formatPrice(currency, item.price)}
               </p>
 
               <p className="text-xs text-gray-500 line-through">
-                {item.oldPrice}
+                {formatPrice(currency, item.oldPrice)}
               </p>
-              {/* <p className="text-xs text-gray-600">{item.note}</p> */}
             </div>
 
-            {/* CTA Button */}
             <motion.button
               className="mt-4 w-full bg-[#0c2b16] text-white font-medium py-2 rounded-md hover:bg-[#1a5b2f] transition"
               onClick={() => {
@@ -165,13 +177,9 @@ const Coaching = () => {
                 ✕
               </button>
 
-              <h3 className="text-xl font-semibold mb-4">
-                {selectedPackage.title}
-              </h3>
+              <h3 className="text-xl font-semibold mb-4">{selectedPackage.title}</h3>
 
-              <p className="text-sm text-gray-600 mb-4">
-                {selectedPackage.subtitle}
-              </p>
+              <p className="text-sm text-gray-600 mb-4">{selectedPackage.subtitle}</p>
 
               <ul className="list-disc list-inside text-sm text-gray-600 mb-4">
                 {selectedPackage.details.map((d, idx) => (
@@ -180,14 +188,14 @@ const Coaching = () => {
               </ul>
 
               <p className="text-lg font-bold text-green-800">
-                {selectedPackage.price}
+                {formatPrice(currency, selectedPackage.price)}
               </p>
+
               <p className="text-sm text-gray-500 line-through">
-                {selectedPackage.oldPrice}
+                {formatPrice(currency, selectedPackage.oldPrice)}
               </p>
-              <p className="text-xs text-gray-600 mb-4">
-                {selectedPackage.note}
-              </p>
+
+              <p className="text-xs text-gray-600 mb-4">{selectedPackage.note}</p>
 
               <motion.button
                 type="button"

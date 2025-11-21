@@ -1,9 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { programsData } from "./programData";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useCurrencyStore } from "../../store/currencyStore";
+
+// ------------ CURRENCY RATES -------------
+const conversionRates = {
+  "£": 1,       // GBP (BASE)
+  "₹": 105,     // INR
+  "$": 1.25,    // USD
+  "€": 1.15,    // EURO
+  "د.إ": 4.60   // AED
+};
+
+// ------------ PRICE FORMATTER -------------
+const formatPrice = (currency, amount) => {
+  const rate = conversionRates[currency] || 1;
+  const converted = Math.round(amount * rate);
+  return currency + converted.toLocaleString();
+};
 
 // SVG Check Icon
 const SVGCheck = (props) => (
@@ -57,11 +74,22 @@ const Bonus = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState(null);
 
+  // 🟢 Global Currency State
+  const currency = useCurrencyStore((state) => state.currency);
+
   const program = programsData[id - 1];
   if (!program)
     return <div className="text-center py-10">Program not found.</div>;
 
   const { bonusAddons, investment } = program;
+
+  // Extract only numeric values
+  const cleanPrice = parseInt(investment?.price?.replace(/\D/g, "")) || 0;
+  const cleanDiscount = parseInt(investment?.discountedFrom?.replace(/\D/g, "")) || 0;
+
+  // Apply conversion
+  const mainPrice = formatPrice(currency, cleanPrice);
+  const discountPrice = cleanDiscount ? formatPrice(currency, cleanDiscount) : null;
 
   return (
     <>
@@ -81,6 +109,7 @@ const Bonus = () => {
         >
           {/* DESKTOP */}
           <div className="hidden md:grid grid-cols-12 gap-x-12 w-full">
+            
             {/* Left Column */}
             <motion.div
               className="col-span-7 flex flex-col space-y-3"
@@ -124,14 +153,14 @@ const Bonus = () => {
                 }}
               >
                 <span className="text-lg font-semibold text-gray-800">
-                  Enroll Now at {investment?.price}
+                  Enroll Now at {mainPrice}
                 </span>
 
-                {investment?.discountedFrom && (
+                {discountPrice && (
                   <div className="flex gap-2 text-xs leading-none">
                     <span className="text-gray-700 opacity-70">25% off</span>
                     <span className="line-through text-gray-500 opacity-50">
-                      {investment.discountedFrom}
+                      {discountPrice}
                     </span>
                   </div>
                 )}
@@ -148,7 +177,6 @@ const Bonus = () => {
                   </p>
                 </motion.div>
               )}
-              
             </motion.div>
 
             {/* Right Column */}
@@ -218,13 +246,13 @@ const Bonus = () => {
               variants={fadeUp}
             >
               <span className="text-base font-semibold text-gray-800">
-                Enroll Now at {investment?.price}
+                Enroll Now at {mainPrice}
               </span>
             </motion.div>
 
             {investment?.paymentPlan && (
               <motion.div className="pt-1" variants={fadeUp}>
-                <p className="text-xs text-gray-600 opacity-80 font-medium leading-2.5">
+                <p className="text-xs text-gray-600 opacity-80 font-medium">
                   Plan
                 </p>
                 <p className="text-sm text-gray-800 font-semibold">
@@ -271,8 +299,9 @@ const Bonus = () => {
                 ))}
               </ul>
 
+              {/* Dynamic Currency */}
               <p className="text-lg font-bold text-green-800">
-                {investment?.price}
+                {mainPrice}
               </p>
 
               <motion.button
@@ -281,7 +310,8 @@ const Bonus = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => {
-                  const amount = (selectedProgram.investment?.inrPrice || 0) * 100;
+                  const amount =
+                    (selectedProgram.investment?.inrPrice || 0) * 100;
 
                   if (!window.Razorpay) {
                     toast.error("Razorpay SDK not loaded!");

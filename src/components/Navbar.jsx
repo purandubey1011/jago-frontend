@@ -3,6 +3,7 @@ import { NavLink, Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import LanguageDropdown from "../utils/LanguageDropdown";
+import CountryDropdown from "../utils/CountryDropdown";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -162,7 +163,7 @@ const Navbar = () => {
           variants={mobileMenuItemVariants}
           className="w-full text-center px-2 relative"
         >
-          <LanguageDropdown textColor={scrolled ? "text-black" : "text-white"} />
+          <CountryDropdown textColor={scrolled ? "text-black" : "text-white"} />
         </motion.div>
       </motion.div>
 
