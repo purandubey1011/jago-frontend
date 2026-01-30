@@ -52,7 +52,7 @@ const SolutionHero = () => {
           animate="visible"
         >
           <motion.img
-            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/leafe.png?updatedAt=1757570791498"
+            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jogo/home/leafe.png?updatedAt=1764674312977"
             alt="Leaf"
             className="hero-leaf absolute md:-left-20 -left-10 top-26 md:top-48 opacity-100 brightness-90 contrast-110 pointer-events-none -z-10 h-48 md:h-80"
             variants={leafVariants}
@@ -84,7 +84,7 @@ const SolutionHero = () => {
           animate="visible"
         >
           <img
-            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/solutionhero.jpg?updatedAt=1757570907767"
+            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jogo/home/solutionhero.jpg?updatedAt=1764674313425"
             alt="Coaching discussion"
             className="rounded-xl w-[80vw] h-[50vh] md:w-[30vw] md:h-[70vh] object-cover shadow-lg"
           />
