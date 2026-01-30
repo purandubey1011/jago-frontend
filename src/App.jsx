@@ -8,6 +8,8 @@ import Faq from './components/Faq/Faq';
 import Pricing from './components/Pricing/Pricing.jsx';
 import PopupModal from './utils/PopupModal.jsx';
 import ProgramDetails from './components/Pricing/Programdetails/ProgramDetails.jsx';
+import Success from './components/Pricing/Success.jsx';
+import Cancel from './components/Pricing/Cancel.jsx';
 
 const App = () => {
   return (
@@ -22,6 +24,10 @@ const App = () => {
         <Route path="/faq" element={<Faq />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/program/:id" element={<ProgramDetails />} />
+
+         {/* Stripe Payment Pages */}
+        <Route path="/success" element={<Success />} />
+        <Route path="/cancel" element={<Cancel />} />
       </Routes>
 
       {/* Global Popup Routes ke bahar */}

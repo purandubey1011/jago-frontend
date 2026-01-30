@@ -35,7 +35,7 @@ const Loader = ({ onFinish }) => {
     >
       <video
         ref={videoRef}
-        src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/3,2,1%20Oldtime%20Countdown.mp4?updatedAt=1762419333290"
+        src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jogo/home/321.mp4"
         autoPlay
         muted
         playsInline

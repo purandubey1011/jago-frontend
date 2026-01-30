@@ -5,14 +5,17 @@ import { programsData } from "./programData";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useCurrencyStore } from "../../store/currencyStore";
+import { loadStripe } from "@stripe/stripe-js";
+const stripePromise = loadStripe("pk_test_51PhEeQB2qUwm737GB72wW58cES7qVxmI0VhdlThaTw41dSrs97Mva1kC96sXmMTYauyiEBAP9YhoFGdicMaiv6FU00V25118aL"); // ← tumhari publishable key
+
 
 // ------------ CURRENCY RATES -------------
 const conversionRates = {
-  "£": 1,       // GBP (BASE)
-  "₹": 105,     // INR
-  "$": 1.25,    // USD
-  "€": 1.15,    // EURO
-  "د.إ": 4.60   // AED
+  "£": 1, // GBP (BASE)
+  "₹": 105, // INR
+  $: 1.25, // USD
+  "€": 1.15, // EURO
+  "د.إ": 4.6, // AED
 };
 
 // ------------ PRICE FORMATTER -------------
@@ -85,11 +88,14 @@ const Bonus = () => {
 
   // Extract only numeric values
   const cleanPrice = parseInt(investment?.price?.replace(/\D/g, "")) || 0;
-  const cleanDiscount = parseInt(investment?.discountedFrom?.replace(/\D/g, "")) || 0;
+  const cleanDiscount =
+    parseInt(investment?.discountedFrom?.replace(/\D/g, "")) || 0;
 
   // Apply conversion
   const mainPrice = formatPrice(currency, cleanPrice);
-  const discountPrice = cleanDiscount ? formatPrice(currency, cleanDiscount) : null;
+  const discountPrice = cleanDiscount
+    ? formatPrice(currency, cleanDiscount)
+    : null;
 
   return (
     <>
@@ -109,7 +115,6 @@ const Bonus = () => {
         >
           {/* DESKTOP */}
           <div className="hidden md:grid grid-cols-12 gap-x-12 w-full">
-            
             {/* Left Column */}
             <motion.div
               className="col-span-7 flex flex-col space-y-3"
@@ -300,37 +305,44 @@ const Bonus = () => {
               </ul>
 
               {/* Dynamic Currency */}
-              <p className="text-lg font-bold text-green-800">
-                {mainPrice}
-              </p>
+              <p className="text-lg font-bold text-green-800">{mainPrice}</p>
 
               <motion.button
                 type="button"
                 className="w-full py-2 px-4 bg-green-700 text-white rounded hover:bg-green-800"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => {
+                onClick={async () => {
+                  const stripe = await stripePromise;
+
                   const amount =
-                    (selectedProgram.investment?.inrPrice || 0) * 100;
+                    selectedProgram.investment?.inrPrice ||
+                    selectedProgram.investment?.usdPrice ||
+                    selectedProgram.price ||
+                    0;
 
-                  if (!window.Razorpay) {
-                    toast.error("Razorpay SDK not loaded!");
-                    return;
-                  }
-
-                  const rzp = new window.Razorpay({
-                    key: "rzp_test_RIZb5le1ykNbRN",
-                    amount,
-                    currency: "INR",
-                    name: "JaGoCoach",
-                    description: `Booking: ${selectedProgram.title}`,
-                    handler: () => {
-                      toast.success("Booking confirmed!");
-                      setIsModalOpen(false);
+                  try {
+                    fetch("http://localhost:3000/api/v1/form/create-checkout-session", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
                     },
-                  });
+                    body: JSON.stringify({
+                      amount: 100,        // ⚠️ Must be a number
+                      programName: "Yoga" // ⚠️ Must be a string
+                    }),
+                  })
+                  .then(res => res.json())
+                  .then(data => {
+                    window.location.href = data.url; // redirect to Stripe Checkout
+                  })
+                  .catch(err => console.error(err));
 
-                  rzp.open();
+                    // else toast.error("Failed to start checkout");
+                  } catch (err) {
+                    toast.error("Payment failed");
+                    console.error(err);
+                  }
                 }}
               >
                 Confirm Enroll
