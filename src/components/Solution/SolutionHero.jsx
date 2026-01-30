@@ -40,7 +40,7 @@ const SolutionHero = () => {
   return (
     <section className="w-full bg-[#F6FBEF] relative overflow-hidden">
       {/* NAVBAR */}
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* HERO SECTION */}
       <div className="relative w-full flex flex-col md:flex-row items-center justify-between px-5 sm:px-8 md:px-20 pt-28 md:pt-32 pb-16 md:pb-24">

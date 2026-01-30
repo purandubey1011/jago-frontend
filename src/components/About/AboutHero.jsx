@@ -49,7 +49,7 @@ const AboutHero = () => {
       ref={heroRef}
       className="relative w-full h-screen bg-[#0f2b14] flex flex-col"
     >
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* Hero content */}
       <div className="relative flex flex-1 flex-col justify-center px-5 sm:px-8 md:px-20 z-10">

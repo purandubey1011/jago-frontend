@@ -15,7 +15,7 @@ const ProgramDetails = () => {
     <div className="w-full h-full overflow-hidden relative">
       {/* navbar */}
       <div className="h-[8vh] md:h-[10vh] w-full bg-white">
-        <Navbar />
+        {/* <Navbar /> */}
       </div>
 
       {/* hero section */}

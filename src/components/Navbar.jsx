@@ -33,7 +33,7 @@ const Navbar = () => {
   // Scroll listener for background change
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) setScrolled(true);
+      if (window.scrollY > 20) setScrolled(true);
       else setScrolled(false);
     };
     window.addEventListener("scroll", handleScroll);
@@ -86,12 +86,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 px-4 lg:px-5 xl:px-10 py-4 flex items-center justify-between transition-all duration-500 
-      ${
-        scrolled
+      className={`fixed top-10 left-0 w-full z-50 px-4 lg:px-5 xl:px-10 py-4 flex items-center justify-between transition-all duration-500 
+      ${scrolled
           ? "backdrop-blur-md bg-white/50 shadow-md" // 👈 white transparent blur on scroll
           : "bg-transparent"
-      }`}
+        }`}
     >
       {/* Logo */}
       <motion.div variants={itemVariants} initial="hidden" animate="visible">
@@ -114,9 +113,8 @@ const Navbar = () => {
 
       {/* Desktop Links */}
       <motion.ul
-        className={`hidden lg:flex items-center space-x-3 lg:space-x-4 xl:space-x-8 font-medium ${
-          scrolled ? "text-black" : textColor
-        }`}
+        className={`hidden lg:flex items-center space-x-3 lg:space-x-4 xl:space-x-8 font-medium ${scrolled ? "text-black" : textColor
+          }`}
         variants={staggerContainerVariants}
         initial="hidden"
         animate="visible"
@@ -151,9 +149,8 @@ const Navbar = () => {
         <motion.div variants={itemVariants}>
           <Link
             to="/contact"
-            className={`px-3 lg:px-4 xl:px-5 py-1.5 lg:py-2 rounded-full border ${
-              scrolled ? "border-black text-black hover:bg-black hover:text-white" : `${borderColor} ${textColor} ${contactHover}`
-            } transition text-xs sm:text-sm lg:text-base xl:text-base`}
+            className={`px-3 lg:px-4 xl:px-5 py-1.5 lg:py-2 rounded-full border ${scrolled ? "border-black text-black hover:bg-black hover:text-white" : `${borderColor} ${textColor} ${contactHover}`
+              } transition text-xs sm:text-sm lg:text-base xl:text-base`}
           >
             Contact
           </Link>
@@ -170,9 +167,8 @@ const Navbar = () => {
       {/* Mobile Menu Button */}
       <motion.button
         onClick={() => setOpen(!open)}
-        className={`lg:hidden text-2xl ${
-          scrolled ? "text-black" : textColor
-        } transition-colors duration-300`}
+        className={`lg:hidden text-2xl ${scrolled ? "text-black" : textColor
+          } transition-colors duration-300`}
         variants={itemVariants}
         initial="hidden"
         animate="visible"
@@ -195,14 +191,14 @@ const Navbar = () => {
               onClick={() => setOpen(false)}
             />
             <motion.div
-  key="menu"
-  ref={menuRef}
-  variants={mobileMenuVariants}
-  initial="hidden"
-  animate="visible"
-  exit="hidden"
-  className="fixed top-[0px] right-0 h-[calc(100vh-72px)] w-3/4 max-w-sm bg-black text-white flex flex-col items-center justify-start pb-8 space-y-6 text-lg shadow-lg z-50 xl:hidden overflow-y-auto"
->
+              key="menu"
+              ref={menuRef}
+              variants={mobileMenuVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              className="fixed top-[0px] right-0 h-[calc(100vh-72px)] w-3/4 max-w-sm bg-black text-white flex flex-col items-center justify-start pb-8 space-y-6 text-lg shadow-lg z-50 xl:hidden overflow-y-auto"
+            >
 
               <motion.div
                 variants={staggerContainerVariants}
@@ -220,10 +216,9 @@ const Navbar = () => {
                       to={link.to}
                       onClick={() => setOpen(false)}
                       className={({ isActive }) =>
-                        `block py-3 px-4 ${
-                          isActive
-                            ? "text-lime-400 font-semibold border-l-4 border-lime-400"
-                            : "hover:bg-gray-800 hover:text-lime-300"
+                        `block py-3 px-4 ${isActive
+                          ? "text-lime-400 font-semibold border-l-4 border-lime-400"
+                          : "hover:bg-gray-800 hover:text-lime-300"
                         } transition-colors duration-200`
                       }
                     >

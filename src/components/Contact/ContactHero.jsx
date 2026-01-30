@@ -68,7 +68,7 @@ const ContactHero = () => {
   return (
     <section className="relative w-full min-h-screen bg-green-950 text-white">
       {/* Navbar */}
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* Content */}
       <motion.div

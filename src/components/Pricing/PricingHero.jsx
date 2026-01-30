@@ -49,7 +49,7 @@ const PricingHero = () => {
       ></motion.div>
 
       {/* Navbar */}
-      <Navbar/>
+      {/* <Navbar/> */}
 
       {/* Hero Content */}
       <motion.div

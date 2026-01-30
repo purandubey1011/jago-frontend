@@ -92,7 +92,7 @@ const FaqHero = () => {
   return (
     <section className="bg-white">
       {/* Navbar */}
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* === HERO HEADER === */}
       <motion.div

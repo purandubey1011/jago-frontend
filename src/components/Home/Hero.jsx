@@ -43,7 +43,7 @@ const Hero = () => {
       />
 
       <div className="bg-overlay absolute top-0 left-0 w-full h-full bg-[#0F2E15CC]/80"></div>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className="hero-content-wrapper relative z-10 flex flex-col justify-center items-center text-center h-full px-4 sm:px-6">
         <h1

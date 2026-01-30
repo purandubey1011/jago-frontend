@@ -44,7 +44,7 @@ const Resources = () => {
   return (
     <div ref={root} className="relative bg-white overflow-hidden">
       {/* === NAVBAR === */}
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* === HERO === */}
       <motion.section
