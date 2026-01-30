@@ -57,7 +57,7 @@ const Footer = () => {
           <div>
             <div className="text-xl font-semibold mb-8 tracking-wide">
               <img
-                src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/jago%20logo%20white.png?updatedAt=1759678906840"
+                src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jogo/home/jago%20logo%20white.png?updatedAt=1764674312979"
                 alt="JaGoCoach Logo"
                 className="w-28"
               />

@@ -63,7 +63,7 @@ const Testimonials = () => {
 
 
    return (
-     <section className="relative w-full py-16 px-4 md:px-20 bg-white h-[90vh]">
+     <section className="relative w-full py-16 px-4 md:px-20 bg-white h-[56vh] md:h-[80vh]">
       {/* Watermark Heading */}
       <h1
         className="testimonial-heading absolute top-4 left-4 md:top-8 md:left-20 text-[2.3rem] md:text-[7rem] font-bold text-transparent leading-none select-none z-0"
@@ -84,7 +84,7 @@ const Testimonials = () => {
   }}
   pagination={{ clickable: true }}
   speed={1000}
-  className="relative z-10 top-5 md:top-40 pt-36 md:pt-40 pb-22 min-h-[75vh] md:min-h-[53vh] "
+  className="relative z-10 top-10 md:top-40 pt-36 md:pt-40 pb-22 min-h-[36vh] md:min-h-[44vh] "
   breakpoints={{
     0: {
       navigation: false, // ✅ Mobile pe off
@@ -98,13 +98,13 @@ const Testimonials = () => {
           <SwiperSlide key={idx}>
             <div className="flex flex-col md:flex-row md:items-center justify-center gap-6 md:gap-12 px-2 md:px-0">
               {/* Image */}
-              <div className="flex-shrink-0 w-full max-w-[280px] md:max-w-[280px] mx-auto md:mx-0">
+              {/* <div className="flex-shrink-0 w-full max-w-[280px] md:max-w-[280px] mx-auto md:mx-0">
                 <img
                   src={t.img}
                   alt={t.name}
                   className="w-full h-[280px] md:h-[340px] object-cover rounded-lg shadow-md"
                 />
-              </div>
+              </div> */}
 
               {/* Text */}
               <div className="text-gray-800 max-w-full md:max-w-[600px] text-center md:text-left">

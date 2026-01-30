@@ -50,7 +50,7 @@ const PopupModal = () => {
               <p className="text-gray-700 text-sm mb-4 leading-relaxed">
                 Take the first step towards unlocking your full potential.
                 Connect with our expert motivational coach in a personalized
-                20-minute session and discover strategies to achieve your goals
+                15-minute session and discover strategies to achieve your goals
                 and overcome obstacles.
               </p>
               <p className="text-gray-800 font-medium mb-6">

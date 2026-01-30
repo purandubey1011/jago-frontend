@@ -103,8 +103,8 @@ const Navbar = () => {
           <img
             src={
               isLightBg || scrolled
-                ? "https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/jago%20logo%20green.png?updatedAt=1759678906834"
-                : "https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/jago%20logo%20white.png?updatedAt=1759678906840"
+                ? "https://ik.imagekit.io/b9tt0xvd7/Falverra/jogo/home/jago%20logo%20green.png?updatedAt=1764674312982"
+                : "https://ik.imagekit.io/b9tt0xvd7/Falverra/jogo/home/jago%20logo%20white.png?updatedAt=1764674312979"
             }
             alt="JaGoCoach Logo"
             className="w-3/4 h-auto object-contain transition-transform duration-300 hover:scale-105"
