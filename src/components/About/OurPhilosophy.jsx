@@ -44,14 +44,14 @@ const OurPhilosophy = () => {
       {/* Images */}
       <div className="flex items-center justify-center mb-8 md:mb-10 -space-x-6">
         <motion.img
-          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/img1a.jpg?updatedAt=1757794172889"
+          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jogo/home/img1a.jpg?updatedAt=1764674313004"
           alt="Sticky notes"
           className="w-28 h-40 sm:w-32 sm:h-44 md:w-40 md:h-56 object-cover rounded-lg shadow-md transform -rotate-6 border-3 border-[#0F2E15]"
           variants={imageVariants}
           custom={-6} 
         />
         <motion.img
-          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/img2a.jpg?updatedAt=1757794173097"
+          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jogo/home/img2a.jpg?updatedAt=1764674313076"
           alt="Discussion"
           className="w-32 h-44 sm:w-40 sm:h-56 md:w-48 md:h-64 object-cover rounded-lg shadow-lg z-10 border-3 border-[#0F2E15]"
           variants={imageVariants}

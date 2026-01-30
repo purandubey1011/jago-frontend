@@ -25,7 +25,7 @@ const GlobalExperienceSection = () => {
       <div className="relative w-full max-w-6xl px-4 md:px-0  mx-auto">
         <div className="relative w-full overflow-hidden h-[50vh] sm:h-[60vh] md:h-[110vh] flex justify-center items-center">
           <motion.img
-            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/map.png?updatedAt=1757482092107"
+            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jogo/home/map.png?updatedAt=1764674313090"
             alt="World map"
             className="ge-map object-contain w-[90vw] h-full"
             variants={mapVariants}
