@@ -41,7 +41,7 @@ const Navbar = () => {
   }, []);
 
   const isLightBg =
-    location.pathname === "/solutions" ||
+    location.pathname === "/solutions" || location.pathname === "/terms" || location.pathname === "/privacy" ||
     location.pathname === "/resources" ||
     location.pathname.startsWith("/program/");
 

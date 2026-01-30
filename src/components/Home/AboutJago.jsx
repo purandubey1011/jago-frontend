@@ -82,7 +82,7 @@ const AboutJago = () => {
           variants={contentChildVariants}
           className="text-gray-600 text-lg leading-relaxed "
         >
-          JaGo means Awaken. JaGoCoach is a call to awaken. Whether you’restuck,
+          JaGo means Awaken. JaGoCoach is a call to awaken. Whether you’re stuck,
           curious, or ready to level up — JaGoCoach is your ignition. Transform
           yourself and benefit from timeless insights — from MentalPhysics,
           Certified Coaching, Breathwork, Reiki, and proven Psychological

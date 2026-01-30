@@ -13,6 +13,8 @@ import PopupModal from "./utils/PopupModal.jsx";
 import ProgramDetails from "./components/Pricing/Programdetails/ProgramDetails.jsx";
 import Success from "./components/Pricing/Success.jsx";
 import Cancel from "./components/Pricing/Cancel.jsx";
+import Terms from "./components/TermsAndPrivacy/Terms.jsx";
+import Privacy from "./components/TermsAndPrivacy/Privacy.jsx";
 
 const App = () => {
   return (
@@ -38,6 +40,11 @@ const App = () => {
           {/* Stripe Pages */}
           <Route path="/success" element={<Success />} />
           <Route path="/cancel" element={<Cancel />} />
+
+          {/* terms */}
+          <Route path="/terms" element={<Terms />} />
+          {/* privacy */}
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
       </div>
 
