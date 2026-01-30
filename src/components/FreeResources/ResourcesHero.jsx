@@ -55,7 +55,7 @@ const Resources = () => {
       >
         {/* LEFT LEAF */}
         <motion.img
-          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/leafe.png?updatedAt=1757570791498"
+          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jogo/home/leafe.png?updatedAt=1764674312977"
           alt="Leaf"
           className="absolute -left-6 sm:-left-10 top-28 sm:top-40 w-28 sm:w-60 rotate-[60deg] opacity-90 pointer-events-none"
           initial={{ opacity: 0, x: -50, }}
@@ -64,7 +64,7 @@ const Resources = () => {
         />
         {/* RIGHT LEAF */}
         <motion.img
-          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/leafe.png?updatedAt=1757570791498"
+          src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jogo/home/leafe.png?updatedAt=1764674312977"
           alt="Leaf mirrored"
           className="absolute -right-6 sm:-right-10 top-28 sm:top-40 w-28 sm:w-60 -scale-x-100 -rotate-[60deg] opacity-90 pointer-events-none"
           initial={{ opacity: 0, x: 50, }}

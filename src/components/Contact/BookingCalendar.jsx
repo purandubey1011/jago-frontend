@@ -194,7 +194,7 @@ const BookingCalendar = ({ id }) => {
             <div className="flex items-center gap-3 mb-4">
               <div className="h-18 w-18 rounded-md bg-green-600 flex items-center justify-center text-white font-bold text-lg">
                 <img
-                  src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/jago%20O%20white.png?updatedAt=1762417860972"
+                  src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jogo/home/jago%20logo%20white.png?updatedAt=1764674312979"
                   alt=""
                   className="p-1"
                 />
