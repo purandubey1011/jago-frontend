@@ -39,14 +39,14 @@ const Clarity = () => {
         >
           {/* Leaves */}
           <motion.img
-            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/leafe.png?updatedAt=1757570791498"
+            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jogo/home/leafe.png?updatedAt=1764674312977"
             alt="leaf left"
             className="absolute left-0 bottom-2 w-16 sm:w-24 md:w-36 opacity-90"
             variants={leafVariants}
             transition={{ delay: 0.4 }} 
           />
           <motion.img
-            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/falverra%20redesign/jogo/home/leafe.png?updatedAt=1757570791498"
+            src="https://ik.imagekit.io/b9tt0xvd7/Falverra/jogo/home/leafe.png?updatedAt=1764674312977"
             alt="leaf right"
             className="absolute right-0 bottom-2 w-16 sm:w-24 md:w-36 opacity-90 rotate-180"
             variants={leafVariants}
