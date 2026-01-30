@@ -16,12 +16,69 @@ const BookingCalendar = ({ id }) => {
   });
   const [bookedSlots, setBookedSlots] = useState([]);
 
-    const slots = [
+  const slots = [
     "10:30 - 11:30 AM",
     "11:30 AM - 12:30 PM",
     "1:30 - 2:30 PM",
     "2:30 - 3:30 PM",
   ];
+
+const timezones = [
+  { offset: -720, code: "AoE", label: "Baker Is., Howland Is. (US)" },
+  { offset: -660, code: "SST", label: "American Samoa, Niue" },
+  { offset: -600, code: "HST", label: "USA (Hawaii), Cook Is., French Polynesia" },
+  { offset: -570, code: "MART", label: "Marquesas Islands" },
+  { offset: -540, code: "AKST", label: "USA (Alaska), Gambier Islands" },
+  { offset: -480, code: "PST", label: "USA (Pacific), Canada (BC), Mexico (Baja)" },
+  { offset: -420, code: "MST", label: "USA (Mountain), Canada (AB), Mexico (Sonora)" },
+  { offset: -360, code: "CST", label: "USA (Central), Mexico, Central America" },
+  { offset: -300, code: "EST", label: "USA (Eastern), Canada, Colombia, Peru" },
+  { offset: -240, code: "AST", label: "Canada (Atlantic), Caribbean" },
+  { offset: -210, code: "NST", label: "Canada (Newfoundland)" },
+  { offset: -180, code: "ART", label: "Argentina, Uruguay, Brazil (East)" },
+  { offset: -120, code: "GST", label: "South Georgia Islands" },
+  { offset: -60, code: "CVT", label: "Cape Verde, Azores" },
+  { offset: 0, code: "GMT", label: "UK, Ireland, Portugal, Ghana" },
+  { offset: 60, code: "CET", label: "France, Germany, Italy, Nigeria" },
+  { offset: 120, code: "EET", label: "South Africa, Egypt, Greece" },
+  { offset: 180, code: "MSK", label: "Russia, Turkey, Saudi Arabia" },
+  { offset: 210, code: "IRST", label: "Iran" },
+  { offset: 240, code: "GST", label: "UAE, Oman" },
+  { offset: 270, code: "AFT", label: "Afghanistan" },
+  { offset: 300, code: "PKT", label: "Pakistan, Maldives" },
+  { offset: 330, code: "IST", label: "India, Sri Lanka" },
+  { offset: 345, code: "NPT", label: "Nepal" },
+  { offset: 360, code: "BST", label: "Bangladesh, Bhutan" },
+  { offset: 390, code: "MMT", label: "Myanmar" },
+  { offset: 420, code: "ICT", label: "Thailand, Vietnam, Indonesia (West)" },
+  { offset: 480, code: "CST/SGT", label: "China, Singapore, Malaysia" },
+  { offset: 525, code: "ACWST", label: "Australia (Eucla)" },
+  { offset: 540, code: "JST/KST", label: "Japan, South Korea" },
+  { offset: 570, code: "ACST", label: "Australia (NT)" },
+  { offset: 600, code: "AEST", label: "Australia (East), PNG" },
+  { offset: 630, code: "LHST", label: "Australia (Lord Howe)" },
+  { offset: 660, code: "SBT", label: "Solomon Islands" },
+  { offset: 720, code: "NZST", label: "New Zealand, Fiji" },
+  { offset: 765, code: "CHAST", label: "New Zealand (Chatham)" },
+  { offset: 780, code: "PHOT", label: "Samoa, Tonga" },
+  { offset: 840, code: "LINT", label: "Kiribati (Line Islands)" },
+];
+
+
+ const [selectedTZ, setSelectedTZ] = useState(timezones.find(t => t.code === "GMT"));
+
+
+const getOffsetTime = (offsetMinutes) => {
+  const now = new Date();
+  const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+  const local = new Date(utc + offsetMinutes * 60000);
+
+  return local.toLocaleTimeString("en-GB", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+};
+
 
 
   // Fetch already booked slots for the selected date
@@ -203,7 +260,7 @@ const BookingCalendar = ({ id }) => {
             </div>
 
             <h4 className="text-2xl font-bold mb-5">
-              Book a Free 15-Minute 
+              Book a Free 15-Minute
             </h4>
 
             <div className="flex items-center gap-2 mb-2 text-gray-700">
@@ -237,19 +294,37 @@ const BookingCalendar = ({ id }) => {
             </div>
 
             {/* ✅ UK Time Zone Section */}
-            <div className="mt-5 pt-4 border-t border-gray-200 text-xs text-gray-500">
-              Time zone:{" "}
-              <span className="font-medium text-gray-700">
-                United Kingdom (GMT / BST)
-              </span>{" "}
-              (
-              {new Date().toLocaleTimeString("en-GB", {
-                timeZone: "Europe/London",
-                hour: "2-digit",
-                minute: "2-digit",
-              })}{" "}
-              local time)
-            </div>
+           <div className="mt-5 pt-4 border-t border-gray-200 text-xs text-gray-500 space-y-1 relative z-20">
+  <div className="flex items-center justify-between gap-3">
+    <span>Time zone:</span>
+
+    <select
+      value={selectedTZ.code}
+      onChange={(e) =>
+        setSelectedTZ(timezones.find(t => t.code === e.target.value))
+      }
+      className="border rounded px-2 py-1 text-xs text-gray-700 bg-white cursor-pointer focus:outline-none focus:ring-1 focus:ring-green-500"
+    >
+      {timezones.map((tz) => (
+        <option key={tz.code} value={tz.code}>
+          UTC{tz.offset >= 0 ? "+" : ""}
+          {Math.floor(tz.offset / 60)}
+          {tz.offset % 60 !== 0 ? ":" + Math.abs(tz.offset % 60) : ""} — {tz.code}
+        </option>
+      ))}
+    </select>
+  </div>
+
+  <div>
+    <span className="font-medium text-gray-700">
+      {selectedTZ.code} — {selectedTZ.label}
+    </span>{" "}
+    (
+    {getOffsetTime(selectedTZ.offset)} local time)
+  </div>
+</div>
+
+
 
             <motion.button
               onClick={handleOpenModal}

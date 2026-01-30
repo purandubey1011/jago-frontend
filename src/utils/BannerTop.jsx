@@ -18,7 +18,7 @@ const BannerTop = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-10 bg-[#0c2b16] text-white text-[2.4vw] md:text-sm md:font-medium z-[60]">
+    <div className="fixed top-0 left-0 w-full h-10 bg-green-950 text-white text-[2.4vw] md:text-sm md:font-medium z-[60]">
       <div className="relative h-full flex items-center justify-center overflow-hidden">
         {messages.map((msg, i) => (
           <div
